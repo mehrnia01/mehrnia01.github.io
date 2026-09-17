@@ -1,145 +1,568 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020816">
 
-    <title>فرادید پردیس کاوش | راهکارهای نوآورانه</title>
+  <title>فرادید پردیس کاوش | FARADID</title>
+  <meta name="description" content="وب‌سایت رسمی شرکت فرادید پردیس کاوش؛ راهکارهای نوآورانه و محصول رگیاب نوری VENIX.">
 
-    <meta name="description"
-          content="شرکت فرادید پردیس کاوش - توسعه راهکارهای نوآورانه و تجهیزات پزشکی">
+  <style>
+    :root{
+      --bg:#020816;
+      --bg2:#061326;
+      --panel:rgba(11,29,52,.72);
+      --line:rgba(135,177,232,.19);
+      --text:#f5f8ff;
+      --muted:#9eacc0;
+      --blue:#20a8ff;
+      --blue2:#6cc8ff;
+      --silver:#dce7f5;
+      --max:1180px;
+      --shadow:0 30px 80px rgba(0,0,0,.40);
+      --radius:26px;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 85% 5%, rgba(0,105,255,.17), transparent 28%),
+        radial-gradient(circle at 10% 35%, rgba(0,180,255,.07), transparent 24%),
+        linear-gradient(180deg,#01050d 0%,#03101f 45%,#020816 100%);
+      color:var(--text);
+      line-height:1.9;
+      overflow-x:hidden;
+    }
 
-        body {
-            font-family: Tahoma, Arial, sans-serif;
-            background: #020817;
-            color: white;
-            line-height: 1.8;
-        }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button{font:inherit}
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            background:
-                radial-gradient(circle at top right, #12315d 0%, transparent 35%),
-                radial-gradient(circle at bottom left, #10284a 0%, transparent 30%),
-                #020817;
-        }
+    .noise{
+      position:fixed;inset:0;pointer-events:none;opacity:.045;z-index:0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.20'/%3E%3C/svg%3E");
+    }
 
-        .hero-content {
-            max-width: 900px;
-        }
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto;position:relative;z-index:2}
 
-        .logo {
-            font-size: 54px;
-            font-weight: bold;
-            letter-spacing: 8px;
-            margin-bottom: 25px;
-        }
+    /* NAV */
+    .nav-wrap{
+      position:fixed;top:0;left:0;right:0;z-index:50;
+      padding:16px 0;
+      transition:.35s ease;
+    }
+    .nav-wrap.scrolled{
+      background:rgba(2,8,22,.82);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{
+      display:flex;align-items:center;justify-content:space-between;gap:24px;
+      padding:10px 14px 10px 18px;
+      border:1px solid var(--line);
+      background:rgba(5,16,32,.55);
+      backdrop-filter:blur(15px);
+      border-radius:18px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:200px}
+    .brand img{width:42px;height:42px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.12)}
+    .brand strong{font-size:15px;letter-spacing:1.5px}
+    .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.6px;margin-top:1px}
+    .nav-links{display:flex;align-items:center;gap:8px}
+    .nav-links a{
+      color:#c5d0df;font-size:13px;padding:9px 12px;border-radius:10px;
+      transition:.25s ease
+    }
+    .nav-links a:hover{color:#fff;background:rgba(255,255,255,.06)}
+    .nav-cta{
+      padding:10px 16px!important;
+      border:1px solid rgba(109,196,255,.35)!important;
+      color:#fff!important;
+      background:linear-gradient(135deg,rgba(20,139,255,.16),rgba(255,255,255,.03));
+    }
 
-        .subtitle {
-            font-size: 20px;
-            color: #bfc9d8;
-            margin-bottom: 20px;
-        }
+    .menu-btn{display:none;background:none;border:0;color:white;font-size:25px}
 
-        h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-        }
+    /* HERO */
+    .hero{min-height:100vh;padding:150px 0 70px;display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;padding:8px 13px;
+      color:#b8dfff;font-size:12px;
+      border:1px solid rgba(93,190,255,.25);border-radius:999px;
+      background:rgba(31,135,255,.08);
+      margin-bottom:20px
+    }
+    .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 16px var(--blue)}
+    h1{font-size:clamp(42px,6vw,76px);line-height:1.08;letter-spacing:-1.8px;margin-bottom:20px}
+    .gradient{
+      background:linear-gradient(90deg,#fff 5%,#c8d8eb 52%,#48b8ff 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .hero p{color:#aebbd0;max-width:630px;font-size:17px;line-height:2}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:1px solid rgba(114,199,255,.36);border-radius:14px;
+      padding:14px 20px;transition:.25s ease;cursor:pointer
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,#0c8af0,#1261d8);
+      box-shadow:0 15px 35px rgba(0,113,255,.22);
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 45px rgba(0,113,255,.30)}
+    .btn-ghost{background:rgba(255,255,255,.03);color:#dae8f9}
+    .btn-ghost:hover{background:rgba(255,255,255,.07)}
+    .hero-mini{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;color:#9baabd;font-size:12px}
+    .hero-mini strong{display:block;color:#eaf3ff;font-size:13px}
 
-        .description {
-            max-width: 700px;
-            margin: auto;
-            color: #c7d0dc;
-            font-size: 18px;
-        }
+    .hero-visual{position:relative}
+    .hero-card{
+      border-radius:32px;padding:10px;
+      background:linear-gradient(135deg,rgba(101,181,255,.28),rgba(255,255,255,.03) 45%,rgba(30,98,220,.18));
+      box-shadow:var(--shadow);
+    }
+    .hero-card-inner{
+      border-radius:25px;overflow:hidden;position:relative;background:#071426;
+      border:1px solid rgba(255,255,255,.08)
+    }
+    .hero-card img{width:100%;height:570px;object-fit:cover}
+    .hero-card:after{
+      content:"";position:absolute;inset:10px;border-radius:25px;
+      background:linear-gradient(180deg,transparent 55%,rgba(1,7,17,.65) 100%);
+      pointer-events:none
+    }
+    .hero-badge{
+      position:absolute;bottom:26px;right:28px;left:28px;display:flex;
+      justify-content:space-between;align-items:end;gap:18px;z-index:3
+    }
+    .hero-badge .title{font-size:28px;font-weight:700;letter-spacing:2px}
+    .hero-badge small{display:block;color:#a8c6e8;font-size:11px;letter-spacing:2.4px}
+    .hero-chip{
+      border:1px solid rgba(100,191,255,.28);padding:8px 12px;border-radius:10px;
+      background:rgba(4,15,31,.65);backdrop-filter:blur(10px);font-size:11px;color:#bfe5ff
+    }
 
-        .button {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 14px 32px;
-            border: 1px solid #8da4c2;
-            border-radius: 10px;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+    /* SECTIONS */
+    section{padding:100px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:42px}
+    .kicker{color:#62c6ff;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:8px}
+    .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.2}
+    .section-head p{max-width:510px;color:var(--muted);font-size:14px}
 
-        .button:hover {
-            background: #dfe8f3;
-            color: #020817;
-        }
+    /* COMPANY */
+    .company-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:25px}
+    .glass{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(14,34,61,.62),rgba(5,15,29,.62));
+      border-radius:var(--radius);
+      box-shadow:0 24px 60px rgba(0,0,0,.22)
+    }
+    .about-card{padding:34px}
+    .about-card p{color:#abb7c9;font-size:15px}
+    .company-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+    .meta{
+      border:1px solid rgba(255,255,255,.08);border-radius:15px;padding:16px;
+      background:rgba(255,255,255,.025)
+    }
+    .meta span{display:block;color:#7e8ca0;font-size:11px;margin-bottom:4px}
+    .meta strong{font-size:14px}
+    .company-image{min-height:100%;overflow:hidden}
+    .company-image img{width:100%;height:100%;min-height:380px;object-fit:cover;transition:.55s}
+    .company-image:hover img{transform:scale(1.035)}
 
-        footer {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            color: #7f8da0;
-            font-size: 14px;
-        }
+    /* PRODUCT */
+    .product-feature{display:grid;grid-template-columns:1.02fr .98fr;gap:26px;align-items:stretch}
+    .product-copy{padding:34px}
+    .product-logo{font-size:42px;letter-spacing:7px;font-weight:800;margin-bottom:7px}
+    .product-tag{font-size:12px;color:#69c7ff;letter-spacing:3px;margin-bottom:20px}
+    .product-copy p{color:#aab6c8;font-size:15px}
+    .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+    .feature{
+      padding:17px;border:1px solid rgba(121,184,240,.13);
+      border-radius:16px;background:rgba(255,255,255,.025)
+    }
+    .feature b{display:block;margin-bottom:4px;font-size:14px}
+    .feature span{font-size:11px;color:#8795a8}
+    .product-image{overflow:hidden;min-height:100%}
+    .product-image img{width:100%;height:100%;min-height:520px;object-fit:cover}
 
-        @media (max-width: 600px) {
-            .logo {
-                font-size: 38px;
-            }
+    /* GALLERY */
+    .gallery{display:grid;grid-template-columns:1.25fr .75fr .75fr;gap:14px}
+    .gallery-item{position:relative;min-height:230px;border-radius:20px;overflow:hidden;border:1px solid var(--line);cursor:pointer}
+    .gallery-item.big{grid-row:span 2;min-height:474px}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.5s}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-overlay{
+      position:absolute;left:0;right:0;bottom:0;padding:17px;
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,.78));
+      font-size:13px
+    }
 
-            h1 {
-                font-size: 34px;
-            }
+    /* CTA */
+    .cta{
+      padding:56px;
+      display:flex;align-items:center;justify-content:space-between;gap:30px;
+      overflow:hidden;position:relative
+    }
+    .cta:before{
+      content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+      left:-180px;top:-220px;
+      background:radial-gradient(circle,rgba(20,150,255,.25),transparent 68%)
+    }
+    .cta h3{font-size:clamp(27px,4vw,42px);position:relative}
+    .cta p{color:var(--muted);margin-top:8px;position:relative}
 
-            .description {
-                font-size: 16px;
-            }
-        }
-    </style>
+    /* FOOTER */
+    footer{padding:45px 0 30px;border-top:1px solid var(--line);margin-top:20px}
+    .footer-grid{display:flex;justify-content:space-between;align-items:end;gap:25px}
+    .footer-brand{display:flex;align-items:center;gap:12px}
+    .footer-brand img{width:48px;height:48px;border-radius:14px;object-fit:cover}
+    .footer-brand strong{letter-spacing:1.8px}
+    .copyright{color:#6f7c8f;font-size:11px}
+    .footer-links{display:flex;gap:8px;flex-wrap:wrap}
+    .footer-links a{color:#9babc0;font-size:12px;padding:7px 10px}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media (max-width: 980px){
+      .hero-grid,.company-grid,.product-feature{grid-template-columns:1fr}
+      .hero{padding-top:130px}
+      .hero-card img{height:520px}
+      .gallery{grid-template-columns:1fr 1fr}
+      .gallery-item.big{grid-column:1/-1;grid-row:auto;min-height:390px}
+      .section-head{align-items:start;flex-direction:column}
+      .cta{align-items:start;flex-direction:column;padding:40px 30px}
+      .nav-links{display:none}
+      .menu-btn{display:block}
+    }
+
+    @media (max-width: 640px){
+      .container{width:min(var(--max),calc(100% - 24px))}
+      .brand{min-width:auto}
+      .brand div{display:none}
+      nav{padding:8px 10px}
+      section{padding:78px 0}
+      .hero{padding-top:115px}
+      .hero p{font-size:15px}
+      .hero-card img{height:430px}
+      .hero-badge{right:18px;left:18px;bottom:18px}
+      .hero-badge .title{font-size:22px}
+      .company-meta,.feature-list,.gallery{grid-template-columns:1fr}
+      .gallery-item.big{min-height:300px}
+      .gallery-item{min-height:250px}
+      .about-card,.product-copy{padding:26px}
+      .product-image img{min-height:380px}
+      .footer-grid{align-items:start;flex-direction:column}
+    }
+  </style>
 </head>
 
 <body>
+<div class="noise"></div>
 
-<section class="hero">
+<header class="nav-wrap" id="nav">
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home" aria-label="FARADID">
+        <img src="assets/faradid-logo.webp" alt="لوگوی فرادید پردیس کاوش">
+        <div>
+          <strong>FARADID</strong>
+          <small>BEYOND TODAY, VISION FOR TOMORROW</small>
+        </div>
+      </a>
 
-    <div class="hero-content">
+      <div class="nav-links">
+        <a href="#home">خانه</a>
+        <a href="#company">درباره شرکت</a>
+        <a href="#venix">VENIX</a>
+        <a href="#gallery">گالری</a>
+        <a href="#contact" class="nav-cta">تماس با ما</a>
+      </div>
 
-        <div class="logo">
-            FARADID
+      <button class="menu-btn" id="menuBtn" aria-label="باز کردن منو">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><i></i> نوآوری در فناوری و تجهیزات پزشکی</div>
+
+          <h1>
+            <span class="gradient">FARADID</span><br>
+            فراتر از امروز،
+            <span class="gradient">برای فردا</span>
+          </h1>
+
+          <p>
+            فرادید پردیس کاوش، مجموعه‌ای فناورمحور با تمرکز بر طراحی و توسعه
+            راهکارهای نوآورانه است؛ با معرفی محصول <strong>VENIX</strong> به‌عنوان
+            رگیاب نوری طراحی‌شده برای کمک به فرایند رگ‌گیری.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#venix">مشاهده VENIX <span>←</span></a>
+            <a class="btn btn-ghost" href="#company">آشنایی با شرکت</a>
+          </div>
+
+          <div class="hero-mini">
+            <div><strong>FARADID</strong>راهکارهای نوآورانه</div>
+            <div><strong>VENIX</strong>رگیاب نوری</div>
+            <div><strong>TECH</strong>توسعه محصول</div>
+          </div>
         </div>
 
-        <div class="subtitle">
-            فرادید پردیس کاوش
+        <div class="hero-visual reveal">
+          <div class="hero-card">
+            <div class="hero-card-inner">
+              <img src="assets/venix-full-showcase.webp" alt="محصول VENIX و بسته‌بندی آن" loading="eager">
+              <div class="hero-badge">
+                <div>
+                  <div class="title">VENIX</div>
+                  <small>SMART VEIN FINDER</small>
+                </div>
+                <div class="hero-chip">محصول محوری شرکت</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <h1>
-            راهکارهای نوآورانه
-        </h1>
-
-        <p class="description">
-            توسعه فناوری، طراحی محصولات نوآورانه و ارائه راهکارهای
-            پیشرفته در حوزه تجهیزات پزشکی و فناوری.
-        </p>
-
-        <a href="#" class="button">
-            محصولات ما
-        </a>
-
+      </div>
     </div>
+  </section>
 
-</section>
+  <!-- COMPANY -->
+  <section id="company">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">ABOUT FARADID</div>
+          <h2>درباره فرادید پردیس کاوش</h2>
+        </div>
+        <p>
+          ترکیب مهندسی، طراحی محصول و نگاه فناورانه برای ساخت راهکارهایی که
+          مسئله واقعی کاربر را هدف می‌گیرند.
+        </p>
+      </div>
+
+      <div class="company-grid">
+        <article class="glass about-card reveal">
+          <p>
+            فرادید پردیس کاوش بر توسعه محصولات نوآورانه و حرکت از ایده و نمونه اولیه
+            به سمت محصول قابل ارائه تمرکز دارد. در این مسیر، طراحی صنعتی، توسعه سخت‌افزار
+            و نرم‌افزار، نمونه‌سازی و بهبود تجربه کاربر در کنار هم قرار می‌گیرند.
+          </p>
+
+          <div class="company-meta">
+            <div class="meta">
+              <span>تمرکز</span>
+              <strong>فناوری و نوآوری</strong>
+            </div>
+            <div class="meta">
+              <span>حوزه</span>
+              <strong>تجهیزات پزشکی</strong>
+            </div>
+            <div class="meta">
+              <span>محصول شاخص</span>
+              <strong>VENIX</strong>
+            </div>
+            <div class="meta">
+              <span>رویکرد</span>
+              <strong>طراحی تا توسعه محصول</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass company-image reveal">
+          <img src="assets/venix-features.webp" alt="نمایی از محصول و قابلیت‌های VENIX" loading="lazy">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENIX -->
+  <section id="venix">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">FEATURED PRODUCT</div>
+          <h2>VENIX؛ محصول محوری فرادید</h2>
+        </div>
+        <p>
+          رگیاب نوری با طراحی مدرن، نمایشگر و حالت‌های کاربری مختلف برای
+          پشتیبانی از فرایند رگ‌گیری.
+        </p>
+      </div>
+
+      <div class="product-feature">
+        <article class="glass product-copy reveal">
+          <div class="product-logo">VENIX</div>
+          <div class="product-tag">SMART VEIN FINDER</div>
+
+          <p>
+            VENIX با هدف کمک به مشاهده بهتر رگ و ساده‌تر شدن فرایند رگ‌گیری
+            توسعه یافته است. طراحی دستگاه بر ترکیب کاربردپذیری، ظاهر حرفه‌ای
+            و تجربه کاربری ساده تمرکز دارد.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature">
+              <b>رگیاب نوری</b>
+              <span>طراحی‌شده برای کمک به مشاهده رگ</span>
+            </div>
+            <div class="feature">
+              <b>مد کودک و بزرگسال</b>
+              <span>حالت‌های کاربری مجزا</span>
+            </div>
+            <div class="feature">
+              <b>نمایشگر</b>
+              <span>ارائه وضعیت دستگاه روی صفحه</span>
+            </div>
+            <div class="feature">
+              <b>تایمر و هشدار صوتی</b>
+              <span>بازخورد زمان و اعلان صوتی</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#gallery">مشاهده تصاویر محصول</a>
+          </div>
+        </article>
+
+        <article class="glass product-image reveal">
+          <img src="assets/venix-closeup.webp" alt="نمای نزدیک از دستگاه VENIX" loading="lazy">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">PRODUCT GALLERY</div>
+          <h2>VENIX از نزدیک</h2>
+        </div>
+        <p>نمونه‌هایی از دستگاه، بسته‌بندی و ارائه بصری محصول.</p>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-item big reveal">
+          <img src="assets/venix-showcase.webp" alt="VENIX و بسته‌بندی محصول" loading="lazy">
+          <div class="gallery-overlay">VENIX • Smart Vein Finder</div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="assets/venix-box-01.webp" alt="بسته‌بندی VENIX" loading="lazy">
+          <div class="gallery-overlay">بسته‌بندی محصول</div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="assets/venix-box-02.webp" alt="بسته‌بندی VENIX از نمای دیگر" loading="lazy">
+          <div class="gallery-overlay">طراحی بسته‌بندی</div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="assets/venix-box-03.webp" alt="نمای دیگری از بسته‌بندی VENIX" loading="lazy">
+          <div class="gallery-overlay">جزئیات ارائه محصول</div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img src="assets/venix-box-04.webp" alt="دستگاه VENIX داخل جعبه" loading="lazy">
+          <div class="gallery-overlay">تجهیزات همراه</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="glass cta reveal">
+        <div>
+          <div class="kicker">LET'S CONNECT</div>
+          <h3>آماده همکاری و توسعه ایده‌های نوآورانه هستیم.</h3>
+          <p>برای معرفی شرکت، محصول و مسیرهای همکاری با ما در ارتباط باشید.</p>
+        </div>
+        <a class="btn btn-primary" href="mailto:">ارتباط با فرادید <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-    © 2026 Faradid Pardis Kavosh
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/faradid-logo.webp" alt="FARADID">
+        <div>
+          <strong>FARADID</strong>
+          <div class="copyright">فرادید پردیس کاوش</div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">خانه</a>
+        <a href="#company">درباره شرکت</a>
+        <a href="#venix">VENIX</a>
+        <a href="#gallery">گالری</a>
+      </div>
+
+      <div class="copyright">© 2026 Faradid Pardis Kavosh</div>
+    </div>
+  </div>
 </footer>
 
+<script>
+  const nav = document.getElementById('nav');
+  const menuBtn = document.getElementById('menuBtn');
+  const links = document.querySelector('.nav-links');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 18);
+  });
+
+  menuBtn.addEventListener('click', () => {
+    const open = links.style.display === 'flex';
+    links.style.display = open ? '' : 'flex';
+    if(!open){
+      links.style.position='absolute';
+      links.style.top='70px';
+      links.style.right='0';
+      links.style.left='0';
+      links.style.flexDirection='column';
+      links.style.alignItems='stretch';
+      links.style.padding='12px';
+      links.style.border='1px solid rgba(135,177,232,.19)';
+      links.style.background='rgba(3,12,26,.97)';
+      links.style.borderRadius='16px';
+    }
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      if(window.innerWidth <= 980) links.style.display='';
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, {threshold:0.12});
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
