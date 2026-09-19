@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>درباره شرکت | فرادید پردیس کاوش</title>
+  <meta name="description" content="درباره فرادید پردیس کاوش؛ مجموعه‌ای فناورانه با تمرکز بر طراحی، توسعه و نمونه‌سازی راهکارهای نوآورانه و تجهیزات پزشکی.">
+  <meta name="theme-color" content="#020817">
+  <style>
+    :root{--bg:#020817;--bg2:#061326;--panel:#091a2d;--line:rgba(142,193,236,.18);--text:#f5f9ff;--muted:#a8bacf;--blue:#53bfff;--blue2:#8ddcff;--shadow:0 30px 80px rgba(0,0,0,.4);--radius:26px;--max:1180px}
+    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+    body{font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at 12% 8%,rgba(18,81,156,.28),transparent 31%),radial-gradient(circle at 90% 18%,rgba(0,166,255,.11),transparent 30%),linear-gradient(180deg,#020817,#031020 52%,#020817);color:var(--text);line-height:1.9;overflow-x:hidden}
+    a{color:inherit;text-decoration:none} img{display:block;max-width:100%}.wrap{width:min(var(--max),92%);margin:auto}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(2,8,23,.82);backdrop-filter:blur(15px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.16em}.brand img{width:44px;height:44px;object-fit:cover;border-radius:12px}.brand span{font-size:18px}.links{display:flex;gap:8px;flex-wrap:wrap}.links a{padding:10px 13px;border-radius:11px;color:#d9e6f5;font-size:14px;transition:.25s}.links a:hover{background:rgba(83,191,255,.08);color:#fff}.active{color:#9bdcff!important;background:rgba(83,191,255,.06)}
+    .hero{padding:92px 0 75px}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:54px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue2);font-size:13px;letter-spacing:.14em;margin-bottom:15px}.eyebrow:before{content:"";width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--blue2))}.hero h1{font-size:clamp(43px,6.4vw,78px);line-height:1.08;margin-bottom:20px}.hero h1 span{color:var(--blue2)}.hero p{color:var(--muted);font-size:17px;max-width:690px}.hero-card{padding:10px;border-radius:32px;background:linear-gradient(135deg,rgba(92,199,255,.4),rgba(255,255,255,.04),rgba(0,128,255,.12));box-shadow:var(--shadow)}.hero-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:25px}
+    section{padding:88px 0}.section-title{font-size:clamp(30px,4.5vw,52px);line-height:1.2;margin:8px 0 14px}.lead{color:var(--muted);font-size:16px;max-width:760px}
+    .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}.panel{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(12,31,53,.88),rgba(4,14,27,.92));box-shadow:0 16px 45px rgba(0,0,0,.18)}.copy{padding:30px}.copy p{color:var(--muted);font-size:15px;margin-top:13px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.fact{padding:18px;border:1px solid rgba(255,255,255,.07);border-radius:17px;background:rgba(255,255,255,.02)}.fact strong{display:block;font-size:15px;margin-bottom:3px}.fact span{color:#8ea1b6;font-size:13px}.visual{overflow:hidden}.visual img{width:100%;height:100%;min-height:390px;object-fit:cover}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}.value{padding:24px;border:1px solid var(--line);border-radius:21px;background:linear-gradient(180deg,rgba(9,27,49,.9),rgba(4,14,27,.9))}.icon{width:45px;height:45px;border-radius:13px;display:grid;place-items:center;color:var(--blue2);border:1px solid rgba(83,191,255,.3);background:rgba(83,191,255,.06);margin-bottom:15px}.value h3{font-size:18px;margin-bottom:7px}.value p{font-size:14px;color:var(--muted)}
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}.step{position:relative;padding:24px 20px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.018)}.n{font-size:12px;color:var(--blue2);letter-spacing:.12em}.step h3{font-size:17px;margin:9px 0 5px}.step p{font-size:13px;color:var(--muted)}
+    .ach-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;margin-top:36px}.ach-img{overflow:hidden;border-radius:var(--radius);border:1px solid var(--line)}.ach-img img{width:100%;height:100%;min-height:390px;object-fit:cover}.ach-copy{padding:28px}.list{display:grid;gap:13px;margin-top:20px}.item{display:flex;gap:13px;align-items:flex-start;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.06)}.item:last-child{border-bottom:0}.dot{width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 14px rgba(83,191,255,.6);margin-top:11px;flex:0 0 auto}.item b{display:block;font-size:15px}.item span{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+    .venix{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.venix-img{overflow:hidden;border-radius:25px;border:1px solid var(--line)}.venix-img img{width:100%;aspect-ratio:1.1/1;object-fit:cover}.venix-copy{padding:10px}.venix-copy h3{font-size:42px;letter-spacing:.08em;font-family:Arial,sans-serif}.venix-copy .sub{color:var(--blue2);letter-spacing:.18em;font-size:12px;margin-bottom:15px}.venix-copy p{color:var(--muted);font-size:15px}.btn{display:inline-flex;margin-top:24px;padding:13px 20px;border-radius:14px;border:1px solid rgba(83,191,255,.28);background:linear-gradient(135deg,#d8efff,#a4dfff);color:#061321;font-weight:800}
+    .contact{padding:33px;display:flex;justify-content:space-between;align-items:center;gap:25px;border:1px solid var(--line);border-radius:25px;background:linear-gradient(135deg,rgba(9,37,64,.88),rgba(4,15,28,.9))}.contact h2{font-size:28px}.contact p{color:var(--muted);margin-top:5px}.contact .btn{margin-top:0}
+    footer{padding:30px 0 42px;border-top:1px solid rgba(255,255,255,.07);color:#8195aa}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:13px}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.show{opacity:1;transform:none}
+    @media(max-width:980px){.hero-grid,.about-grid,.ach-grid,.venix{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.hero{padding-top:60px}}
+    @media(max-width:640px){.nav-inner{align-items:flex-start;flex-direction:column;padding:12px 0}.links{justify-content:center}.values,.timeline,.facts{grid-template-columns:1fr}.contact{flex-direction:column;align-items:stretch}.hero h1{font-size:clamp(39px,13vw,58px)}section{padding:70px 0}}
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><img src="faradid-logo.jpg" alt="لوگوی فرادید"><span>FARADID</span></a>
+    <nav class="links" aria-label="منوی سایت">
+      <a href="index.html">خانه</a>
+      <a class="active" href="about.html">درباره شرکت</a>
+      <a href="venix.html">VENIX</a>
+      <a href="index.html#gallery">گالری</a>
+      <a href="index.html#innovation">نوآوری</a>
+      <a href="index.html#contact">تماس</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">ABOUT FARADID · COMPANY PROFILE</div>
+      <h1>فناوری را<br><span>به محصول تبدیل می‌کنیم.</span></h1>
+      <p>فرادید پردیس کاوش یک مجموعه فناورانه با تمرکز بر طراحی، توسعه، نمونه‌سازی و حرکت از ایده به سمت محصول است؛ با توجه ویژه به راهکارهای نوآورانه و حوزه تجهیزات پزشکی.</p>
+    </div>
+    <div class="hero-card reveal"><img src="faradid-logo.jpg" alt="لوگوی شرکت فرادید پردیس کاوش"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap about-grid">
+    <article class="panel copy reveal">
+      <div class="eyebrow">WHO WE ARE</div>
+      <h2 class="section-title">فرادید پردیس کاوش</h2>
+      <p>رویکرد ما بر حل مسئله، طراحی مهندسی و تبدیل ایده‌های فناورانه به محصولات کاربردی است. در توسعه هر محصول، تجربه کاربر، نمونه‌سازی و بهبود تکرارشونده بخشی از مسیر هستند.</p>
+      <p>این نگاه، فرادید را از یک معرفی محصول فراتر می‌برد و آن را به بستری برای توسعه نسل‌های بعدی راهکارهای فناورانه تبدیل می‌کند.</p>
+      <div class="facts">
+        <div class="fact"><strong>تمرکز اصلی</strong><span>نوآوری و توسعه محصول</span></div>
+        <div class="fact"><strong>حوزه تخصصی</strong><span>تجهیزات و فناوری پزشکی</span></div>
+        <div class="fact"><strong>رویکرد</strong><span>مهندسی، نمونه‌سازی و توسعه</span></div>
+        <div class="fact"><strong>محصول شاخص</strong><span>VENIX · رگیاب نوری</span></div>
+      </div>
+    </article>
+    <article class="panel visual reveal"><img src="venix-showcase.jpg" alt="تصویر معرفی VENIX و برند فرادید"></article>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">OUR APPROACH</div><h2 class="section-title">سه اصل در مسیر توسعه</h2><p class="lead">در فرادید، فناوری زمانی ارزشمند است که بتواند یک نیاز واقعی را به تجربه‌ای روشن‌تر و راهکاری قابل‌استفاده تبدیل کند.</p></div>
+    <div class="values">
+      <article class="value reveal"><div class="icon">◎</div><h3>مسئله‌محوری</h3><p>از شناخت نیاز و تعریف مسئله شروع می‌کنیم و راهکار را بر اساس کاربرد واقعی توسعه می‌دهیم.</p></article>
+      <article class="value reveal"><div class="icon">◇</div><h3>مهندسی و طراحی</h3><p>طراحی محصول، تجربه کاربری و ملاحظات فنی در کنار هم قرار می‌گیرند تا راهکار قابل توسعه باشد.</p></article>
+      <article class="value reveal"><div class="icon">↻</div><h3>بهبود مستمر</h3><p>نمونه‌سازی، آزمون، دریافت بازخورد و اصلاح، بخشی از چرخه توسعه محصول است.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">DEVELOPMENT PROCESS</div><h2 class="section-title">از ایده تا محصول</h2><p class="lead">فرآیند توسعه محصول در یک مسیر مرحله‌ای و قابل پیگیری تعریف می‌شود.</p></div>
+    <div class="timeline">
+      <article class="step reveal"><div class="n">STEP 01</div><h3>ایده و نیاز</h3><p>شناخت مسئله و تعریف مسیر راهکار</p></article>
+      <article class="step reveal"><div class="n">STEP 02</div><h3>طراحی</h3><p>طراحی مهندسی و تجربه کاربری</p></article>
+      <article class="step reveal"><div class="n">STEP 03</div><h3>نمونه‌سازی</h3><p>ساخت، ارزیابی و اصلاح نمونه اولیه</p></article>
+      <article class="step reveal"><div class="n">STEP 04</div><h3>توسعه</h3><p>بهبود محصول و حرکت به سمت تولید</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">ACHIEVEMENTS</div><h2 class="section-title">فناوری با پشتوانه توسعه</h2><p class="lead">دستاوردهای فناورانه شرکت بخشی از مسیر شکل‌گیری محصولات جدید هستند.</p></div>
+    <div class="ach-grid">
+      <div class="ach-img reveal"><img src="venix-features.jpg" alt="نمایی از محصول و ویژگی‌های VENIX"></div>
+      <article class="panel ach-copy reveal">
+        <div class="list">
+          <div class="item"><span class="dot"></span><div><b>توسعه نمونه اولیه VENIX</b><span>حرکت از ایده و طراحی به سمت نمونه محصول و ارائه بصری.</span></div></div>
+          <div class="item"><span class="dot"></span><div><b>فعالیت فناورانه</b><span>تمرکز بر توسعه محصول و راهکارهای نوآورانه.</span></div></div>
+          <div class="item"><span class="dot"></span><div><b>ثبت و توسعه ایده‌های نوآورانه</b><span>پیگیری حقوق و مستندسازی مالکیت فکری در مسیر توسعه فناوری.</span></div></div>
+          <div class="item"><span class="dot"></span><div><b>مسیر توسعه صنعتی</b><span>حرکت مرحله‌ای از نمونه‌سازی به سمت آماده‌سازی برای تولید.</span></div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap venix">
+    <div class="venix-img reveal"><img src="venix-full-showcase.jpg" alt="VENIX Smart Vein Finder"></div>
+    <div class="venix-copy reveal">
+      <div class="eyebrow">FEATURED PRODUCT</div>
+      <h3>VENIX</h3>
+      <div class="sub">SMART VEIN FINDER</div>
+      <p>VENIX یکی از محورهای توسعه محصول در فرادید است؛ رگیاب نوری با تمرکز بر کمک به فرایند رگ‌گیری، تجربه کاربری و طراحی یکپارچه محصول و بسته‌بندی.</p>
+      <a class="btn" href="venix.html">مشاهده صفحه اختصاصی VENIX ←</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="contact reveal">
+      <div><h2>آماده همکاری و توسعه ایده‌های جدید هستیم.</h2><p>برای معرفی شرکت، محصولات یا بررسی مسیرهای همکاری با فرادید در ارتباط باشید.</p></div>
+      <a class="btn" href="index.html#contact">ارتباط با فرادید</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap foot"><span>FARADID · فرادید پردیس کاوش</span><span>© 2026 Faradid Pardis Kavosh</span></div></footer>
+<script>
+  const io = new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
