@@ -103,19 +103,53 @@
     .proof span{font-size:11px;color:#7f90a7}
 
     .hero-visual{position:relative}
-    .hero-frame{
+    .hero-logo-frame{
       position:relative;padding:10px;border-radius:34px;
-      background:linear-gradient(135deg,rgba(99,190,255,.28),rgba(255,255,255,.025) 42%,rgba(28,92,219,.16));
-      box-shadow:var(--shadow)
+      background:linear-gradient(135deg,rgba(93,191,255,.30),rgba(255,255,255,.025) 42%,rgba(25,93,224,.18));
+      box-shadow:0 30px 85px rgba(0,0,0,.42),0 0 50px rgba(14,126,255,.07);
     }
-    .hero-inner{position:relative;overflow:hidden;border-radius:26px;background:radial-gradient(circle at 50% 34%,rgba(31,150,255,.18),transparent 30%),linear-gradient(180deg,#081a32 0%,#031022 100%);border:1px solid rgba(255,255,255,.07)}
-    .hero-inner::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,transparent 40%,rgba(2,7,15,.28) 100%);pointer-events:none}
-    .hero-inner img{width:100%;height:590px;object-fit:contain;object-position:center;padding:34px;filter:drop-shadow(0 28px 55px rgba(0,92,255,.18))}
-    .hero-brand-mark{position:absolute;top:22px;left:22px;right:22px;text-align:center;z-index:2;color:#7fbff0;font-size:10px;letter-spacing:3.4px;text-transform:uppercase}
-    .hero-overlay{position:absolute;inset:auto 24px 24px;display:flex;align-items:end;justify-content:space-between;gap:16px;z-index:2}
-    .hero-product strong{display:block;font-size:28px;letter-spacing:5px}
-    .hero-product span{display:block;color:#a7c7e8;font-size:10px;letter-spacing:2.6px}
-    .hero-tag{padding:8px 11px;border-radius:10px;border:1px solid rgba(113,196,255,.25);background:rgba(4,14,28,.66);backdrop-filter:blur(10px);font-size:10px;color:#bfe5ff;white-space:nowrap}
+    .hero-logo-inner{
+      position:relative;overflow:hidden;border-radius:26px;
+      border:1px solid rgba(255,255,255,.08);
+      background:
+        radial-gradient(circle at 50% 42%,rgba(12,102,196,.14),transparent 40%),
+        linear-gradient(180deg,#071528 0%,#03101f 100%);
+      padding:22px 20px 18px;
+    }
+    .hero-logo-inner::before{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(115deg,transparent 0%,rgba(42,161,255,.06) 45%,transparent 56%);
+    }
+    .hero-logo-kicker{
+      position:relative;text-align:center;color:#6ecaff;font-size:9px;letter-spacing:3px;
+      margin-bottom:14px;white-space:nowrap;
+    }
+    .hero-logo-stage{
+      position:relative;border-radius:18px;overflow:hidden;
+      border:1px solid rgba(112,190,255,.15);
+      background:linear-gradient(180deg,#020713,#071527);
+      box-shadow:inset 0 0 35px rgba(3,17,35,.45);
+      min-height:520px;display:flex;align-items:center;justify-content:center;
+    }
+    .hero-logo-stage::after{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(circle at 50% 44%,rgba(0,152,255,.09),transparent 52%);
+    }
+    .hero-logo-stage img{
+      width:100%;height:520px;object-fit:contain;object-position:center;
+      background:#020713;
+    }
+    .hero-logo-footer{
+      position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+      margin-top:13px;z-index:2;
+    }
+    .hero-logo-pill{
+      padding:8px 11px;border-radius:10px;border:1px solid rgba(113,196,255,.25);
+      background:rgba(4,14,28,.66);backdrop-filter:blur(10px);font-size:9px;color:#bfe5ff;
+    }
+    .hero-logo-caption{text-align:right}
+    .hero-logo-caption strong{display:block;font-size:25px;letter-spacing:4px}
+    .hero-logo-caption span{display:block;color:#80b9e7;font-size:9px;letter-spacing:2px;margin-top:2px}
 
     /* SECTION COMMON */
     section{padding:104px 0}
@@ -198,7 +232,7 @@
     @media(max-width:980px){
       .hero-grid,.company-grid,.product-feature{grid-template-columns:1fr}
       .hero{padding-top:122px}
-      .hero-inner img{height:520px;padding:28px}
+      .hero-logo-stage{min-height:470px}.hero-logo-stage img{height:470px}
       .cap-grid{grid-template-columns:1fr 1fr}
       .gallery{grid-template-columns:1fr 1fr}
       .gallery-item.big{grid-column:1/-1;grid-row:auto;min-height:400px}
@@ -216,7 +250,7 @@
       .hero{padding-top:106px}
       .hero h1{font-size:clamp(40px,12vw,58px)}
       .hero-copy>p{font-size:14px}
-      .hero-inner img{height:420px;padding:22px}
+      .hero-logo-stage{min-height:370px}.hero-logo-stage img{height:370px}
       .hero-overlay{inset:auto 16px 16px}
       .hero-product strong{font-size:23px}
       .hero-tag{font-size:9px}
@@ -289,16 +323,18 @@
           </div>
 
           <div class="hero-visual reveal">
-            <div class="hero-frame">
-              <div class="hero-inner">
-                <div class="hero-brand-mark">FARADID · INNOVATION & PRODUCT DEVELOPMENT</div>
-                <img src="faradid-logo.jpg" alt="لوگوی شرکت فرادید پردیس کاوش" loading="eager">
-                <div class="hero-overlay">
-                  <div class="hero-product">
+            <div class="hero-logo-frame">
+              <div class="hero-logo-inner">
+                <div class="hero-logo-kicker">FARADID · INNOVATION &amp; PRODUCT DEVELOPMENT</div>
+                <div class="hero-logo-stage">
+                  <img src="faradid-logo.jpg" alt="لوگوی رسمی شرکت فرادید پردیس کاوش" loading="eager">
+                </div>
+                <div class="hero-logo-footer">
+                  <span class="hero-logo-pill">برند شرکت</span>
+                  <div class="hero-logo-caption">
                     <strong>FARADID</strong>
-                    <span>BEYOND TODAY, VISION FOR TOMORROW</span>
+                    <span>FARADID PARDIS KAVOSH</span>
                   </div>
-                  <div class="hero-tag">برند شرکت</div>
                 </div>
               </div>
             </div>
