@@ -108,11 +108,12 @@
       background:linear-gradient(135deg,rgba(99,190,255,.28),rgba(255,255,255,.025) 42%,rgba(28,92,219,.16));
       box-shadow:var(--shadow)
     }
-    .hero-inner{position:relative;overflow:hidden;border-radius:26px;background:#071427;border:1px solid rgba(255,255,255,.07)}
-    .hero-inner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(2,7,15,.76) 100%);pointer-events:none}
-    .hero-inner img{width:100%;height:590px;object-fit:cover}
+    .hero-inner{position:relative;overflow:hidden;border-radius:26px;background:radial-gradient(circle at 50% 34%,rgba(31,150,255,.18),transparent 30%),linear-gradient(180deg,#081a32 0%,#031022 100%);border:1px solid rgba(255,255,255,.07)}
+    .hero-inner::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,transparent 40%,rgba(2,7,15,.28) 100%);pointer-events:none}
+    .hero-inner img{width:100%;height:590px;object-fit:contain;object-position:center;padding:34px;filter:drop-shadow(0 28px 55px rgba(0,92,255,.18))}
+    .hero-brand-mark{position:absolute;top:22px;left:22px;right:22px;text-align:center;z-index:2;color:#7fbff0;font-size:10px;letter-spacing:3.4px;text-transform:uppercase}
     .hero-overlay{position:absolute;inset:auto 24px 24px;display:flex;align-items:end;justify-content:space-between;gap:16px;z-index:2}
-    .hero-product strong{display:block;font-size:31px;letter-spacing:5px}
+    .hero-product strong{display:block;font-size:28px;letter-spacing:5px}
     .hero-product span{display:block;color:#a7c7e8;font-size:10px;letter-spacing:2.6px}
     .hero-tag{padding:8px 11px;border-radius:10px;border:1px solid rgba(113,196,255,.25);background:rgba(4,14,28,.66);backdrop-filter:blur(10px);font-size:10px;color:#bfe5ff;white-space:nowrap}
 
@@ -197,7 +198,7 @@
     @media(max-width:980px){
       .hero-grid,.company-grid,.product-feature{grid-template-columns:1fr}
       .hero{padding-top:122px}
-      .hero-inner img{height:520px}
+      .hero-inner img{height:520px;padding:28px}
       .cap-grid{grid-template-columns:1fr 1fr}
       .gallery{grid-template-columns:1fr 1fr}
       .gallery-item.big{grid-column:1/-1;grid-row:auto;min-height:400px}
@@ -215,7 +216,7 @@
       .hero{padding-top:106px}
       .hero h1{font-size:clamp(40px,12vw,58px)}
       .hero-copy>p{font-size:14px}
-      .hero-inner img{height:420px}
+      .hero-inner img{height:420px;padding:22px}
       .hero-overlay{inset:auto 16px 16px}
       .hero-product strong{font-size:23px}
       .hero-tag{font-size:9px}
@@ -290,13 +291,14 @@
           <div class="hero-visual reveal">
             <div class="hero-frame">
               <div class="hero-inner">
-                <img src="venix-full-showcase.jpg" alt="محصول VENIX و بسته‌بندی آن" loading="eager">
+                <div class="hero-brand-mark">FARADID · INNOVATION & PRODUCT DEVELOPMENT</div>
+                <img src="faradid-logo.jpg" alt="لوگوی شرکت فرادید پردیس کاوش" loading="eager">
                 <div class="hero-overlay">
                   <div class="hero-product">
-                    <strong>VENIX</strong>
-                    <span>SMART VEIN FINDER</span>
+                    <strong>FARADID</strong>
+                    <span>BEYOND TODAY, VISION FOR TOMORROW</span>
                   </div>
-                  <div class="hero-tag">محصول محوری فرادید</div>
+                  <div class="hero-tag">برند شرکت</div>
                 </div>
               </div>
             </div>
