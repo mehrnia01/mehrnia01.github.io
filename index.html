@@ -453,6 +453,71 @@
   }
 
 }
+  @media (max-width: 640px) {
+
+  /* جلوگیری کامل از بیرون‌زدگی بخش Hero */
+  .hero,
+  .hero-grid,
+  .hero-copy,
+  .hero-kicker,
+  .eyebrow {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  /* کادر بالای Hero */
+  .hero-kicker,
+  .eyebrow {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    text-align: center !important;
+  }
+
+  /* عنوان */
+  .hero h1,
+  .hero-copy h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    font-size: clamp(32px, 9vw, 46px) !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* متن معرفی */
+  .hero p,
+  .hero-copy p {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-wrap: anywhere !important;
+    text-align: center !important;
+  }
+
+  /* دکمه‌ها */
+  .hero-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
   </style>
 </head>
 
