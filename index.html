@@ -232,7 +232,8 @@
     @media(max-width:980px){
       .hero-grid,.company-grid,.product-feature{grid-template-columns:1fr}
       .hero{padding-top:122px}
-      .hero-logo-stage{min-height:470px}.hero-logo-stage img{height:470px}
+      .hero-logo-stage{min-height:470px}
+      .hero-logo-stage img{height:470px}
       .cap-grid{grid-template-columns:1fr 1fr}
       .gallery{grid-template-columns:1fr 1fr}
       .gallery-item.big{grid-column:1/-1;grid-row:auto;min-height:400px}
@@ -243,281 +244,163 @@
     }
 
     @media(max-width:640px){
-      .container{width:min(var(--max),calc(100% - 24px))}
-      nav{min-height:58px;padding:7px 9px}
+      html,body{width:100%;max-width:100%;overflow-x:hidden}
+      *,*::before,*::after{box-sizing:border-box}
+
+      .container{width:calc(100% - 28px);max-width:100%;margin-inline:auto}
+
+      nav{
+        position:relative;
+        min-height:58px;
+        padding:7px 9px;
+      }
       .brand{min-width:auto}
       .brand div{display:none}
-      .hero{padding-top:106px}
-      .hero h1{font-size:clamp(40px,12vw,58px)}
-      .hero-copy>p{font-size:14px}
-      .hero-logo-stage{min-height:370px}.hero-logo-stage img{height:370px}
-      .hero-overlay{inset:auto 16px 16px}
-      .hero-product strong{font-size:23px}
-      .hero-tag{font-size:9px}
-      section{padding:78px 0}
-      .company-points,.feature-list,.cap-grid,.gallery{grid-template-columns:1fr}
+
+      .hero{
+        min-height:auto;
+        padding:118px 0 64px;
+      }
+      .hero-grid{
+        grid-template-columns:1fr !important;
+        width:100%;
+        max-width:100%;
+        gap:22px;
+      }
+      .hero-copy{
+        width:100%;
+        min-width:0;
+        max-width:100%;
+        text-align:center;
+      }
+      .hero-copy .eyebrow{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:100%;
+        max-width:100%;
+        min-width:0;
+        margin:0 auto 18px;
+        padding:9px 12px;
+        white-space:normal;
+        overflow-wrap:anywhere;
+        text-align:center;
+        line-height:1.8;
+        font-size:10px;
+      }
+      .hero h1,.hero-copy h1{
+        width:100%;
+        max-width:100%;
+        margin:0 auto 20px;
+        padding:0;
+        font-size:clamp(32px,10vw,48px);
+        line-height:1.2;
+        letter-spacing:-1px;
+        overflow-wrap:anywhere;
+        word-break:normal;
+      }
+      .hero-copy>p,.hero-copy p{
+        width:100%;
+        max-width:100%;
+        margin-inline:auto;
+        padding:0 2px;
+        font-size:13px;
+        line-height:2.05;
+        overflow-wrap:anywhere;
+        word-break:normal;
+      }
+      .hero-actions{
+        width:100%;
+        max-width:100%;
+        margin:20px auto 0;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+      }
+      .hero-actions .btn,.hero-actions a{
+        width:100%;
+        max-width:100%;
+        margin:0;
+        justify-content:center;
+        text-align:center;
+        white-space:normal;
+        overflow-wrap:anywhere;
+      }
+      .hero-proof{
+        justify-content:center;
+        gap:16px 22px;
+        margin-top:24px;
+      }
+
+      .hero-logo-frame,.hero-logo-inner,.hero-logo-stage{
+        width:100%;
+        max-width:100%;
+        min-width:0;
+      }
+      .hero-logo-frame{padding:8px}
+      .hero-logo-inner{padding:14px 12px 14px}
+      .hero-logo-kicker{
+        white-space:normal;
+        line-height:1.7;
+        font-size:8px;
+      }
+      .hero-logo-stage{
+        min-height:auto;
+        aspect-ratio:1/1;
+      }
+      .hero-logo-stage img{
+        width:100%;
+        height:100%;
+        max-width:100%;
+        object-fit:cover;
+        object-position:center;
+      }
+      .hero-logo-footer{
+        align-items:center;
+        gap:10px;
+        flex-wrap:wrap;
+      }
+      .hero-logo-caption{text-align:center;flex:1}
+      .hero-logo-caption strong{font-size:20px;letter-spacing:3px}
+      .hero-logo-caption span{font-size:8px;letter-spacing:1.5px}
+
+      section{width:100%;max-width:100%;overflow:hidden;padding:78px 0}
+      .section-head{margin-bottom:28px;gap:18px}
+      .section-head h2{font-size:clamp(28px,8vw,40px);overflow-wrap:anywhere}
+      .section-head p{font-size:12px}
+
+      .company-grid,.product-feature{grid-template-columns:1fr !important}
+      .company-points,.feature-list,.cap-grid,.gallery{grid-template-columns:1fr !important}
       .about-card,.product-copy{padding:25px}
-      .image-card img{min-height:300px}
-      .product-image img{min-height:360px}
+      .image-card img{min-height:300px;height:auto}
+      .product-image img{min-height:360px;height:auto}
       .gallery-item.big{min-height:310px}
       .gallery-item{min-height:235px}
-      .cta{padding:36px 25px}
-      .footer{align-items:start;flex-direction:column}
+      .quote-strip{flex-direction:column;align-items:stretch;text-align:center;padding:22px 18px}
+      .quote-strip .btn{width:100%}
+
+      .feature,.gallery-item,.quote-strip,.product-copy{width:100%;max-width:100%;min-width:0}
+      .feature{padding:16px}
+      .feature b{font-size:13px}
+
+      .cta{padding:36px 22px}
+      .cta-inner{align-items:stretch !important;gap:18px}
+      .cta .btn{width:100%}
+
+      footer{width:100%;max-width:100%;overflow:hidden}
+      .footer{align-items:center;flex-direction:column;text-align:center}
+      .footer-links{justify-content:center}
     }
-  /* =========================
-   MOBILE FINAL FIX
-   ========================= */
 
-@media (max-width: 640px) {
-
-  /* جلوگیری از بیرون‌زدگی افقی */
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .container {
-    width: calc(100% - 28px);
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* ===== HERO ===== */
-
-  .hero {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr !important;
-    width: 100%;
-    max-width: 100%;
-    gap: 22px;
-  }
-
-  .hero-copy {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .hero-copy h1,
-  .hero h1 {
-    width: 100%;
-    max-width: 100%;
-    font-size: clamp(34px, 10vw, 48px);
-    line-height: 1.18;
-    overflow-wrap: anywhere;
-    word-break: normal;
-  }
-
-  .hero-copy p,
-  .hero p {
-    width: 100%;
-    max-width: 100%;
-    font-size: 14px;
-    line-height: 2;
-    overflow-wrap: anywhere;
-  }
-
-  .hero-actions {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .hero-actions a,
-  .hero-actions .btn {
-    width: 100%;
-    max-width: 100%;
-    justify-content: center;
-  }
-
-  /* ===== تصاویر Hero ===== */
-
-  .hero-logo-frame,
-  .hero-logo-inner,
-  .hero-logo-stage {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .hero-logo-frame {
-    padding: 8px;
-  }
-
-  .hero-logo-inner {
-    padding: 14px;
-  }
-
-  .hero-logo-stage img {
-    width: 100%;
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-  /* ===== بخش‌های عمومی ===== */
-
-  section {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  .product-feature,
-  .product-copy,
-  .feature-list,
-  .feature,
-  .gallery,
-  .gallery-item,
-  .quote-strip {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  /* ===== عناوین ===== */
-
-  section h2,
-  section h3 {
-    max-width: 100%;
-    overflow-wrap: anywhere;
-    line-height: 1.35;
-  }
-
-  /* ===== کارت‌ها ===== */
-
-  .feature-list {
-    grid-template-columns: 1fr !important;
-  }
-
-  .feature {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* ===== تصاویر گالری ===== */
-
-  .gallery {
-    grid-template-columns: 1fr !important;
-    width: 100%;
-  }
-
-  .gallery-item {
-    min-width: 0;
-    width: 100%;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  /* ===== دکمه‌ها ===== */
-
-  .btn {
-    max-width: 100%;
-    white-space: normal;
-    overflow-wrap: anywhere;
-  }
-
-  /* ===== فوتر ===== */
-
-  footer {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-}
-  @media (max-width: 640px) {
-
-  /* جلوگیری کامل از بیرون‌زدگی بخش Hero */
-  .hero,
-  .hero-grid,
-  .hero-copy,
-  .hero-kicker,
-  .eyebrow {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-  }
-
-  /* کادر بالای Hero */
-  .hero-kicker,
-  .eyebrow {
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-    text-align: center !important;
-  }
-
-  /* عنوان */
-  .hero h1,
-  .hero-copy h1 {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    font-size: clamp(32px, 9vw, 46px) !important;
-    overflow-wrap: anywhere !important;
-  }
-
-  /* متن معرفی */
-  .hero p,
-  .hero-copy p {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    overflow-wrap: anywhere !important;
-    text-align: center !important;
-  }
-
-  /* دکمه‌ها */
-  .hero-actions {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .hero-actions .btn {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-}
+    @media(max-width:380px){
+      .container{width:calc(100% - 20px)}
+      .hero{padding-top:108px}
+      .hero h1,.hero-copy h1{font-size:32px}
+      .hero-copy>p,.hero-copy p{font-size:12px}
+      .hero-logo-kicker{font-size:7px}
+      .hero-logo-caption strong{font-size:18px}
+      .section-head h2{font-size:27px}
+    }
 </style>
 </head>
 
@@ -537,7 +420,7 @@
           <a href="index.html">خانه</a>
           <a href="about.html">درباره شرکت</a>
           <a href="venix.html">VENIX</a>
-          <a href="#gallery">گالری</a>
+          <a href="venix.html">گالری VENIX</a>
           <a href="#capabilities">توانمندی‌ها</a>
           <a href="contact.html" class="nav-cta">تماس با ما</a>
         </div>
@@ -561,7 +444,7 @@
             </h1>
             <p>
               فرادید پردیس کاوش، مجموعه‌ای فناورمحور با تمرکز بر طراحی، توسعه و نمونه‌سازی
-              راهکارهای نوآورانه است؛ با معرفی <strong>VENIX</strong> به‌عنوان محصول شاخص در حوزه رگیاب نوری.
+              راهکارهای نوآورانه و تبدیل ایده‌های مهندسی به راهکارهای کاربردی در حوزه فناوری است.
             </p>
 
             <div class="hero-actions">
@@ -571,20 +454,20 @@
 
             <div class="hero-proof">
               <div class="proof"><strong>FARADID</strong><span>توسعه راهکارهای نوآورانه</span></div>
-              <div class="proof"><strong>VENIX</strong><span>رگیاب نوری</span></div>
-              <div class="proof"><strong>PRODUCT</strong><span>از ایده تا نمونه‌سازی</span></div>
+              <div class="proof"><strong>R&amp;D</strong><span>تحقیق و توسعه</span></div>
+              <div class="proof"><strong>INNOVATION</strong><span>از ایده تا توسعه</span></div>
             </div>
           </div>
 
           <div class="hero-visual reveal">
             <div class="hero-logo-frame">
               <div class="hero-logo-inner">
-                <div class="hero-logo-kicker">FARADID · INNOVATION &amp; PRODUCT DEVELOPMENT</div>
+                <div class="hero-logo-kicker">FARADID · INNOVATION &amp; DEVELOPMENT</div>
                 <div class="hero-logo-stage">
-                  <img src="faradid-logo.jpg" alt="لوگوی رسمی شرکت فرادید پردیس کاوش" loading="eager">
+                  <img src="faradid-logo.jpg" alt="لوگوی بزرگ FARADID" loading="eager">
                 </div>
                 <div class="hero-logo-footer">
-                  <span class="hero-logo-pill">برند شرکت</span>
+                  <span class="hero-logo-pill">هویت شرکت</span>
                   <div class="hero-logo-caption">
                     <strong>FARADID</strong>
                     <span>FARADID PARDIS KAVOSH</span>
@@ -618,7 +501,7 @@
             <div class="company-points">
               <div class="point"><small>تمرکز</small><strong>نوآوری و توسعه محصول</strong></div>
               <div class="point"><small>حوزه</small><strong>فناوری و تجهیزات پزشکی</strong></div>
-              <div class="point"><small>محصول شاخص</small><strong>VENIX</strong></div>
+              <div class="point"><small>تمرکز سازمانی</small><strong>تحقیق و توسعه</strong></div>
               <div class="point"><small>رویکرد</small><strong>طراحی، توسعه و نمونه‌سازی</strong></div>
             </div>
 
@@ -628,7 +511,7 @@
           </article>
 
           <article class="glass image-card reveal">
-            <img src="venix-features.jpg" alt="نمایی از محصول VENIX و قابلیت‌های آن" loading="lazy">
+            <img src="faradid-logo.jpg" alt="هویت بصری شرکت فرادید پردیس کاوش" loading="lazy">
           </article>
         </div>
       </div>
@@ -665,86 +548,6 @@
       </div>
     </section>
 
-    <!-- VENIX -->
-    <section id="venix-preview">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">FEATURED PRODUCT</div>
-            <h2>VENIX؛ محصول محوری فرادید</h2>
-          </div>
-          <p>رگیاب نوری با طراحی مدرن و تمرکز بر تجربه کاربری در فرایند رگ‌گیری.</p>
-        </div>
-
-        <div class="product-feature">
-          <article class="glass product-copy reveal">
-            <div class="product-logo">VENIX</div>
-            <div class="product-tag">SMART VEIN FINDER</div>
-            <p>
-              VENIX با هدف کمک به مشاهده بهتر رگ و ساده‌تر شدن فرایند رگ‌گیری توسعه یافته است.
-              طراحی دستگاه بر ترکیب کاربردپذیری، ظاهر حرفه‌ای و تجربه کاربری ساده تمرکز دارد.
-            </p>
-
-            <div class="feature-list">
-              <div class="feature"><b>رگیاب نوری</b><span>کمک به مشاهده رگ</span></div>
-              <div class="feature"><b>مد کودک و بزرگسال</b><span>حالت‌های کاربری مجزا</span></div>
-              <div class="feature"><b>نمایشگر</b><span>نمایش وضعیت دستگاه</span></div>
-              <div class="feature"><b>تایمر و هشدار صوتی</b><span>بازخورد زمان و اعلان صوتی</span></div>
-            </div>
-
-            <div class="product-actions">
-              <a class="btn btn-primary" href="venix.html">مشاهده صفحه کامل VENIX <span>←</span></a>
-            </div>
-          </article>
-
-          <article class="glass product-image reveal">
-            <img src="venix-closeup.jpg" alt="نمای نزدیک از دستگاه VENIX" loading="lazy">
-          </article>
-        </div>
-
-        <div class="quote-strip reveal">
-          <div><strong>SEE MORE. ACT WITH CONFIDENCE.</strong><br><span>فناوری برای لحظه‌ای که دیدن، مهم است.</span></div>
-          <a class="btn btn-secondary" href="venix.html">جزئیات محصول <span>↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="gallery">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">PRODUCT GALLERY</div>
-            <h2>VENIX از نزدیک</h2>
-          </div>
-          <p>نمایی از محصول، بسته‌بندی و ارائه بصری VENIX.</p>
-        </div>
-
-        <div class="gallery">
-          <article class="gallery-item big reveal">
-            <img src="venix-showcase.jpg" alt="VENIX و بسته‌بندی محصول" loading="lazy">
-            <div class="gallery-overlay">VENIX · Smart Vein Finder</div>
-          </article>
-          <article class="gallery-item reveal">
-            <img src="venix-box-01.jpg" alt="بسته‌بندی VENIX" loading="lazy">
-            <div class="gallery-overlay">بسته‌بندی محصول</div>
-          </article>
-          <article class="gallery-item reveal">
-            <img src="venix-box-02.jpg" alt="نمای دوم بسته‌بندی VENIX" loading="lazy">
-            <div class="gallery-overlay">طراحی بسته‌بندی</div>
-          </article>
-          <article class="gallery-item reveal">
-            <img src="venix-box-03.jpg" alt="نمای سوم بسته‌بندی VENIX" loading="lazy">
-            <div class="gallery-overlay">جزئیات ارائه محصول</div>
-          </article>
-          <article class="gallery-item reveal">
-            <img src="venix-box-04.jpg" alt="دستگاه VENIX داخل جعبه" loading="lazy">
-            <div class="gallery-overlay">تجهیزات همراه</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- CONTACT -->
     <section id="contact">
       <div class="container">
@@ -756,7 +559,7 @@
               <p>برای معرفی شرکت، محصول و مسیرهای همکاری با فرادید در ارتباط باشید.</p>
             </div>
             <!-- ایمیل تماس را در href زیر جایگزین کنید -->
-            <a class="btn btn-primary" href="mailto:EMAIL@EXAMPLE.COM">ارتباط با فرادید <span>↗</span></a>
+            <a class="btn btn-primary" href="mailto:rezaeimasoud1379@gmail.com">ارتباط با فرادید <span>↗</span></a>
           </div>
         </div>
       </div>
@@ -777,7 +580,7 @@
         <a href="index.html">خانه</a>
         <a href="about.html">درباره شرکت</a>
         <a href="venix.html">VENIX</a>
-        <a href="#gallery">گالری</a>
+        <a href="venix.html">گالری VENIX</a>
         <a href="#contact">تماس</a>
       </div>
 
