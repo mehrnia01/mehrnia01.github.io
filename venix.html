@@ -172,6 +172,291 @@
       .brand{min-width:0}
       .brand div{display:none}
       .hero{padding:52px 0 54px}
+      /* ================= VENIX TECHNICAL SPECIFICATIONS ================= */
+
+.venix-specs{padding:96px 0}
+
+.venix-specs-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:34px
+}
+
+.venix-specs-kicker{
+  color:#3dbaff;
+  font-size:10px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  margin-bottom:8px
+}
+
+.venix-specs-title{
+  font-size:clamp(32px,4.6vw,56px);
+  line-height:1.15;
+  margin:0
+}
+
+.venix-specs-intro{
+  max-width:610px;
+  color:#9fb3ca;
+  font-size:14px;
+  line-height:2
+}
+
+.venix-specs-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:18px;
+  align-items:start
+}
+
+.venix-spec-card{
+  border:1px solid rgba(119,190,255,.18);
+  border-radius:26px;
+  background:linear-gradient(180deg,rgba(10,31,56,.84),rgba(4,14,28,.86));
+  box-shadow:0 22px 60px rgba(0,0,0,.18);
+  overflow:hidden
+}
+
+.venix-spec-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:22px 24px;
+  border-bottom:1px solid rgba(119,190,255,.12)
+}
+
+.venix-spec-card-head h3{
+  margin:0;
+  font-size:18px
+}
+
+.venix-spec-chip{
+  padding:7px 11px;
+  border-radius:999px;
+  border:1px solid rgba(61,186,255,.28);
+  background:rgba(61,186,255,.05);
+  color:#8edcff;
+  font-size:10px;
+  letter-spacing:1.1px;
+  white-space:nowrap
+}
+
+.venix-spec-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0
+}
+
+.venix-spec-row{
+  padding:17px 22px;
+  border-bottom:1px solid rgba(119,190,255,.09)
+}
+
+.venix-spec-row:nth-child(odd){
+  border-left:1px solid rgba(119,190,255,.09)
+}
+
+.venix-spec-label{
+  display:block;
+  color:#738da8;
+  font-size:10px;
+  margin-bottom:5px
+}
+
+.venix-spec-value{
+  display:block;
+  color:#eef7ff;
+  font-size:13px;
+  line-height:1.9;
+  font-weight:700
+}
+
+.venix-spec-value em{
+  font-style:normal;
+  color:#8edcff;
+  font-weight:600
+}
+
+.venix-highlight-grid{
+  display:grid;
+  gap:14px
+}
+
+.venix-highlight{
+  padding:22px;
+  position:relative;
+  min-height:140px
+}
+
+.venix-highlight::after{
+  content:"";
+  position:absolute;
+  inset:auto -55px -60px auto;
+  width:170px;
+  height:170px;
+  background:radial-gradient(
+    circle,
+    rgba(61,186,255,.12),
+    transparent 65%
+  );
+  pointer-events:none
+}
+
+.venix-highlight-num{
+  display:inline-grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:11px;
+  border:1px solid rgba(61,186,255,.28);
+  color:#8edcff;
+  background:rgba(61,186,255,.05);
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:15px
+}
+
+.venix-highlight h4{
+  margin:0 0 6px;
+  font-size:16px
+}
+
+.venix-highlight p{
+  margin:0;
+  color:#9fb3ca;
+  font-size:12px;
+  line-height:2
+}
+
+.venix-modes{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px
+}
+
+.venix-mode-card{
+  padding:22px;
+  border:1px solid rgba(119,190,255,.15);
+  border-radius:20px;
+  background:rgba(255,255,255,.018)
+}
+
+.venix-mode-tag{
+  color:#6ecbff;
+  font-size:10px;
+  letter-spacing:1.5px;
+  margin-bottom:8px
+}
+
+.venix-mode-card h4{
+  margin:0 0 7px;
+  font-size:17px
+}
+
+.venix-mode-card p{
+  margin:0;
+  color:#9fb3ca;
+  font-size:12px;
+  line-height:2
+}
+
+.venix-mode-time{
+  display:inline-block;
+  margin-top:13px;
+  color:#dff5ff;
+  font-size:11px;
+  padding:6px 9px;
+  border-radius:10px;
+  background:rgba(61,186,255,.06);
+  border:1px solid rgba(61,186,255,.18)
+}
+
+.venix-dimensions{
+  margin-top:18px;
+  padding:24px 26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:22px;
+  flex-wrap:wrap
+}
+
+.venix-dim-label{
+  color:#7e96af;
+  font-size:11px
+}
+
+.venix-dim-value{
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:.4px
+}
+
+.venix-dim-value span{
+  color:#6ecbff
+}
+
+@media(max-width:980px){
+
+  .venix-specs-head{
+    flex-direction:column;
+    align-items:flex-start
+  }
+
+  .venix-specs-grid{
+    grid-template-columns:1fr
+  }
+
+  .venix-highlight-grid{
+    grid-template-columns:1fr 1fr
+  }
+
+}
+
+@media(max-width:640px){
+
+  .venix-specs{
+    padding:70px 0
+  }
+
+  .venix-spec-list{
+    grid-template-columns:1fr
+  }
+
+  .venix-spec-row:nth-child(odd){
+    border-left:0
+  }
+
+  .venix-spec-row{
+    padding:15px 18px
+  }
+
+  .venix-highlight-grid{
+    grid-template-columns:1fr
+  }
+
+  .venix-modes{
+    grid-template-columns:1fr
+  }
+
+  .venix-spec-card-head{
+    align-items:flex-start;
+    flex-direction:column
+  }
+
+  .venix-dimensions{
+    align-items:flex-start;
+    flex-direction:column
+  }
+
+}
+
+/* ================= END VENIX TECHNICAL SPECIFICATIONS ================= */
       .hero h1{font-size:clamp(42px,12vw,58px);letter-spacing:-1.4px}
       .hero h2{font-size:18px}
       .hero p{font-size:13px}
@@ -256,6 +541,355 @@
         </div>
       </div>
     </section>
+    <!-- ================= VENIX TECHNICAL SPECIFICATIONS ================= -->
+
+<section class="venix-specs" id="technical-specs">
+  <div class="wrap">
+
+    <div class="venix-specs-head">
+
+      <div>
+        <div class="venix-specs-kicker">
+          TECHNICAL SPECIFICATIONS
+        </div>
+
+        <h2 class="venix-specs-title">
+          مشخصات فنی <span class="gradient">VENIX</span>
+        </h2>
+      </div>
+
+      <p class="venix-specs-intro">
+        ساختار فنی VENIX بر پایه رگیابی نوری تماسی، دستیار راهنمای فرآیند،
+        نمایشگر، تایمرهای مرحله‌ای و طراحی ارگونومیک برای کاربری در فرآیند
+        رگ‌گیری شکل گرفته است.
+      </p>
+
+    </div>
+
+
+    <div class="venix-specs-grid">
+
+      <!-- مشخصات اصلی -->
+
+      <div class="venix-spec-card">
+
+        <div class="venix-spec-card-head">
+
+          <h3>
+            مشخصات و قابلیت‌های اصلی
+          </h3>
+
+          <div class="venix-spec-chip">
+            VENIX · SMART VEIN FINDER
+          </div>
+
+        </div>
+
+
+        <div class="venix-spec-list">
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">نام محصول</span>
+            <span class="venix-spec-value">VENIX</span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">نوع دستگاه</span>
+            <span class="venix-spec-value">رگیاب نوری هوشمند</span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">کاربری اصلی</span>
+            <span class="venix-spec-value">
+              کمک به مشاهده رگ و هدایت فرآیند رگ‌گیری
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">فناوری رگیابی</span>
+            <span class="venix-spec-value">
+              سیستم نوری مبتنی بر <em>LED</em>
+              با طول موج و فرکانس اختصاصی
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">ساختار رگیاب</span>
+            <span class="venix-spec-value">
+              طراحی نوری تماسی
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">حالت‌های کاری</span>
+            <span class="venix-spec-value">
+              ۳ حالت کاری
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">نمایشگر</span>
+            <span class="venix-spec-value">
+              نمایش وضعیت دستگاه، زمان و پیام‌های راهنما
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">دستیار فرآیند</span>
+            <span class="venix-spec-value">
+              نمایش مرحله‌ای راهنمای رگ‌گیری
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">فیکس‌کننده رگ</span>
+            <span class="venix-spec-value">
+              فیکس‌کننده زیر دستگاه با قابلیت کنترل با یک دست
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">نشانگر قطر نیدل</span>
+            <span class="venix-spec-value">
+              مقایسه قطر نیدل‌های کانولاسیون با رگ
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">قابلیت ضدعفونی</span>
+            <span class="venix-spec-value">
+              قابل ضدعفونی شدن دستگاه
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">پوشش خارجی</span>
+            <span class="venix-spec-value">
+              پوشش نانویی طبق طراحی محصول
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">QR Code</span>
+            <span class="venix-spec-value">
+              دسترسی به محتوای آموزشی و علمی مرتبط
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">باتری</span>
+            <span class="venix-spec-value">
+              ۱۲۰۰ میلی‌آمپرساعت
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">ظرفیت استفاده</span>
+            <span class="venix-spec-value">
+              حدود ۷۰ بیمار با یک بار شارژ، طبق اطلاعات ارائه‌شده
+            </span>
+          </div>
+
+          <div class="venix-spec-row">
+            <span class="venix-spec-label">ابعاد</span>
+            <span class="venix-spec-value">
+              ۹۲ × ۵۱ × ۲۳٫۵ میلی‌متر
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ویژگی‌های برجسته -->
+
+      <div class="venix-highlight-grid">
+
+        <article class="venix-spec-card venix-highlight">
+
+          <div class="venix-highlight-num">01</div>
+
+          <h4>
+            رگیابی نوری تماسی
+          </h4>
+
+          <p>
+            منبع نور در تماس مستقیم با پوست قرار می‌گیرد تا پایداری تابش
+            و کاهش اثر نور محیط و بازتاب‌های نامطلوب مورد توجه قرار گیرد.
+          </p>
+
+        </article>
+
+
+        <article class="venix-spec-card venix-highlight">
+
+          <div class="venix-highlight-num">02</div>
+
+          <h4>
+            دستیار هوشمند فرآیند
+          </h4>
+
+          <p>
+            نمایش مرحله‌ای راهنما برای مدیریت زمان و یادآوری بخش‌هایی
+            از فرآیند، همراه با تایمر و هشدار صوتی.
+          </p>
+
+        </article>
+
+
+        <article class="venix-spec-card venix-highlight">
+
+          <div class="venix-highlight-num">03</div>
+
+          <h4>
+            طراحی ارگونومیک و فیکس‌کننده
+          </h4>
+
+          <p>
+            فیکس‌کننده زیر دستگاه برای کنترل با یک دست، در کنار امکان
+            کنترل آنژیوکت یا نیدل با دست دیگر طراحی شده است.
+          </p>
+
+        </article>
+
+
+        <article class="venix-spec-card venix-highlight">
+
+          <div class="venix-highlight-num">04</div>
+
+          <h4>
+            مدیریت مصرف انرژی
+          </h4>
+
+          <p>
+            باتری ۱۲۰۰ میلی‌آمپرساعتی و طراحی عملکردی دستگاه با هدف
+            بهینه‌سازی مصرف انرژی در استفاده روزمره.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+
+    <!-- سه مد کاری -->
+
+    <div class="venix-modes">
+
+      <article class="venix-mode-card">
+
+        <div class="venix-mode-tag">
+          MODE 01
+        </div>
+
+        <h4>
+          رگ‌گیری بزرگسال
+        </h4>
+
+        <p>
+          ۳۰ ثانیه برای یافتن رگ + ۳۰ ثانیه برای انجام فرآیند رگ‌گیری،
+          همراه با پیام‌های راهنما پس از پایان زمان.
+        </p>
+
+        <span class="venix-mode-time">
+          ۳۰ + ۳۰ ثانیه
+        </span>
+
+      </article>
+
+
+      <article class="venix-mode-card">
+
+        <div class="venix-mode-tag">
+          MODE 02
+        </div>
+
+        <h4>
+          رگ‌گیری کودکان
+        </h4>
+
+        <p>
+          ۳۰ ثانیه برای یافتن رگ + ۳۰ ثانیه برای انجام فرآیند،
+          با فعال بودن ماژول LED مربوط به این حالت.
+        </p>
+
+        <span class="venix-mode-time">
+          ۳۰ + ۳۰ ثانیه
+        </span>
+
+      </article>
+
+
+      <article class="venix-mode-card">
+
+        <div class="venix-mode-tag">
+          MODE 03
+        </div>
+
+        <h4>
+          تایمر علائم حیاتی
+        </h4>
+
+        <p>
+          تایمر ۶۰ ثانیه‌ای با هشدارهای صوتی مرحله‌ای در
+          ۱۵، ۳۰ و ۶۰ ثانیه.
+        </p>
+
+        <span class="venix-mode-time">
+          ۶۰ ثانیه
+        </span>
+
+      </article>
+
+    </div>
+
+
+    <!-- ابعاد و باتری -->
+
+    <div class="venix-spec-card venix-dimensions">
+
+      <div>
+        <div class="venix-dim-label">
+          ابعاد دستگاه
+        </div>
+
+        <div class="venix-dim-value">
+          <span>92</span> ×
+          <span>51</span> ×
+          <span>23.5</span> mm
+        </div>
+      </div>
+
+
+      <div>
+        <div class="venix-dim-label">
+          ظرفیت باتری
+        </div>
+
+        <div class="venix-dim-value">
+          <span>1200</span> mAh
+        </div>
+      </div>
+
+
+      <div>
+        <div class="venix-dim-label">
+          تعداد مدهای کاری
+        </div>
+
+        <div class="venix-dim-value">
+          <span>03</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= END VENIX TECHNICAL SPECIFICATIONS ================= -->
 
     <section>
       <div class="wrap focus-grid">
