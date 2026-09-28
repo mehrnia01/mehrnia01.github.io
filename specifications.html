@@ -56,7 +56,7 @@ img{display:block;max-width:100%}
 .menu{display:none;width:44px;height:44px;border:1px solid var(--line-strong);border-radius:13px;background:rgba(255,255,255,.02);color:#fff;font-size:21px}
 
 /* HERO */
-.hero{padding:88px 0 58px}
+.hero{padding:72px 0 40px}
 .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--line-strong);border-radius:999px;background:rgba(66,191,255,.045);color:var(--blue-soft);font-size:10px;letter-spacing:1.6px}
 .eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 16px var(--blue)}
@@ -75,7 +75,7 @@ h1{font-size:clamp(42px,5.8vw,78px);line-height:1.05;letter-spacing:-2px;margin:
 .hero-visual-caption strong{color:#dfefff;font-size:12px;letter-spacing:2px}
 
 /* OVERVIEW METRICS */
-.metric-band{padding:14px 0 28px}
+.metric-band{padding:8px 0 18px}
 .metrics{display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,rgba(9,31,53,.84),rgba(4,14,27,.82));box-shadow:0 20px 60px rgba(0,0,0,.18)}
 .metric{padding:22px 24px;position:relative}
 .metric:not(:last-child){border-left:1px solid var(--line)}
@@ -85,7 +85,7 @@ h1{font-size:clamp(42px,5.8vw,78px);line-height:1.05;letter-spacing:-2px;margin:
 .metric-note{font-size:10px;color:var(--muted);margin-top:4px}
 
 /* SECTIONS */
-section{padding:74px 0}
+section{padding:58px 0}
 .section-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:28px}
 .kicker{color:var(--blue);font-size:10px;letter-spacing:2.6px;text-transform:uppercase;margin-bottom:7px}
 .section-top h2{font-size:clamp(30px,4vw,49px);line-height:1.18}
@@ -132,6 +132,22 @@ section{padding:74px 0}
 .flow-item h4{font-size:14px;margin-bottom:4px}
 .flow-item p{font-size:10px;color:var(--muted);line-height:1.95}
 
+/* ENGINEERING VISUAL */
+.engineering-visual{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;align-items:stretch;margin-top:22px}
+.engineering-image{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:#020816;box-shadow:0 18px 55px rgba(0,0,0,.18);min-height:360px}
+.engineering-image img{width:100%;height:100%;object-fit:cover}
+.engineering-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(2,8,22,.72));pointer-events:none}
+.engineering-overlay{position:absolute;right:20px;bottom:18px;left:20px;z-index:1;display:flex;justify-content:space-between;align-items:end;gap:15px}
+.engineering-overlay strong{font-size:18px}
+.engineering-overlay span{font-size:9px;letter-spacing:1.8px;color:var(--blue-soft)}
+.engineering-copy{padding:26px}
+.engineering-copy h3{font-size:24px;margin-bottom:9px}
+.engineering-copy>p{color:var(--muted);font-size:12px;line-height:2}
+.engineering-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.engineering-point{padding:17px;border:1px solid rgba(122,193,255,.12);border-radius:18px;background:rgba(255,255,255,.016)}
+.engineering-point strong{display:block;font-size:13px;margin-bottom:4px}
+.engineering-point span{display:block;color:var(--muted);font-size:10px;line-height:1.9}
+
 /* EXTRA CAPABILITIES */
 .cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .cap{padding:22px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
@@ -165,6 +181,12 @@ footer{padding:30px 0 40px;border-top:1px solid var(--line)}
   section{padding:62px 0}.section-top{flex-direction:column;align-items:flex-start}.system-features,.cap-grid{grid-template-columns:1fr}.mode-grid,.flow-line{grid-template-columns:1fr}.flow-item:not(:last-child){border-left:0;border-bottom:1px solid var(--line)}
   .system-main-head{flex-direction:column}.cta{flex-direction:column;align-items:stretch}.btn{width:100%}.hero-visual-caption{align-items:flex-start;flex-direction:column}
 }
+
+@media(max-width:640px){
+  .engineering-visual{grid-template-columns:1fr}
+  .engineering-image{min-height:280px}
+  .engineering-points{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -190,7 +212,7 @@ footer{padding:30px 0 40px;border-top:1px solid var(--line)}
   <div class="wrap hero-grid">
     <div class="reveal">
       <div class="eyebrow">VENIX · TECHNICAL PROFILE</div>
-      <h1>مشخصات فنی<span class="gradient"></span><br>VENIX</h1>
+      <h1>مهندسیِ <span class="gradient">VENIX</span><br>در یک نگاه</h1>
       <p class="hero-copy">
         VENIX یک رگیاب نوری هوشمند است که رگیابی تماسی، راهنمای مرحله‌ای،
         تایمرهای کاری و طراحی ارگونومیک را در یک ساختار یکپارچه کنار هم قرار می‌دهد.
@@ -262,6 +284,27 @@ footer{padding:30px 0 40px;border-top:1px solid var(--line)}
         <article class="card side-card reveal"><span class="side-tag">USER SUPPORT</span><h4>راهنمای فرآیند</h4><p>ساختار پیام‌ها، تایمر و هشدارها برای کمک به مدیریت مراحل فرآیند و کاهش فراموشی جزئیات طراحی شده است.</p></article>
       </div>
     </div>
+
+    <div class="engineering-visual">
+      <div class="engineering-image reveal">
+        <img src="venix-showcase.jpg" alt="نمای محصول VENIX" loading="lazy">
+        <div class="engineering-overlay">
+          <strong>VENIX</strong>
+          <span>ENGINEERED FOR PRACTICAL USE</span>
+        </div>
+      </div>
+      <div class="card engineering-copy reveal">
+        <div class="kicker">ENGINEERING APPROACH</div>
+        <h3>فناوری، طراحی و کاربری در یک مسیر</h3>
+        <p>ساختار VENIX از ابتدا با نگاه به یک فرآیند واقعی طراحی شده است؛ بنابراین اجزای نوری، نمایشگر، زمان‌سنجی و کنترل دستگاه در کنار هم یک تجربه یکپارچه ایجاد می‌کنند.</p>
+        <div class="engineering-points">
+          <div class="engineering-point"><strong>طراحی تماسی</strong><span>تمرکز بر پایداری تابش و کاهش اثر بازتاب‌های نامطلوب.</span></div>
+          <div class="engineering-point"><strong>کنترل مرحله‌ای</strong><span>پیام‌ها و زمان‌بندی‌ها برای همراهی کاربر در طول فرآیند.</span></div>
+          <div class="engineering-point"><strong>طراحی ارگونومیک</strong><span>فیکس‌کننده زیر دستگاه و امکان کنترل با یک دست.</span></div>
+          <div class="engineering-point"><strong>نگهداری ساده</strong><span>در نظر گرفتن قابلیت ضدعفونی پس از استفاده.</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -327,8 +370,8 @@ footer{padding:30px 0 40px;border-top:1px solid var(--line)}
 <section>
   <div class="wrap">
     <div class="card cta reveal">
-      <div><h3>حالا ساختار VENIX را بهتر می‌شناسید.</h3><p>برای مشاهده معرفی محصول، تصاویر و قابلیت‌های نمایشی VENIX به صفحه اختصاصی محصول بروید.</p></div>
-      <a class="btn btn-primary" href="venix.html">مشاهده صفحه VENIX ↗</a>
+      <div><h3>برای آشنایی بیشتر با VENIX</h3><p>معرفی محصول، تصاویر، ویژگی‌ها و جزئیات کاربردی VENIX را در صفحه اختصاصی محصول ببینید.</p></div>
+      <a class="btn btn-primary" href="venix.html">← بازگشت به صفحه VENIX</a>
     </div>
   </div>
 </section>
