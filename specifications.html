@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="مشخصات فنی VENIX؛ رگیاب نوری هوشمند فرادید پردیس کاوش.">
+<title>مشخصات فنی VENIX | فرادید پردیس کاوش</title>
+<style>
+:root{
+  --bg:#020817;
+  --bg2:#07172a;
+  --panel:rgba(9,28,50,.82);
+  --panel2:rgba(12,36,63,.78);
+  --line:rgba(122,193,255,.18);
+  --line2:rgba(86,190,255,.36);
+  --text:#f6f9fd;
+  --muted:#9db2c9;
+  --blue:#40bfff;
+  --blue2:#9bdfff;
+  --shadow:0 26px 70px rgba(0,0,0,.34);
+  --max:1220px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  color:var(--text);
+  line-height:1.9;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 82% 0%,rgba(35,160,255,.14),transparent 25%),
+    radial-gradient(circle at 5% 28%,rgba(35,140,255,.07),transparent 22%),
+    linear-gradient(180deg,#01040a,#031122 48%,#020817 100%);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.025;z-index:0;
+  background-image:radial-gradient(rgba(255,255,255,.7) .55px,transparent .55px);
+  background-size:5px 5px;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto;position:relative;z-index:2}
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(2,8,23,.76);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)
+}
+.nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:46px;height:46px;object-fit:cover;border-radius:13px;border:1px solid rgba(255,255,255,.08)}
+.brand strong{display:block;font-size:16px;letter-spacing:2.5px}
+.brand small{display:block;color:#718aa5;font-size:9px;letter-spacing:1.4px}
+.links{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.links a{padding:10px 12px;border-radius:12px;color:#c7d5e4;font-size:13px;transition:.2s}
+.links a:hover,.links a.active{background:rgba(64,191,255,.08);color:#fff}
+.menu{display:none;width:45px;height:45px;border:1px solid var(--line2);border-radius:13px;background:rgba(255,255,255,.02);color:#fff;font-size:21px}
+.hero{padding:84px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid var(--line2);border-radius:999px;background:rgba(64,191,255,.045);color:var(--blue2);font-size:10px;letter-spacing:1.4px}
+.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 15px var(--blue)}
+h1{font-size:clamp(42px,6vw,76px);line-height:1.08;letter-spacing:-1.8px;margin:20px 0 14px}
+.gradient{background:linear-gradient(100deg,#fff,#dceaf7 55%,#51c7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:720px;color:var(--muted);font-size:15px;line-height:2.1}
+.hero-media{padding:8px;border-radius:28px;background:linear-gradient(145deg,rgba(70,193,255,.23),rgba(255,255,255,.03) 50%,rgba(39,89,203,.17));box-shadow:var(--shadow)}
+.hero-media-inner{border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#020817}
+.hero-media img{width:100%;height:auto;object-fit:contain;background:#020817}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.stat{padding:18px 20px;border:1px solid var(--line);background:rgba(255,255,255,.018);border-radius:18px}
+.stat strong{display:block;font-size:29px;line-height:1.1}
+.stat span{display:block;color:#8198b0;font-size:11px;margin-top:5px}
+section{padding:86px 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:30px}
+.kicker{color:var(--blue);font-size:10px;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:7px}
+.section-head h2{font-size:clamp(30px,4.2vw,50px);line-height:1.18}
+.section-head p{max-width:620px;color:var(--muted);font-size:13px;line-height:2}
+.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(11,34,59,.78),rgba(4,14,28,.82));border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.spec-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.spec-block{overflow:hidden}
+.spec-title{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:21px 22px;border-bottom:1px solid var(--line)}
+.spec-title h3{font-size:18px}
+.chip{font-size:9px;letter-spacing:1.3px;color:var(--blue2);padding:7px 10px;border:1px solid var(--line2);border-radius:999px;white-space:nowrap}
+.rows{display:grid;grid-template-columns:1fr 1fr}
+.row{padding:17px 20px;border-bottom:1px solid rgba(122,193,255,.08)}
+.row:nth-child(odd){border-left:1px solid rgba(122,193,255,.08)}
+.label{display:block;color:#738ca6;font-size:10px;margin-bottom:4px}
+.value{display:block;color:#edf6ff;font-size:12px;font-weight:700;line-height:1.9}
+.value em{font-style:normal;color:var(--blue2)}
+.feature-stack{display:grid;gap:14px}
+.feature{padding:22px;position:relative;overflow:hidden;min-height:140px}
+.feature:after{content:"";position:absolute;inset:auto -35px -55px auto;width:170px;height:170px;background:radial-gradient(circle,rgba(64,191,255,.13),transparent 65%);pointer-events:none}
+.feature-num{width:37px;height:37px;display:grid;place-items:center;border-radius:11px;color:var(--blue2);border:1px solid var(--line2);background:rgba(64,191,255,.05);font-size:11px;font-weight:800;margin-bottom:13px}
+.feature h3{font-size:16px;margin-bottom:5px}
+.feature p{color:var(--muted);font-size:12px;line-height:2}
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mode{padding:23px}
+.mode-tag{font-size:9px;letter-spacing:1.7px;color:var(--blue);margin-bottom:7px}
+.mode h3{font-size:19px;margin-bottom:7px}
+.mode p{font-size:12px;color:var(--muted);line-height:2}
+.time{display:inline-block;margin-top:13px;padding:6px 9px;border:1px solid var(--line);border-radius:9px;background:rgba(64,191,255,.04);color:#dff4ff;font-size:10px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:24px}
+.flow-item{position:relative;padding:19px 18px 19px 28px;border:1px solid var(--line);background:rgba(255,255,255,.015)}
+.flow-item:not(:last-child){border-left:0}
+.flow-num{display:block;color:var(--blue);font-size:10px;letter-spacing:1.4px;margin-bottom:7px}
+.flow h4{font-size:14px;margin-bottom:4px}
+.flow p{color:#8fa5bd;font-size:11px;line-height:1.9}
+.dim-card{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 26px;flex-wrap:wrap}
+.dim-label{font-size:10px;color:#7892ab}
+.dim-value{font-size:27px;font-weight:800}
+.dim-value span{color:var(--blue2)}
+.note{margin-top:18px;padding:15px 18px;border-radius:16px;border:1px dashed rgba(122,193,255,.2);color:#839ab3;font-size:10px;line-height:2}
+.cta{padding:30px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.cta h3{font-size:clamp(22px,3vw,33px);line-height:1.35}
+.cta p{color:var(--muted);font-size:12px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 17px;border:1px solid var(--line2);border-radius:14px;font-size:12px;font-weight:700;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,#dff5ff,#9edcff);color:#071626;border:0}
+footer{padding:30px 0 42px;border-top:1px solid var(--line)}
+.footer{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;color:#6e86a0;font-size:10px}
+.footer-brand{display:flex;align-items:center;gap:10px}.footer-brand img{width:38px;height:38px;border-radius:10px;object-fit:cover}.footer-brand strong{display:block;color:#edf5fc;font-size:12px;letter-spacing:2px}.footer-brand span{display:block;font-size:9px}
+.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:980px){
+ .nav-inner{min-height:68px}.menu{display:block}.links{display:none;position:absolute;top:69px;right:12px;left:12px;flex-direction:column;align-items:stretch;padding:9px;border:1px solid var(--line);border-radius:15px;background:rgba(3,12,26,.97);backdrop-filter:blur(15px)}.links.open{display:flex}
+ .hero-grid,.spec-layout{grid-template-columns:1fr}.modes{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr}.flow-item:not(:last-child){border-left:1px solid var(--line)}
+}
+@media(max-width:640px){
+ .wrap{width:calc(100% - 24px)}.brand div{display:none}.hero{padding:56px 0}.hero p{font-size:13px}.stats{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:flex-start}.rows{grid-template-columns:1fr}.row:nth-child(odd){border-left:0}.modes,.flow{grid-template-columns:1fr}.flow-item:not(:last-child){border-bottom:0}.cta{flex-direction:column;align-items:stretch}.btn{width:100%}.dim-card{align-items:flex-start;flex-direction:column}.dim-value{font-size:23px}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="FARADID">
+      <img src="faradid-logo.jpg" alt="لوگوی فرادید">
+      <div><strong>FARADID</strong><small>BEYOND TODAY, VISION FOR TOMORROW</small></div>
+    </a>
+    <nav class="links" id="links">
+      <a href="index.html">خانه</a>
+      <a href="venix.html">VENIX</a>
+      <a href="venix.html#features">ویژگی‌ها</a>
+      <a href="#technical" class="active">مشخصات فنی</a>
+      <a href="index.html#contact">تماس</a>
+    </nav>
+    <button class="menu" id="menu" aria-label="باز کردن منو">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="technical">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">VENIX · TECHNICAL SPECIFICATIONS</div>
+      <h1>جزئیات فنی <span class="gradient">VENIX</span></h1>
+      <p>صفحه اختصاصی مشخصات فنی VENIX؛ از معماری رگیابی نوری و دستیار فرآیند تا حالت‌های کاری، سیستم زمان‌بندی، فیکس‌کننده رگ و مشخصات ابعادی و انرژی.</p>
+      <div class="stats">
+        <div class="stat"><strong>۳</strong><span>مد کاری</span></div>
+        <div class="stat"><strong>۱۲۰۰</strong><span>میلی‌آمپرساعت باتری</span></div>
+        <div class="stat"><strong>۹۲×۵۱×۲۳٫۵</strong><span>میلی‌متر · ابعاد دستگاه</span></div>
+      </div>
+    </div>
+    <div class="hero-media reveal">
+      <div class="hero-media-inner">
+        <img src="venix-closeup.jpg" alt="نمای نزدیک دستگاه VENIX" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-head reveal">
+    <div><div class="kicker">CORE SPECIFICATIONS</div><h2>مشخصات و قابلیت‌های اصلی</h2></div>
+    <p>مشخصات زیر بر اساس اطلاعات فنی ارائه‌شده برای دستگاه VENIX تنظیم شده‌اند.</p>
+  </div>
+
+  <div class="spec-layout">
+    <div class="card spec-block reveal">
+      <div class="spec-title"><h3>مشخصات پایه دستگاه</h3><span class="chip">VENIX · SMART VEIN FINDER</span></div>
+      <div class="rows">
+        <div class="row"><span class="label">نام محصول</span><span class="value">VENIX</span></div>
+        <div class="row"><span class="label">نوع دستگاه</span><span class="value">رگیاب نوری هوشمند</span></div>
+        <div class="row"><span class="label">کاربری اصلی</span><span class="value">کمک به مشاهده رگ و هدایت فرآیند رگ‌گیری</span></div>
+        <div class="row"><span class="label">فناوری رگیابی</span><span class="value">سیستم نوری مبتنی بر <em>LED</em> با طول موج و فرکانس اختصاصی</span></div>
+        <div class="row"><span class="label">ساختار رگیاب</span><span class="value">طراحی نوری تماسی</span></div>
+        <div class="row"><span class="label">حالت‌های کاری</span><span class="value">۳ حالت کاری</span></div>
+        <div class="row"><span class="label">نمایشگر</span><span class="value">نمایش وضعیت دستگاه، زمان و پیام‌های راهنما</span></div>
+        <div class="row"><span class="label">باتری</span><span class="value">۱۲۰۰ میلی‌آمپرساعت</span></div>
+        <div class="row"><span class="label">ظرفیت استفاده</span><span class="value">حدود ۷۰ بیمار با یک بار شارژ، طبق اطلاعات ارائه‌شده</span></div>
+        <div class="row"><span class="label">قابلیت ضدعفونی</span><span class="value">قابل ضدعفونی شدن دستگاه</span></div>
+        <div class="row"><span class="label">پوشش خارجی</span><span class="value">پوشش نانویی طبق طراحی محصول</span></div>
+        <div class="row"><span class="label">QR Code</span><span class="value">دسترسی به محتوای آموزشی و علمی مرتبط</span></div>
+      </div>
+    </div>
+
+    <div class="feature-stack">
+      <article class="card feature reveal"><div class="feature-num">01</div><h3>رگیابی نوری تماسی</h3><p>منبع نور در تماس مستقیم با پوست قرار می‌گیرد تا پایداری تابش و کاهش اثر نور محیط و بازتاب‌های نامطلوب مورد توجه قرار گیرد.</p></article>
+      <article class="card feature reveal"><div class="feature-num">02</div><h3>دستیار هوشمند فرآیند</h3><p>نمایش مرحله‌ای راهنما برای مدیریت زمان و یادآوری بخش‌هایی از فرآیند، همراه با تایمر و هشدار صوتی.</p></article>
+      <article class="card feature reveal"><div class="feature-num">03</div><h3>فیکس‌کننده رگ</h3><p>فیکس‌کننده در بخش زیر دستگاه، با هدف امکان کنترل با یک دست در کنار کنترل آنژیوکت یا نیدل با دست دیگر.</p></article>
+      <article class="card feature reveal"><div class="feature-num">04</div><h3>نشانگر قطر نیدل</h3><p>نشانگرهای قطر انواع نیدل‌های کانولاسیون برای مقایسه بصری با رگ در حین فرآیند رگ‌گیری.</p></article>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-head reveal">
+    <div><div class="kicker">OPERATING MODES</div><h2>سه مد کاری، سه سناریوی مشخص</h2></div>
+    <p>منطق عملکرد هر مد با زمان‌بندی مشخص و پیام‌های راهنما روی نمایشگر تعریف شده است.</p>
+  </div>
+
+  <div class="modes">
+    <article class="card mode reveal"><div class="mode-tag">MODE 01</div><h3>رگ‌گیری بزرگسال</h3><p>۳۰ ثانیه برای یافتن رگ، سپس ۳۰ ثانیه برای انجام فرآیند رگ‌گیری. پس از پایان زمان، پیام‌های راهنما برای باز کردن گارو، دفع نیدل و ضدعفونی دستگاه نمایش داده می‌شوند.</p><span class="time">۳۰ + ۳۰ ثانیه</span></article>
+    <article class="card mode reveal"><div class="mode-tag">MODE 02</div><h3>رگ‌گیری کودکان</h3><p>۳۰ ثانیه برای یافتن رگ و ۳۰ ثانیه برای انجام فرآیند، با فعال بودن ماژول LED مربوط به حالت کودکان و سپس نمایش پیام‌های پایانی.</p><span class="time">۳۰ + ۳۰ ثانیه</span></article>
+    <article class="card mode reveal"><div class="mode-tag">MODE 03</div><h3>تایمر علائم حیاتی</h3><p>تایمر ۶۰ ثانیه‌ای با هشدارهای صوتی مرحله‌ای؛ یک بوق در شروع، دو بوق در ۱۵ ثانیه، بوق یک‌ثانیه‌ای در ۳۰ ثانیه و بوق ممتد در پایان.</p><span class="time">۶۰ ثانیه</span></article>
+  </div>
+
+  <div class="card flow">
+    <div class="flow-item"><span class="flow-num">STEP 01</span><h4>بستن گارو</h4><p>فعال‌سازی مد کاری موردنظر پس از آماده‌سازی.</p></div>
+    <div class="flow-item"><span class="flow-num">STEP 02</span><h4>یافتن رگ</h4><p>شروع تایمر و کمک به مشاهده و انتخاب رگ مناسب.</p></div>
+    <div class="flow-item"><span class="flow-num">STEP 03</span><h4>انجام فرآیند</h4><p>ورود به زمان اختصاص‌یافته برای انجام رگ‌گیری.</p></div>
+    <div class="flow-item"><span class="flow-num">STEP 04</span><h4>پایان و یادآوری</h4><p>نمایش پیام‌های راهنما و خاموش شدن ماژول رگیاب.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="card dim-card reveal">
+    <div><div class="dim-label">ابعاد دستگاه</div><div class="dim-value"><span>92</span> × <span>51</span> × <span>23.5</span> mm</div></div>
+    <div><div class="dim-label">ظرفیت باتری</div><div class="dim-value"><span>1200</span> mAh</div></div>
+    <div><div class="dim-label">مدهای کاری</div><div class="dim-value"><span>03</span> Mode</div></div>
+  </div>
+  <div class="note reveal">اعداد و مشخصات این صفحه بر اساس اطلاعات فنی ارائه‌شده برای VENIX تنظیم شده‌اند. مواردی مانند طول موج و فرکانس دقیق LED، وزن، ولتاژ باتری و مشخصات مدل نمایشگر در اطلاعات ارائه‌شده عدد یا مدل مشخصی نداشتند و در این صفحه مقدار فرضی درج نشده است.</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="card cta reveal">
+    <div><h3>مشخصات فنی را دیدید؛ حالا VENIX را بهتر بشناسید.</h3><p>برای معرفی قابلیت‌ها و تصاویر محصول به صفحه اختصاصی VENIX بروید.</p></div>
+    <a class="btn btn-primary" href="venix.html">مشاهده صفحه VENIX ↗</a>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap footer">
+  <div class="footer-brand"><img src="faradid-logo.jpg" alt="FARADID"><div><strong>FARADID</strong><span>فرادید پردیس کاوش</span></div></div>
+  <span>VENIX · Technical Specifications</span>
+  <span>© 2026 Faradid Pardis Kavosh</span>
+</div>
+</footer>
+
+<script>
+const menu=document.getElementById('menu');
+const links=document.getElementById('links');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}
+  })
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
