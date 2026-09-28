@@ -177,15 +177,190 @@ footer{padding:30px 0 40px;border-top:1px solid var(--line)}
   .hero-grid,.system-grid{grid-template-columns:1fr}.hero-visual{max-width:760px;margin-inline:auto}.mode-grid{grid-template-columns:1fr 1fr}.flow-line{grid-template-columns:1fr 1fr}.flow-item:not(:last-child){border-left:1px solid var(--line)}
 }
 @media(max-width:640px){
-  .wrap{width:calc(100% - 24px)}.brand div{display:none}.hero{padding:56px 0 38px}.hero-copy{font-size:13px}.hero-points,.metrics{grid-template-columns:1fr}.metric:not(:last-child){border-left:0;border-bottom:1px solid var(--line)}
-  section{padding:62px 0}.section-top{flex-direction:column;align-items:flex-start}.system-features,.cap-grid{grid-template-columns:1fr}.mode-grid,.flow-line{grid-template-columns:1fr}.flow-item:not(:last-child){border-left:0;border-bottom:1px solid var(--line)}
-  .system-main-head{flex-direction:column}.cta{flex-direction:column;align-items:stretch}.btn{width:100%}.hero-visual-caption{align-items:flex-start;flex-direction:column}
+  html,body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  .wrap{
+    width:calc(100% - 24px);
+    max-width:100%;
+  }
+
+  .nav-inner{
+    min-width:0;
+  }
+
+  .brand,
+  .menu{
+    flex:0 0 auto;
+  }
+
+  .brand div{display:none}
+
+  .hero{
+    padding:52px 0 34px;
+  }
+
+  h1{
+    font-size:clamp(36px,10.8vw,52px);
+    letter-spacing:-1.1px;
+    line-height:1.14;
+    overflow-wrap:anywhere;
+  }
+
+  .hero-copy{
+    font-size:13px;
+    line-height:2.05;
+    overflow-wrap:anywhere;
+  }
+
+  .hero-points,
+  .metrics{
+    grid-template-columns:1fr;
+  }
+
+  .metric:not(:last-child){
+    border-left:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .metric-value{
+    font-size:26px;
+    line-height:1.2;
+    overflow-wrap:anywhere;
+  }
+
+  section{
+    padding:52px 0;
+  }
+
+  .section-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+  }
+
+  .section-top h2{
+    overflow-wrap:anywhere;
+  }
+
+  .system-features,
+  .cap-grid,
+  .mode-grid,
+  .flow-line{
+    grid-template-columns:1fr;
+  }
+
+  .flow-item:not(:last-child){
+    border-left:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .system-main-head{
+    flex-direction:column;
+  }
+
+  .system-main,
+  .side-card,
+  .mode-card,
+  .flow-wrap,
+  .engineering-copy,
+  .engineering-image,
+  .cap,
+  .cta,
+  .card{
+    min-width:0;
+    max-width:100%;
+  }
+
+  .system-item p,
+  .side-card p,
+  .mode-card p,
+  .flow-item p,
+  .engineering-copy p,
+  .engineering-point span,
+  .cap p,
+  .cta p{
+    overflow-wrap:anywhere;
+  }
+
+  .cta{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .hero-visual-caption{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .engineering-visual{
+    grid-template-columns:1fr;
+  }
+
+  .engineering-image{
+    min-height:280px;
+  }
+
+  .engineering-points{
+    grid-template-columns:1fr;
+  }
+
+  footer{
+    overflow:hidden;
+  }
+
+  .footer{
+    min-width:0;
+  }
 }
 
-@media(max-width:640px){
-  .engineering-visual{grid-template-columns:1fr}
-  .engineering-image{min-height:280px}
-  .engineering-points{grid-template-columns:1fr}
+@media(max-width:360px){
+  .wrap{
+    width:calc(100% - 18px);
+  }
+
+  .hero{
+    padding-top:42px;
+  }
+
+  h1{
+    font-size:37px;
+  }
+
+  .eyebrow{
+    font-size:9px;
+    letter-spacing:1.1px;
+    max-width:100%;
+    white-space:normal;
+  }
+
+  .hero-point,
+  .metric,
+  .system-item,
+  .side-card,
+  .mode-card,
+  .flow-item,
+  .cap,
+  .engineering-copy,
+  .cta{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .metric-value{
+    font-size:23px;
+  }
+
+  .mode-step{
+    white-space:normal;
+  }
 }
 </style>
 </head>
@@ -212,7 +387,7 @@ footer{padding:30px 0 40px;border-top:1px solid var(--line)}
   <div class="wrap hero-grid">
     <div class="reveal">
       <div class="eyebrow">VENIX · TECHNICAL PROFILE</div>
-      <h1>مشخصات فنی <span class="gradient">VENIX</span>
+      <h1>مشخصات فنی <span class="gradient">VENIX</span></h1>
       <p class="hero-copy">
         VENIX یک رگیاب نوری هوشمند است که رگیابی تماسی، راهنمای مرحله‌ای،
         تایمرهای کاری و طراحی ارگونومیک را در یک ساختار یکپارچه کنار هم قرار می‌دهد.
