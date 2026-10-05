@@ -206,8 +206,13 @@
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1fr;
-      gap:24px;
+      grid-template-columns:1fr 1fr;
+      gap:2.hero-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+  align-items:stretch;
+}4px;
       align-items:stretch;
     }
 
@@ -845,6 +850,16 @@
         flex-direction:column;
       }
     }
+
+
+    /* REMOVE OUTER FRAME FROM MAIN NAV */
+    header.nav-wrap > .container > nav{
+      border:none !important;
+      border-radius:0 !important;
+      background:transparent !important;
+      box-shadow:none !important;
+    }
+
   </style>
 </head>
 
@@ -867,9 +882,8 @@
           <a href="index.html">خانه</a>
           <a href="venix.html">VENIX</a>
           <a href="specifications.html">مشخصات فنی</a>
-          <a href="certifications.html" class="active">مجوزات و استانداردها</a>
-          <a href="about.html">درباره شرکت</a>
-          <a href="contact.html">تماس با ما</a>
+          <a href="certifications.html" class="active">گواهی‌ها و دستاوردها</a>
+          <a href="contact.html">تماس</a>
         </div>
 
       </nav>
