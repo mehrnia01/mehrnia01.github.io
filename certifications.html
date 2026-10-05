@@ -4,258 +4,845 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>گواهی‌ها و دستاوردها | FARADID</title>
+  <meta name="description" content="گواهی ISO 13485، ثبت اختراعات و دستاوردهای علمی شرکت فرادید پردیس کاوش">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg:#020914;
+      --bg2:#061528;
+      --panel:#071b31;
+      --panel2:#0a213b;
+      --line:rgba(92,194,255,.17);
+      --line2:rgba(92,194,255,.30);
+      --text:#f4f8ff;
+      --muted:#9db4ca;
+      --blue:#57c9ff;
+      --blue2:#a8e5ff;
+      --shadow:0 28px 80px rgba(0,0,0,.30);
+      --radius:28px;
     }
 
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      min-height:100vh;
+      overflow-x:hidden;
+      font-family:Tahoma,Arial,sans-serif;
+      color:var(--text);
+      line-height:1.85;
+      background:
+        radial-gradient(circle at 12% 10%,rgba(55,180,255,.08),transparent 24%),
+        radial-gradient(circle at 88% 28%,rgba(70,193,255,.06),transparent 22%),
+        linear-gradient(180deg,#020914 0%,#041425 55%,#020914 100%);
     }
 
-    body {
-      font-family: Tahoma, Arial, sans-serif;
-      background: #020b1c;
-      color: #ffffff;
-      line-height: 1.9;
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+
+    .container{width:min(1180px,calc(100% - 32px));margin:auto}
+
+    /* HEADER */
+    .nav-wrap{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      padding:12px 0;
+      background:rgba(2,9,20,.84);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(92,194,255,.07);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+      padding:10px 18px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:rgba(3,15,30,.88);
+      box-shadow:0 16px 45px rgba(0,0,0,.18);
     }
 
-    .container {
-      width: min(1150px, 92%);
-      margin: auto;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      direction:ltr;
+      flex-shrink:0;
     }
 
-    /* Header */
-    header {
-      padding: 28px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(2,11,28,0.95);
+    .brand img{
+      width:50px;
+      height:50px;
+      object-fit:cover;
+      border-radius:14px;
+      border:1px solid rgba(92,194,255,.12);
     }
 
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+    .brand strong{
+      display:block;
+      font-size:18px;
+      line-height:1;
+      letter-spacing:2px;
     }
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      color: #ffffff;
+    .brand small{
+      display:block;
+      margin-top:6px;
+      color:#7891aa;
+      font-size:8px;
+      letter-spacing:1.4px;
+      white-space:nowrap;
     }
 
-    .back-btn {
-      padding: 10px 18px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 10px;
-      background: rgba(255,255,255,0.04);
-      transition: 0.3s;
+    .nav-links{
+      display:flex;
+      gap:5px;
+      flex-wrap:wrap;
+      justify-content:flex-start;
     }
 
-    .back-btn:hover {
-      background: rgba(255,255,255,0.1);
+    .nav-links a{
+      padding:10px 14px;
+      border-radius:13px;
+      color:#dbe6ef;
+      font-size:12px;
+      transition:.2s ease;
     }
 
-    /* Hero */
-    .hero {
-      text-align: center;
-      padding: 75px 20px 55px;
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:#0a2039;
+      color:var(--blue2);
     }
 
-    .hero h1 {
-      font-size: clamp(30px, 5vw, 52px);
-      margin-bottom: 15px;
+    /* COMMON */
+    .surface{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:
+        linear-gradient(145deg,rgba(10,34,59,.90),rgba(3,15,30,.96));
+      box-shadow:var(--shadow);
     }
 
-    .hero p {
-      color: #b9c7dc;
-      max-width: 760px;
-      margin: auto;
-      font-size: 17px;
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      max-width:100%;
+      padding:7px 11px;
+      border:1px solid rgba(82,193,255,.23);
+      border-radius:999px;
+      color:var(--blue);
+      background:rgba(82,193,255,.035);
+      font-size:10px;
+      letter-spacing:1.65px;
+      text-transform:uppercase;
+      margin-bottom:16px;
     }
 
-    /* Sections */
-    section {
-      padding: 35px 0 70px;
+    .eyebrow::before{
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--blue);
+      box-shadow:0 0 15px rgba(82,193,255,.75);
+      flex-shrink:0;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 35px;
+    .btn{
+      min-height:43px;
+      padding:0 17px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:12px;
+      border:1px solid rgba(113,203,255,.22);
+      background:linear-gradient(135deg,#e0f6ff,#92dcff);
+      color:#031222;
+      font-size:10px;
+      font-weight:800;
+      transition:.2s ease;
     }
 
-    .section-title h2 {
-      font-size: 30px;
-      margin-bottom: 8px;
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 12px 30px rgba(62,173,255,.15);
     }
 
-    .section-title p {
-      color: #8fa2bd;
+    .btn.secondary{
+      background:transparent;
+      color:var(--blue2);
     }
 
-    /* Cards */
-    .card {
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,0.055),
-        rgba(255,255,255,0.02)
-      );
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.22);
+    .section{
+      padding:28px 0 72px;
+    }
+
+    .section-head{margin-bottom:23px}
+
+    .section-head h2{
+      font-size:clamp(31px,4.2vw,54px);
+      line-height:1.1;
+      letter-spacing:-1px;
+    }
+
+    .section-head h2 span{color:var(--blue2)}
+
+    .section-head p{
+      margin-top:10px;
+      max-width:850px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:2;
+    }
+
+    /* HERO */
+    .hero{padding:86px 0 58px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .hero-copy{
+      min-height:460px;
+      padding:44px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:clamp(40px,5.3vw,71px);
+      line-height:1.05;
+      letter-spacing:-1.8px;
+    }
+
+    .hero h1 span{color:var(--blue2)}
+
+    .hero-copy > p{
+      margin-top:21px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:2.05;
+      max-width:690px;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:11px;
+      margin-top:27px;
+    }
+
+    .hero-stat{
+      padding:15px;
+      border:1px solid rgba(92,194,255,.11);
+      border-radius:16px;
+      background:rgba(255,255,255,.015);
+    }
+
+    .hero-stat strong{
+      display:block;
+      font-size:18px;
+      line-height:1.25;
+    }
+
+    .hero-stat span{
+      display:block;
+      margin-top:4px;
+      color:#7890a8;
+      font-size:9px;
+    }
+
+    .hero-visual{
+      min-height:460px;
+      padding:15px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+
+    .hero-visual a{
+      width:100%;
+      height:100%;
+      display:flex;
+    }
+
+    .hero-visual img{
+      width:100%;
+      height:100%;
+      min-height:420px;
+      object-fit:contain;
+      border-radius:18px;
+      background:#020914;
+      cursor:zoom-in;
+      border:1px solid rgba(92,194,255,.08);
     }
 
     /* ISO */
-    .iso-card {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
+    .iso-grid{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:18px;
+      align-items:stretch;
     }
 
-    .iso-card img {
-      display: block;
-      width: 100%;
-      max-width: 780px;
-      height: auto;
-      margin: 0 auto 25px;
-      border-radius: 12px;
-      background: #ffffff;
+    .iso-info{padding:28px}
+
+    .iso-heading{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:15px;
+      margin-bottom:19px;
     }
 
-    .iso-card h3 {
-      font-size: 24px;
-      margin-bottom: 12px;
+    .iso-heading h3{
+      font-size:25px;
+      line-height:1.35;
     }
 
-    .iso-card p {
-      color: #b9c7dc;
-      margin-bottom: 8px;
+    .iso-heading p{
+      margin-top:5px;
+      color:#849bb2;
+      font-size:10px;
     }
 
-    .certificate-number {
-      color: #ffffff;
-      font-weight: bold;
+    .iso-mark{
+      width:78px;
+      height:78px;
+      display:grid;
+      place-items:center;
+      flex-shrink:0;
+      border-radius:21px;
+      border:1px solid rgba(92,194,255,.2);
+      background:
+        radial-gradient(circle at 50% 35%,rgba(82,193,255,.14),transparent 52%),
+        rgba(3,15,29,.75);
     }
 
-    /* Patents */
-    .patent-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    .iso-mark strong{
+      display:block;
+      font-size:21px;
+      line-height:1;
+      text-align:center;
     }
 
-    .patent-card {
-      overflow: hidden;
-      padding: 0;
+    .iso-mark small{
+      display:block;
+      margin-top:7px;
+      color:var(--blue);
+      font-size:8px;
+      letter-spacing:1px;
+      text-align:center;
     }
 
-    .patent-card img {
-      width: 100%;
-      display: block;
-      height: auto;
+    .iso-meta{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
     }
 
-    .patent-info {
-      padding: 18px;
-      text-align: center;
-      color: #c5d1e3;
+    .meta-card{
+      padding:13px;
+      border:1px solid rgba(92,194,255,.09);
+      border-radius:15px;
+      background:rgba(255,255,255,.014);
     }
 
-    /* Article */
-    .article-card {
-      max-width: 900px;
-      margin: auto;
+    .meta-card.full{grid-column:1/-1}
+
+    .meta-card span{
+      display:block;
+      margin-bottom:3px;
+      color:#6e869d;
+      font-size:8px;
     }
 
-    .article-preview {
-      width: 100%;
-      max-width: 800px;
-      display: block;
-      margin: 0 auto 25px;
-      border-radius: 12px;
+    .meta-card strong{
+      display:block;
+      font-size:11px;
+      line-height:1.75;
     }
 
-    .article-card h3 {
-      font-size: 23px;
-      margin-bottom: 15px;
+    .scope{
+      margin-top:15px;
+      padding:17px;
+      border:1px solid rgba(92,194,255,.12);
+      border-radius:17px;
+      background:rgba(66,171,255,.03);
     }
 
-    .article-meta {
-      color: #aebdd1;
-      margin-bottom: 20px;
+    .scope-label{
+      margin-bottom:7px;
+      color:var(--blue);
+      font-size:9px;
+      letter-spacing:1.4px;
     }
 
-    .article-button {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 10px;
-      background: #ffffff;
-      color: #020b1c;
-      font-weight: bold;
-      transition: 0.3s;
+    .scope p{
+      direction:ltr;
+      text-align:left;
+      color:#d5e4ef;
+      font-size:10px;
+      line-height:2;
     }
 
-    .article-button:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
+    .iso-actions{
+      margin-top:16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:11px;
+      flex-wrap:wrap;
     }
 
-    /* Footer */
-    footer {
-      margin-top: 20px;
-      padding: 30px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-      color: #8fa2bd;
+    .status{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      color:#b9cde0;
+      font-size:9px;
     }
 
-    .iso-footer-badge {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 8px 14px;
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 8px;
-      font-size: 13px;
+    .status::before{
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#49d1ff;
+      box-shadow:0 0 12px rgba(73,209,255,.75);
     }
 
-    /* Mobile */
-    @media (max-width: 850px) {
-      .patent-grid {
-        grid-template-columns: 1fr;
+    .iso-document{
+      padding:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .iso-document img{
+      width:100%;
+      max-height:780px;
+      object-fit:contain;
+      border-radius:16px;
+      background:#f1ead8;
+      cursor:zoom-in;
+    }
+
+    /* PATENTS */
+    .patent-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .patent-card{
+      overflow:hidden;
+    }
+
+    .patent-image{
+      position:relative;
+      aspect-ratio:3/4;
+      overflow:hidden;
+      background:#020914;
+      border-bottom:1px solid rgba(92,194,255,.1);
+    }
+
+    .patent-image a{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+
+    .patent-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      cursor:zoom-in;
+      transition:transform .35s ease;
+    }
+
+    .patent-card:hover .patent-image img{
+      transform:scale(1.015);
+    }
+
+    .patent-tag{
+      position:absolute;
+      top:12px;
+      right:12px;
+      padding:6px 9px;
+      border:1px solid rgba(92,194,255,.22);
+      border-radius:999px;
+      color:var(--blue2);
+      background:rgba(2,12,23,.84);
+      font-size:9px;
+      backdrop-filter:blur(8px);
+    }
+
+    .patent-body{padding:17px}
+
+    .patent-body h3{
+      font-size:17px;
+      line-height:1.45;
+    }
+
+    .patent-body p{
+      margin-top:5px;
+      color:var(--muted);
+      font-size:9px;
+      line-height:1.85;
+    }
+
+    .patent-body .btn{
+      margin-top:12px;
+      width:100%;
+    }
+
+    /* PUBLICATION */
+    .publication{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:18px;
+    }
+
+    .publication-preview{
+      padding:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .publication-preview a{
+      width:100%;
+      display:flex;
+      justify-content:center;
+    }
+
+    .publication-preview img{
+      width:100%;
+      max-height:650px;
+      object-fit:contain;
+      border-radius:16px;
+      background:#fff;
+      cursor:zoom-in;
+    }
+
+    .publication-info{padding:28px}
+
+    .publication-info h3{
+      font-size:24px;
+      line-height:1.4;
+      margin-bottom:10px;
+    }
+
+    .publication-info > p{
+      color:var(--muted);
+      font-size:11px;
+      line-height:2;
+    }
+
+    .publication-meta{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:17px;
+    }
+
+    .publication-meta div{
+      padding:13px;
+      border:1px solid rgba(92,194,255,.09);
+      border-radius:15px;
+      background:rgba(255,255,255,.014);
+    }
+
+    .publication-meta span{
+      display:block;
+      color:#6e869d;
+      font-size:8px;
+      margin-bottom:3px;
+    }
+
+    .publication-meta strong{
+      display:block;
+      font-size:11px;
+    }
+
+    .publication-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:17px;
+    }
+
+    /* DOCUMENT ARCHIVE */
+    .documents-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:15px;
+    }
+
+    .document-card{
+      padding:20px;
+      display:flex;
+      align-items:center;
+      gap:13px;
+    }
+
+    .document-icon{
+      width:50px;
+      height:50px;
+      display:grid;
+      place-items:center;
+      flex-shrink:0;
+      border-radius:15px;
+      border:1px solid rgba(92,194,255,.18);
+      background:rgba(75,180,255,.035);
+      color:var(--blue2);
+      font-size:11px;
+      font-weight:800;
+    }
+
+    .document-text{
+      flex:1;
+    }
+
+    .document-text strong{
+      display:block;
+      font-size:13px;
+    }
+
+    .document-text span{
+      display:block;
+      margin-top:3px;
+      color:#7f96ad;
+      font-size:9px;
+      line-height:1.7;
+    }
+
+    .document-link{
+      min-height:39px;
+      padding:0 13px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:11px;
+      border:1px solid rgba(92,194,255,.2);
+      color:var(--blue2);
+      font-size:9px;
+      white-space:nowrap;
+      transition:.2s ease;
+    }
+
+    .document-link:hover{
+      background:#0a2039;
+    }
+
+    /* FOOTER */
+    footer{
+      margin-top:10px;
+      padding:30px 0 27px;
+      border-top:1px solid rgba(92,194,255,.10);
+    }
+
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .footer-brand img{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      object-fit:cover;
+    }
+
+    .footer-brand strong{
+      display:block;
+      font-size:14px;
+      letter-spacing:1.7px;
+    }
+
+    .footer-brand small{
+      display:block;
+      color:#7088a0;
+      font-size:8px;
+    }
+
+    .footer-copy{
+      color:#69829b;
+      font-size:9px;
+    }
+
+    /* LIGHTBOX */
+    .viewer{
+      position:fixed;
+      inset:0;
+      z-index:5000;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:14px;
+      background:rgba(0,5,14,.92);
+      backdrop-filter:blur(10px);
+    }
+
+    .viewer:target{display:flex}
+
+    .viewer-box{
+      position:relative;
+      width:min(1050px,100%);
+      height:min(94vh,900px);
+      padding:10px;
+      border:1px solid rgba(107,205,255,.20);
+      border-radius:22px;
+      background:#061528;
+      box-shadow:0 35px 100px rgba(0,0,0,.60);
+    }
+
+    .viewer-box img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      border-radius:14px;
+      background:#f1ead8;
+    }
+
+    .viewer-box iframe{
+      width:100%;
+      height:100%;
+      border:0;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .close{
+      position:absolute;
+      top:10px;
+      left:10px;
+      z-index:2;
+      width:39px;
+      height:39px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,10,20,.86);
+      color:#fff;
+      font-size:21px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:920px){
+      .hero-grid,.iso-grid,.publication{
+        grid-template-columns:1fr;
       }
 
-      .header-inner {
-        flex-direction: column;
-      }
+      .hero-copy,.hero-visual{min-height:auto}
+
+      .hero-visual img{min-height:340px}
+
+      .patent-grid{grid-template-columns:1fr 1fr}
+
+      .documents-grid{grid-template-columns:1fr}
     }
 
-    @media (max-width: 600px) {
-      .hero {
-        padding-top: 50px;
+    @media(max-width:640px){
+      .container{width:calc(100% - 24px)}
+
+      nav{
+        min-height:64px;
+        padding:8px 11px;
+        border-radius:20px;
       }
 
-      .card {
-        padding: 18px;
+      .brand strong,.brand small{display:none}
+
+      .brand img{
+        width:42px;
+        height:42px;
       }
 
-      .section-title h2 {
-        font-size: 25px;
+      .nav-links{gap:2px}
+
+      .nav-links a{
+        padding:8px 9px;
+        font-size:9px;
       }
 
-      .hero p {
-        font-size: 15px;
+      .hero{
+        padding:64px 0 38px;
+      }
+
+      .hero-copy{padding:23px 19px}
+
+      .hero h1{
+        font-size:clamp(34px,12vw,47px);
+      }
+
+      .hero-copy > p{font-size:11px}
+
+      .hero-stats{grid-template-columns:1fr}
+
+      .hero-visual{padding:10px}
+
+      .hero-visual img{min-height:285px}
+
+      .section{padding:22px 0 50px}
+
+      .section-head h2{
+        font-size:clamp(29px,10vw,42px);
+      }
+
+      .iso-info,.publication-info{padding:19px}
+
+      .iso-heading h3{font-size:21px}
+
+      .iso-meta,.publication-meta{grid-template-columns:1fr}
+
+      .meta-card.full{grid-column:auto}
+
+      .iso-actions,.publication-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .iso-actions .btn,.publication-actions .btn{
+        width:100%;
+      }
+
+      .iso-document{padding:10px}
+
+      .patent-grid{grid-template-columns:1fr}
+
+      .document-card{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .document-link{width:100%}
+
+      .footer-inner{
+        align-items:flex-start;
+        flex-direction:column;
       }
     }
   </style>
@@ -263,156 +850,781 @@
 
 <body>
 
-<header>
-  <div class="container header-inner">
-    <div class="logo">FARADID</div>
-
-    <a href="index.html" class="back-btn">
-      بازگشت به صفحه اصلی
-    </a>
-  </div>
-</header>
-
-
-<main>
-
-  <!-- HERO -->
-  <div class="hero">
-    <h1>گواهی‌ها و دستاوردها</h1>
-    <p>
-      گواهی‌های رسمی، ثبت اختراعات و دستاوردهای علمی شرکت فرادید پردیس کاوش
-    </p>
-  </div>
-
-
-  <!-- ISO -->
-  <section>
+  <header class="nav-wrap">
     <div class="container">
+      <nav>
 
-      <div class="section-title">
-        <h2>گواهی ISO 13485:2016</h2>
-        <p>سیستم مدیریت کیفیت تجهیزات پزشکی</p>
-      </div>
+        <a href="index.html" class="brand" aria-label="FARADID">
+          <img src="faradid-logo.jpg" alt="لوگوی فرادید">
 
-      <div class="card iso-card">
-
-        <img
-          src="iso-13485-github.jpg"
-          alt="گواهی ISO 13485:2016 شرکت فرادید پردیس کاوش"
-        >
-
-        <h3>ISO 13485:2016</h3>
-
-        <p>
-          شرکت فرادید پردیس کاوش دارای گواهی سیستم مدیریت کیفیت
-          ISO 13485:2016 در حوزه تجهیزات پزشکی است.
-        </p>
-
-        <p>
-          <span class="certificate-number">شماره گواهی:</span>
-          60292202613
-        </p>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- PATENTS -->
-  <section>
-    <div class="container">
-
-      <div class="section-title">
-        <h2>ثبت اختراعات</h2>
-        <p>نمونه‌ای از ثبت اختراعات و دستاوردهای فناورانه</p>
-      </div>
-
-      <div class="patent-grid">
-
-        <div class="card patent-card">
-          <img src="patent-01.jpg" alt="گواهی ثبت اختراع ۱">
-          <div class="patent-info">
-            گواهی ثبت اختراع ۱
+          <div>
+            <strong>FARADID</strong>
+            <small>BEYOND TODAY, VISION FOR TOMORROW</small>
           </div>
-        </div>
-
-        <div class="card patent-card">
-          <img src="patent-02.jpg" alt="گواهی ثبت اختراع ۲">
-          <div class="patent-info">
-            گواهی ثبت اختراع ۲
-          </div>
-        </div>
-
-        <div class="card patent-card">
-          <img src="patent-03.jpg" alt="گواهی ثبت اختراع ۳">
-          <div class="patent-info">
-            گواهی ثبت اختراع ۳
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ARTICLE -->
-  <section>
-    <div class="container">
-
-      <div class="section-title">
-        <h2>دستاورد علمی</h2>
-        <p>مقاله علمی ارائه‌شده در کنفرانس</p>
-      </div>
-
-      <div class="card article-card">
-
-        <img
-          src="article-preview.jpg"
-          alt="گواهی و پذیرش مقاله علمی"
-          class="article-preview"
-        >
-
-        <h3>
-          Investigating the Safety and Efficacy of LED Light Therapy on Skin Disease Improvement
-        </h3>
-
-        <div class="article-meta">
-          Article Code: 607027<br>
-          Date: 2026-01-31<br>
-          Conference: Warsaw, Poland
-        </div>
-
-        <a
-          href="article-607027.pdf"
-          target="_blank"
-          class="article-button"
-        >
-          مشاهده نسخه مقاله / گواهی
         </a>
 
+        <div class="nav-links">
+          <a href="index.html">خانه</a>
+          <a href="venix.html">VENIX</a>
+          <a href="specifications.html">مشخصات فنی</a>
+          <a href="certifications.html" class="active">گواهی‌ها و دستاوردها</a>
+          <a href="contact.html">تماس</a>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-grid">
+
+          <div class="surface hero-copy">
+
+            <div class="eyebrow">CERTIFICATIONS &amp; ACHIEVEMENTS</div>
+
+            <h1>
+              گواهی‌ها و<br>
+              <span>دستاوردهای FARADID</span>
+            </h1>
+
+            <p>
+              مروری یکپارچه بر استانداردها، گواهی‌های رسمی، ثبت اختراعات
+              و مستندات علمی شرکت فرادید پردیس کاوش؛ همراه با دسترسی مستقیم
+              به مدارک ارائه‌شده.
+            </p>
+
+            <div class="hero-stats">
+
+              <div class="hero-stat">
+                <strong>ISO 13485</strong>
+                <span>سیستم مدیریت کیفیت تجهیزات پزشکی</span>
+              </div>
+
+              <div class="hero-stat">
+                <strong>03</strong>
+                <span>گواهی ثبت اختراع</span>
+              </div>
+
+              <div class="hero-stat">
+                <strong>01</strong>
+                <span>مستند انتشار علمی</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="surface hero-visual">
+
+            <a href="#iso-viewer" aria-label="مشاهده گواهی ISO 13485">
+
+              <img
+                src="iso-13485-github.jpg"
+                alt="گواهی ISO 13485:2016 شرکت فرادید پردیس کاوش"
+              >
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ISO -->
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="eyebrow">QUALITY CERTIFICATION</div>
+
+          <h2>
+            ISO <span>13485:2016</span>
+          </h2>
+
+          <p>
+            مشخصات این گواهی بر اساس سند ارائه‌شده برای شرکت تنظیم شده است.
+          </p>
+
+        </div>
+
+
+        <div class="iso-grid">
+
+          <article class="surface iso-info">
+
+            <div class="iso-heading">
+
+              <div>
+                <h3>
+                  سیستم مدیریت کیفیت تجهیزات پزشکی
+                </h3>
+
+                <p>
+                  Medical Devices — Quality Management Systems
+                </p>
+              </div>
+
+
+              <div class="iso-mark">
+
+                <div>
+                  <strong>ISO</strong>
+                  <small>13485:2016</small>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="iso-meta">
+
+              <div class="meta-card">
+                <span>نام سازمان</span>
+                <strong>Faradid Pardis Kavosh Co.</strong>
+              </div>
+
+              <div class="meta-card">
+                <span>شماره گواهی</span>
+                <strong>60292202613</strong>
+              </div>
+
+              <div class="meta-card">
+                <span>تاریخ صدور</span>
+                <strong>17 Aug 2026</strong>
+              </div>
+
+              <div class="meta-card">
+                <span>تاریخ انقضا</span>
+                <strong>17 Aug 2029</strong>
+              </div>
+
+              <div class="meta-card">
+                <span>اولین ممیزی مراقبتی</span>
+                <strong>17 Aug 2027</strong>
+              </div>
+
+              <div class="meta-card">
+                <span>دومین ممیزی مراقبتی</span>
+                <strong>17 Aug 2028</strong>
+              </div>
+
+              <div class="meta-card full">
+                <span>صادرکننده</span>
+                <strong>TECHNO CERT assessment private limited</strong>
+              </div>
+
+            </div>
+
+
+            <div class="scope">
+
+              <div class="scope-label">
+                ACTIVITY SCOPE
+              </div>
+
+              <p>
+                Design, Research, Development, Manufacturing and Sales of
+                Vein-Finding Devices for Medical Equipment, along with
+                after-Sales Services
+              </p>
+
+            </div>
+
+
+            <div class="iso-actions">
+
+              <div class="status">
+                اطلاعات بر اساس گواهی ارائه‌شده
+              </div>
+
+              <a class="btn" href="#iso-viewer">
+                مشاهده گواهی کامل ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="surface iso-document">
+
+            <a href="#iso-viewer">
+              <img
+                src="iso-13485-github.jpg"
+                alt="تصویر کامل گواهی ISO 13485:2016"
+              >
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PATENTS -->
+    <section class="section" id="patents">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="eyebrow">PATENTS</div>
+
+          <h2>
+            ثبت <span>اختراعات</span>
+          </h2>
+
+          <p>
+            سه مدرک ثبت اختراع ارائه‌شده در قالب کارت‌های مستقل نمایش داده شده‌اند.
+            برای دیدن نسخه بزرگ هر مدرک، روی تصویر یا دکمه مشاهده کلیک کنید.
+          </p>
+
+        </div>
+
+
+        <div class="patent-grid">
+
+
+          <article class="surface patent-card">
+
+            <div class="patent-image">
+
+              <a href="#patent1-viewer">
+                <img
+                  src="patent-01.jpg"
+                  alt="گواهی ثبت اختراع ۰۱"
+                  loading="lazy"
+                >
+              </a>
+
+              <div class="patent-tag">PATENT · 01</div>
+
+            </div>
+
+            <div class="patent-body">
+
+              <h3>
+                گواهی ثبت اختراع ۰۱
+              </h3>
+
+              <p>
+                تصویر مدرک ارائه‌شده با اطلاعات اشخاص پوشانده‌شده.
+              </p>
+
+              <a class="btn" href="#patent1-viewer">
+                مشاهده مدرک ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="surface patent-card">
+
+            <div class="patent-image">
+
+              <a href="#patent2-viewer">
+                <img
+                  src="patent-02.jpg"
+                  alt="گواهی ثبت اختراع ۰۲"
+                  loading="lazy"
+                >
+              </a>
+
+              <div class="patent-tag">PATENT · 02</div>
+
+            </div>
+
+            <div class="patent-body">
+
+              <h3>
+                گواهی ثبت اختراع ۰۲
+              </h3>
+
+              <p>
+                تصویر مدرک ارائه‌شده با اطلاعات اشخاص پوشانده‌شده.
+              </p>
+
+              <a class="btn" href="#patent2-viewer">
+                مشاهده مدرک ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="surface patent-card">
+
+            <div class="patent-image">
+
+              <a href="#patent3-viewer">
+                <img
+                  src="patent-03.jpg"
+                  alt="گواهی ثبت اختراع ۰۳"
+                  loading="lazy"
+                >
+              </a>
+
+              <div class="patent-tag">PATENT · 03</div>
+
+            </div>
+
+            <div class="patent-body">
+
+              <h3>
+                گواهی ثبت اختراع ۰۳
+              </h3>
+
+              <p>
+                تصویر مدرک ارائه‌شده با اطلاعات اشخاص پوشانده‌شده.
+              </p>
+
+              <a class="btn" href="#patent3-viewer">
+                مشاهده مدرک ↗
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PUBLICATION -->
+    <section class="section" id="publication">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="eyebrow">INTERNATIONAL PUBLICATION</div>
+
+          <h2>
+            دستاورد <span>علمی</span>
+          </h2>
+
+          <p>
+            پیش‌نمایش مستند علمی و دسترسی مستقیم به نسخه PDF در این بخش قرار گرفته است.
+          </p>
+
+        </div>
+
+
+        <div class="publication">
+
+
+          <article class="surface publication-preview">
+
+            <a href="#article-image-viewer">
+
+              <img
+                src="article-preview.jpg"
+                alt="پیش‌نمایش مقاله علمی"
+                loading="lazy"
+              >
+
+            </a>
+
+          </article>
+
+
+          <article class="surface publication-info">
+
+            <div class="eyebrow">
+              ARTICLE · 607027
+            </div>
+
+            <h3>
+              Investigating the Safety and Efficacy of LED Light Therapy on Skin Disease Improvement
+            </h3>
+
+            <p>
+              مشخصات این بخش مطابق اطلاعات درج‌شده در مستند مقاله تنظیم شده است.
+              نسخه کامل PDF نیز از همین صفحه قابل مشاهده است.
+            </p>
+
+
+            <div class="publication-meta">
+
+              <div>
+                <span>کد مقاله</span>
+                <strong>607027</strong>
+              </div>
+
+              <div>
+                <span>تاریخ</span>
+                <strong>2026-01-31</strong>
+              </div>
+
+              <div>
+                <span>محل درج‌شده</span>
+                <strong>Warsaw, Poland</strong>
+              </div>
+
+              <div>
+                <span>نوع مستند</span>
+                <strong>International Publication</strong>
+              </div>
+
+            </div>
+
+
+            <div class="publication-actions">
+
+              <a
+                class="btn"
+                href="article-607027.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                مشاهده PDF کامل ↗
+              </a>
+
+              <a
+                class="btn secondary"
+                href="#article-image-viewer"
+              >
+                مشاهده پیش‌نمایش
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DOCUMENTS -->
+    <section class="section" id="documents">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="eyebrow">DOCUMENT ARCHIVE</div>
+
+          <h2>
+            مدارک و <span>مستندات</span>
+          </h2>
+
+          <p>
+            دسترسی سریع به مدارکی که در این صفحه ارائه شده‌اند.
+          </p>
+
+        </div>
+
+
+        <div class="documents-grid">
+
+
+          <article class="surface document-card">
+
+            <div class="document-icon">ISO</div>
+
+            <div class="document-text">
+
+              <strong>
+                گواهی ISO 13485:2016
+              </strong>
+
+              <span>
+                گواهی سیستم مدیریت کیفیت تجهیزات پزشکی
+              </span>
+
+            </div>
+
+            <a
+              class="document-link"
+              href="#iso-viewer"
+            >
+              مشاهده
+            </a>
+
+          </article>
+
+
+          <article class="surface document-card">
+
+            <div class="document-icon">01</div>
+
+            <div class="document-text">
+
+              <strong>
+                ثبت اختراع ۰۱
+              </strong>
+
+              <span>
+                تصویر کامل مدرک ثبت اختراع
+              </span>
+
+            </div>
+
+            <a
+              class="document-link"
+              href="#patent1-viewer"
+            >
+              مشاهده
+            </a>
+
+          </article>
+
+
+          <article class="surface document-card">
+
+            <div class="document-icon">02</div>
+
+            <div class="document-text">
+
+              <strong>
+                ثبت اختراع ۰۲
+              </strong>
+
+              <span>
+                تصویر کامل مدرک ثبت اختراع
+              </span>
+
+            </div>
+
+            <a
+              class="document-link"
+              href="#patent2-viewer"
+            >
+              مشاهده
+            </a>
+
+          </article>
+
+
+          <article class="surface document-card">
+
+            <div class="document-icon">03</div>
+
+            <div class="document-text">
+
+              <strong>
+                ثبت اختراع ۰۳
+              </strong>
+
+              <span>
+                تصویر کامل مدرک ثبت اختراع
+              </span>
+
+            </div>
+
+            <a
+              class="document-link"
+              href="#patent3-viewer"
+            >
+              مشاهده
+            </a>
+
+          </article>
+
+
+          <article class="surface document-card">
+
+            <div class="document-icon">PDF</div>
+
+            <div class="document-text">
+
+              <strong>
+                مقاله علمی 607027
+              </strong>
+
+              <span>
+                نسخه کامل PDF مستند
+              </span>
+
+            </div>
+
+            <a
+              class="document-link"
+              href="article-607027.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              مشاهده PDF
+            </a>
+
+          </article>
+
+
+          <article class="surface document-card">
+
+            <div class="document-icon">IMG</div>
+
+            <div class="document-text">
+
+              <strong>
+                پیش‌نمایش مقاله
+              </strong>
+
+              <span>
+                تصویر پیش‌نمایش مستند علمی
+              </span>
+
+            </div>
+
+            <a
+              class="document-link"
+              href="#article-image-viewer"
+            >
+              مشاهده
+            </a>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+
+          <img
+            src="faradid-logo.jpg"
+            alt="لوگوی فرادید"
+          >
+
+          <div>
+            <strong>FARADID</strong>
+            <small>فرادید پردیس کاوش</small>
+          </div>
+
+        </div>
+
+        <div class="footer-copy">
+          FARADID PARDIS KAVOSH · 2026 ©
+        </div>
+
       </div>
 
     </div>
-  </section>
 
-</main>
+  </footer>
 
 
-<footer>
-  <a href="certifications.html" class="iso-footer-badge">
-    ISO 13485:2016
-  </a>
+  <!-- LIGHTBOX : ISO -->
+  <div class="viewer" id="iso-viewer">
 
-  <div>
-    شرکت فرادید پردیس کاوش (سهامی خاص)
+    <div class="viewer-box">
+
+      <a href="#" class="close" aria-label="بستن">×</a>
+
+      <img
+        src="iso-13485-github.jpg"
+        alt="گواهی ISO 13485:2016"
+      >
+
+    </div>
+
   </div>
 
-  <div>
-    شماره ثبت: 9747
+
+  <!-- LIGHTBOX : PATENT 01 -->
+  <div class="viewer" id="patent1-viewer">
+
+    <div class="viewer-box">
+
+      <a href="#" class="close" aria-label="بستن">×</a>
+
+      <img
+        src="patent-01.jpg"
+        alt="گواهی ثبت اختراع اول"
+      >
+
+    </div>
+
   </div>
-</footer>
+
+
+  <!-- LIGHTBOX : PATENT 02 -->
+  <div class="viewer" id="patent2-viewer">
+
+    <div class="viewer-box">
+
+      <a href="#" class="close" aria-label="بستن">×</a>
+
+      <img
+        src="patent-02.jpg"
+        alt="گواهی ثبت اختراع دوم"
+      >
+
+    </div>
+
+  </div>
+
+
+  <!-- LIGHTBOX : PATENT 03 -->
+  <div class="viewer" id="patent3-viewer">
+
+    <div class="viewer-box">
+
+      <a href="#" class="close" aria-label="بستن">×</a>
+
+      <img
+        src="patent-03.jpg"
+        alt="گواهی ثبت اختراع سوم"
+      >
+
+    </div>
+
+  </div>
+
+
+  <!-- LIGHTBOX : ARTICLE PREVIEW -->
+  <div class="viewer" id="article-image-viewer">
+
+    <div class="viewer-box">
+
+      <a href="#" class="close" aria-label="بستن">×</a>
+
+      <img
+        src="article-preview.jpg"
+        alt="پیش‌نمایش مقاله علمی"
+      >
+
+    </div>
+
+  </div>
 
 </body>
 </html>
