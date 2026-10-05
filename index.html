@@ -685,3 +685,64 @@
 
   </div>
 </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 18);
+    });
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.dataset.open === 'true';
+
+      if(isOpen){
+        navLinks.dataset.open = 'false';
+        navLinks.removeAttribute('style');
+        return;
+      }
+
+      navLinks.dataset.open = 'true';
+
+      Object.assign(navLinks.style, {
+        display:'flex',
+        position:'absolute',
+        top:'66px',
+        right:'0',
+        left:'0',
+        flexDirection:'column',
+        alignItems:'stretch',
+        padding:'10px',
+        border:'1px solid rgba(155,198,245,.15)',
+        borderRadius:'16px',
+        background:'rgba(4,14,28,.98)',
+        backdropFilter:'blur(16px)',
+        boxShadow:'0 20px 40px rgba(0,0,0,.28)'
+      });
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if(window.innerWidth <= 980){
+          navLinks.dataset.open = 'false';
+          navLinks.removeAttribute('style');
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
