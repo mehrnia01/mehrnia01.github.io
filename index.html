@@ -28,6 +28,7 @@
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
+
     body{
       font-family:Tahoma,Arial,sans-serif;
       color:var(--text);
@@ -49,381 +50,1393 @@
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
     }
 
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    button{font:inherit}
-    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto;position:relative;z-index:2}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    .container{
+      width:min(var(--max),calc(100% - 40px));
+      margin-inline:auto;
+      position:relative;
+      z-index:2;
+    }
 
     /* NAV */
-    .nav-wrap{position:fixed;inset:0 0 auto;z-index:100;padding:14px 0;transition:.3s ease}
-    .nav-wrap.scrolled{background:rgba(2,7,18,.76);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav-wrap{
+      position:fixed;
+      inset:0 0 auto;
+      z-index:100;
+      padding:14px 0;
+      transition:.3s ease;
+    }
+
+    .nav-wrap.scrolled{
+      background:rgba(2,7,18,.76);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+
     nav{
-      display:flex;align-items:center;justify-content:space-between;gap:20px;
-      min-height:64px;padding:8px 12px 8px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:64px;
+      padding:8px 12px 8px 16px;
       border:1px solid var(--line);
       border-radius:20px;
       background:rgba(5,17,34,.58);
       backdrop-filter:blur(16px);
       box-shadow:0 14px 40px rgba(0,0,0,.12);
     }
-    .brand{display:flex;align-items:center;gap:12px;min-width:240px}
-    .brand img{width:44px;height:44px;object-fit:cover;border-radius:13px;border:1px solid rgba(255,255,255,.10)}
-    .brand strong{display:block;letter-spacing:2px;font-size:15px}
-    .brand small{display:block;color:#7f90a7;font-size:9px;letter-spacing:1.8px;line-height:1.5}
-    .nav-links{display:flex;align-items:center;gap:5px}
-    .nav-links a{font-size:13px;color:#c4d0df;padding:10px 12px;border-radius:12px;transition:.25s ease}
-    .nav-links a:hover{color:#fff;background:rgba(255,255,255,.055)}
-    .nav-links .nav-cta{border:1px solid var(--line-strong);color:#fff;background:linear-gradient(135deg,rgba(21,136,240,.19),rgba(255,255,255,.03))}
-    .menu-btn{display:none;background:none;color:#fff;border:0;font-size:25px;cursor:pointer}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:240px;
+    }
+
+    .brand img{
+      width:44px;
+      height:44px;
+      object-fit:cover;
+      border-radius:13px;
+      border:1px solid rgba(255,255,255,.10);
+    }
+
+    .brand strong{
+      display:block;
+      letter-spacing:2px;
+      font-size:15px;
+    }
+
+    .brand small{
+      display:block;
+      color:#7f90a7;
+      font-size:9px;
+      letter-spacing:1.8px;
+      line-height:1.5;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:5px;
+    }
+
+    .nav-links a{
+      font-size:13px;
+      color:#c4d0df;
+      padding:10px 12px;
+      border-radius:12px;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover{
+      color:#fff;
+      background:rgba(255,255,255,.055);
+    }
+
+    .nav-links .nav-cta{
+      border:1px solid var(--line-strong);
+      color:#fff;
+      background:linear-gradient(
+        135deg,
+        rgba(21,136,240,.19),
+        rgba(255,255,255,.03)
+      );
+    }
+
+    .menu-btn{
+      display:none;
+      background:none;
+      color:#fff;
+      border:0;
+      font-size:25px;
+      cursor:pointer;
+    }
 
     /* HERO */
-    .hero{min-height:100vh;display:flex;align-items:center;padding:142px 0 72px}
-    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:58px;align-items:center}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:9px;
-      margin-bottom:20px;padding:8px 13px;
-      border:1px solid rgba(96,189,255,.24);border-radius:999px;
-      background:rgba(22,131,255,.07);
-      color:#bfe4ff;font-size:11px;letter-spacing:.2px
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:142px 0 72px;
     }
-    .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 14px var(--blue)}
-    .hero h1{font-size:clamp(44px,6vw,78px);line-height:1.06;letter-spacing:-2px;margin-bottom:22px}
-    .hero h1 .line-soft{color:#dce7f5}
-    .gradient{background:linear-gradient(90deg,#fff 5%,#d6e4f3 53%,#4fc2ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero-copy>p{max-width:690px;color:#aebcd0;font-size:16px;line-height:2.05}
-    .hero-copy>p strong{color:#eaf5ff}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:14px;border:1px solid var(--line-strong);transition:.25s ease;font-size:13px}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:linear-gradient(135deg,#149af0,#1262d5);box-shadow:0 16px 32px rgba(0,112,255,.18)}
-    .btn-secondary{background:rgba(255,255,255,.035);color:#dbe8f8}
-    .hero-proof{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px}
-    .proof{display:flex;flex-direction:column;gap:1px}
-    .proof strong{font-size:12px;color:#edf5ff;letter-spacing:1px}
-    .proof span{font-size:11px;color:#7f90a7}
 
-    .hero-visual{position:relative}
-    .hero-logo-frame{
-      position:relative;padding:10px;border-radius:34px;
-      background:linear-gradient(135deg,rgba(93,191,255,.30),rgba(255,255,255,.025) 42%,rgba(25,93,224,.18));
-      box-shadow:0 30px 85px rgba(0,0,0,.42),0 0 50px rgba(14,126,255,.07);
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:58px;
+      align-items:center;
     }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      margin-bottom:20px;
+      padding:8px 13px;
+      border:1px solid rgba(96,189,255,.24);
+      border-radius:999px;
+      background:rgba(22,131,255,.07);
+      color:#bfe4ff;
+      font-size:11px;
+      letter-spacing:.2px;
+    }
+
+    .eyebrow i{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--blue);
+      box-shadow:0 0 14px var(--blue);
+    }
+
+    .hero h1{
+      font-size:clamp(44px,6vw,78px);
+      line-height:1.06;
+      letter-spacing:-2px;
+      margin-bottom:22px;
+    }
+
+    .hero h1 .line-soft{
+      color:#dce7f5;
+    }
+
+    .gradient{
+      background:linear-gradient(
+        90deg,
+        #fff 5%,
+        #d6e4f3 53%,
+        #4fc2ff 100%
+      );
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero-copy>p{
+      max-width:690px;
+      color:#aebcd0;
+      font-size:16px;
+      line-height:2.05;
+    }
+
+    .hero-copy>p strong{
+      color:#eaf5ff;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:13px 18px;
+      border-radius:14px;
+      border:1px solid var(--line-strong);
+      transition:.25s ease;
+      font-size:13px;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#149af0,#1262d5);
+      box-shadow:0 16px 32px rgba(0,112,255,.18);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.035);
+      color:#dbe8f8;
+    }
+
+    .hero-proof{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .proof{
+      display:flex;
+      flex-direction:column;
+      gap:1px;
+    }
+
+    .proof strong{
+      font-size:12px;
+      color:#edf5ff;
+      letter-spacing:1px;
+    }
+
+    .proof span{
+      font-size:11px;
+      color:#7f90a7;
+    }
+
+    .hero-visual{
+      position:relative;
+    }
+
+    .hero-logo-frame{
+      position:relative;
+      padding:10px;
+      border-radius:34px;
+      background:linear-gradient(
+        135deg,
+        rgba(93,191,255,.30),
+        rgba(255,255,255,.025) 42%,
+        rgba(25,93,224,.18)
+      );
+      box-shadow:
+        0 30px 85px rgba(0,0,0,.42),
+        0 0 50px rgba(14,126,255,.07);
+    }
+
     .hero-logo-inner{
-      position:relative;overflow:hidden;border-radius:26px;
+      position:relative;
+      overflow:hidden;
+      border-radius:26px;
       border:1px solid rgba(255,255,255,.08);
       background:
         radial-gradient(circle at 50% 42%,rgba(12,102,196,.14),transparent 40%),
         linear-gradient(180deg,#071528 0%,#03101f 100%);
       padding:22px 20px 18px;
     }
+
     .hero-logo-inner::before{
-      content:"";position:absolute;inset:0;pointer-events:none;
-      background:linear-gradient(115deg,transparent 0%,rgba(42,161,255,.06) 45%,transparent 56%);
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(
+        115deg,
+        transparent 0%,
+        rgba(42,161,255,.06) 45%,
+        transparent 56%
+      );
     }
+
     .hero-logo-kicker{
-      position:relative;text-align:center;color:#6ecaff;font-size:9px;letter-spacing:3px;
-      margin-bottom:14px;white-space:nowrap;
+      position:relative;
+      text-align:center;
+      color:#6ecaff;
+      font-size:9px;
+      letter-spacing:3px;
+      margin-bottom:14px;
+      white-space:nowrap;
     }
+
     .hero-logo-stage{
-      position:relative;border-radius:18px;overflow:hidden;
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
       border:1px solid rgba(112,190,255,.15);
       background:linear-gradient(180deg,#020713,#071527);
       box-shadow:inset 0 0 35px rgba(3,17,35,.45);
-      min-height:520px;display:flex;align-items:center;justify-content:center;
+      min-height:520px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
+
     .hero-logo-stage::after{
-      content:"";position:absolute;inset:0;pointer-events:none;
-      background:radial-gradient(circle at 50% 44%,rgba(0,152,255,.09),transparent 52%);
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:radial-gradient(
+        circle at 50% 44%,
+        rgba(0,152,255,.09),
+        transparent 52%
+      );
     }
+
     .hero-logo-stage img{
-      width:100%;height:520px;object-fit:contain;object-position:center;
+      width:100%;
+      height:520px;
+      object-fit:contain;
+      object-position:center;
       background:#020713;
     }
+
     .hero-logo-footer{
-      position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
-      margin-top:13px;z-index:2;
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin-top:13px;
+      z-index:2;
     }
+
     .hero-logo-pill{
-      padding:8px 11px;border-radius:10px;border:1px solid rgba(113,196,255,.25);
-      background:rgba(4,14,28,.66);backdrop-filter:blur(10px);font-size:9px;color:#bfe5ff;
+      padding:8px 11px;
+      border-radius:10px;
+      border:1px solid rgba(113,196,255,.25);
+      background:rgba(4,14,28,.66);
+      backdrop-filter:blur(10px);
+      font-size:9px;
+      color:#bfe5ff;
     }
-    .hero-logo-caption{text-align:right}
-    .hero-logo-caption strong{display:block;font-size:25px;letter-spacing:4px}
-    .hero-logo-caption span{display:block;color:#80b9e7;font-size:9px;letter-spacing:2px;margin-top:2px}
+
+    .hero-logo-caption{
+      text-align:right;
+    }
+
+    .hero-logo-caption strong{
+      display:block;
+      font-size:25px;
+      letter-spacing:4px;
+    }
+
+    .hero-logo-caption span{
+      display:block;
+      color:#80b9e7;
+      font-size:9px;
+      letter-spacing:2px;
+      margin-top:2px;
+    }
 
     /* SECTION COMMON */
-    section{padding:104px 0}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:40px}
-    .kicker{color:#63c9ff;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:8px}
-    .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.2}
-    .section-head p{max-width:520px;color:var(--muted);font-size:13px;line-height:1.9}
+    section{
+      padding:104px 0;
+    }
 
-    .glass{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(13,32,58,.66),rgba(4,14,28,.66));box-shadow:0 24px 60px rgba(0,0,0,.20)}
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:30px;
+      margin-bottom:40px;
+    }
+
+    .kicker{
+      color:#63c9ff;
+      font-size:11px;
+      letter-spacing:2.2px;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .section-head h2{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.2;
+    }
+
+    .section-head p{
+      max-width:520px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.9;
+    }
+
+    .glass{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(
+        180deg,
+        rgba(13,32,58,.66),
+        rgba(4,14,28,.66)
+      );
+      box-shadow:0 24px 60px rgba(0,0,0,.20);
+    }
 
     /* COMPANY */
-    .company-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:24px}
-    .about-card{padding:34px}
-    .about-card .lead{color:#aebbd0;font-size:15px;line-height:2}
-    .company-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
-    .point{padding:17px;border:1px solid rgba(136,182,229,.11);border-radius:16px;background:rgba(255,255,255,.025)}
-    .point small{display:block;color:#7e8fa5;font-size:10px;margin-bottom:4px}
-    .point strong{font-size:13px}
-    .image-card{overflow:hidden;min-height:100%}
-    .image-card img{width:100%;height:100%;min-height:390px;object-fit:contain;object-position:center;background:#071326;display:block;transition:.55s}
-    .image-card:hover img{transform:scale(1.03)}
+    .company-grid{
+      display:grid;
+      grid-template-columns:.88fr 1.12fr;
+      gap:24px;
+    }
+
+    .about-card{
+      padding:34px;
+    }
+
+    .about-card .lead{
+      color:#aebbd0;
+      font-size:15px;
+      line-height:2;
+    }
+
+    .company-points{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .point{
+      padding:17px;
+      border:1px solid rgba(136,182,229,.11);
+      border-radius:16px;
+      background:rgba(255,255,255,.025);
+    }
+
+    .point small{
+      display:block;
+      color:#7e8fa5;
+      font-size:10px;
+      margin-bottom:4px;
+    }
+
+    .point strong{
+      font-size:13px;
+    }
+
+    .image-card{
+      overflow:hidden;
+      min-height:100%;
+    }
+
+    .image-card img{
+      width:100%;
+      height:100%;
+      min-height:390px;
+      object-fit:contain;
+      object-position:center;
+      background:#071326;
+      display:block;
+      transition:.55s;
+    }
+
+    .image-card:hover img{
+      transform:scale(1.03);
+    }
 
     /* CAPABILITIES */
-    .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .cap{padding:25px;min-height:205px}
-    .cap-num{font-size:11px;color:#62c6ff;letter-spacing:2px;margin-bottom:22px}
-    .cap h3{font-size:19px;margin-bottom:10px}
-    .cap p{color:#8f9db1;font-size:12px;line-height:1.9}
+    .cap-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .cap{
+      padding:25px;
+      min-height:205px;
+    }
+
+    .cap-num{
+      font-size:11px;
+      color:#62c6ff;
+      letter-spacing:2px;
+      margin-bottom:22px;
+    }
+
+    .cap h3{
+      font-size:19px;
+      margin-bottom:10px;
+    }
+
+    .cap p{
+      color:#8f9db1;
+      font-size:12px;
+      line-height:1.9;
+    }
 
     /* VENIX */
-    .product-feature{display:grid;grid-template-columns:1.02fr .98fr;gap:24px}
-    .product-copy{padding:36px}
-    .product-logo{font-size:44px;font-weight:800;letter-spacing:7px;line-height:1;margin-bottom:7px}
-    .product-tag{color:#67c9ff;font-size:11px;letter-spacing:3px;margin-bottom:19px}
-    .product-copy>p{color:#aab8cc;font-size:14px;line-height:2}
-    .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:25px}
-    .feature{padding:16px;border:1px solid rgba(126,183,230,.12);border-radius:15px;background:rgba(255,255,255,.025)}
-    .feature b{display:block;font-size:13px;margin-bottom:4px}
-    .feature span{font-size:10px;color:#8493a8}
-    .product-image{overflow:hidden}
-    .product-image img{width:100%;height:100%;min-height:520px;object-fit:cover;transition:.5s}
-    .product-image:hover img{transform:scale(1.025)}
-    .product-actions{margin-top:24px;display:flex;gap:11px;flex-wrap:wrap}
+    .product-feature{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:24px;
+    }
+
+    .product-copy{
+      padding:36px;
+    }
+
+    .product-logo{
+      font-size:44px;
+      font-weight:800;
+      letter-spacing:7px;
+      line-height:1;
+      margin-bottom:7px;
+    }
+
+    .product-tag{
+      color:#67c9ff;
+      font-size:11px;
+      letter-spacing:3px;
+      margin-bottom:19px;
+    }
+
+    .product-copy>p{
+      color:#aab8cc;
+      font-size:14px;
+      line-height:2;
+    }
+
+    .feature-list{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:11px;
+      margin-top:25px;
+    }
+
+    .feature{
+      padding:16px;
+      border:1px solid rgba(126,183,230,.12);
+      border-radius:15px;
+      background:rgba(255,255,255,.025);
+    }
+
+    .feature b{
+      display:block;
+      font-size:13px;
+      margin-bottom:4px;
+    }
+
+    .feature span{
+      font-size:10px;
+      color:#8493a8;
+    }
+
+    .product-image{
+      overflow:hidden;
+    }
+
+    .product-image img{
+      width:100%;
+      height:100%;
+      min-height:520px;
+      object-fit:cover;
+      transition:.5s;
+    }
+
+    .product-image:hover img{
+      transform:scale(1.025);
+    }
+
+    .product-actions{
+      margin-top:24px;
+      display:flex;
+      gap:11px;
+      flex-wrap:wrap;
+    }
 
     /* SHOWCASE STRIP */
-    .quote-strip{padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:22px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(90deg,rgba(24,125,224,.10),rgba(255,255,255,.02))}
-    .quote-strip strong{font-size:15px}
-    .quote-strip span{color:#8291a5;font-size:11px}
+    .quote-strip{
+      padding:26px 30px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+      margin-top:22px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(
+        90deg,
+        rgba(24,125,224,.10),
+        rgba(255,255,255,.02)
+      );
+    }
+
+    .quote-strip strong{
+      font-size:15px;
+    }
+
+    .quote-strip span{
+      color:#8291a5;
+      font-size:11px;
+    }
 
     /* GALLERY */
-    .gallery{display:grid;grid-template-columns:1.3fr .85fr .85fr;gap:14px}
-    .gallery-item{position:relative;overflow:hidden;min-height:240px;border:1px solid var(--line);border-radius:20px;background:#071326}
-    .gallery-item.big{grid-row:span 2;min-height:495px}
-    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.5s}
-    .gallery-item.big img{object-fit:contain;background:#071326}
-    .gallery-item:hover img{transform:scale(1.035)}
-    .gallery-overlay{position:absolute;inset:auto 0 0;padding:17px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.82));font-size:12px}
+    .gallery{
+      display:grid;
+      grid-template-columns:1.3fr .85fr .85fr;
+      gap:14px;
+    }
+
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      min-height:240px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#071326;
+    }
+
+    .gallery-item.big{
+      grid-row:span 2;
+      min-height:495px;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:.5s;
+    }
+
+    .gallery-item.big img{
+      object-fit:contain;
+      background:#071326;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.035);
+    }
+
+    .gallery-overlay{
+      position:absolute;
+      inset:auto 0 0;
+      padding:17px;
+      background:linear-gradient(
+        180deg,
+        transparent,
+        rgba(0,0,0,.82)
+      );
+      font-size:12px;
+    }
 
     /* CTA */
-    .cta{position:relative;overflow:hidden;padding:52px}
-    .cta::before{content:"";position:absolute;left:-140px;top:-220px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(28,155,255,.23),transparent 68%)}
-    .cta-inner{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .cta h3{font-size:clamp(26px,4vw,41px);line-height:1.25}
-    .cta p{color:#8f9db1;font-size:13px;margin-top:9px}
+    .cta{
+      position:relative;
+      overflow:hidden;
+      padding:52px;
+    }
+
+    .cta::before{
+      content:"";
+      position:absolute;
+      left:-140px;
+      top:-220px;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background:radial-gradient(
+        circle,
+        rgba(28,155,255,.23),
+        transparent 68%
+      );
+    }
+
+    .cta-inner{
+      position:relative;
+      z-index:2;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .cta h3{
+      font-size:clamp(26px,4vw,41px);
+      line-height:1.25;
+    }
+
+    .cta p{
+      color:#8f9db1;
+      font-size:13px;
+      margin-top:9px;
+    }
 
     /* FOOTER */
-    footer{padding:34px 0 28px;border-top:1px solid var(--line);margin-top:15px}
-    .footer{display:flex;align-items:end;justify-content:space-between;gap:20px}
-    .footer-brand{display:flex;align-items:center;gap:11px}
-    .footer-brand img{width:45px;height:45px;border-radius:12px;object-fit:cover}
-    .footer-brand strong{display:block;letter-spacing:1.7px;font-size:13px}
-    .footer-brand span{display:block;color:#6f7d91;font-size:10px}
-    .footer-links{display:flex;gap:7px;flex-wrap:wrap}
-    .footer-links a{font-size:11px;color:#8c9bae;padding:6px 9px}
-    .copyright{font-size:10px;color:#607086}
+    footer{
+      padding:34px 0 28px;
+      border-top:1px solid var(--line);
+      margin-top:15px;
+    }
+
+    .footer{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+    }
+
+    .footer-brand img{
+      width:45px;
+      height:45px;
+      border-radius:12px;
+      object-fit:cover;
+    }
+
+    .footer-brand strong{
+      display:block;
+      letter-spacing:1.7px;
+      font-size:13px;
+    }
+
+    .footer-brand span{
+      display:block;
+      color:#6f7d91;
+      font-size:10px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:7px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      font-size:11px;
+      color:#8c9bae;
+      padding:6px 9px;
+    }
+
+    .copyright{
+      font-size:10px;
+      color:#607086;
+    }
 
     /* REVEAL */
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.show{opacity:1;transform:none}
-
-    /* RESPONSIVE / MOBILE — CLEAN SINGLE SYSTEM */
-    @media (max-width: 980px){
-      .container{width:min(var(--max),calc(100% - 32px))}
-      .hero{padding-top:118px}
-      .hero-grid,.company-grid,.product-feature{grid-template-columns:1fr;gap:28px}
-      .hero-copy{order:1}
-      .hero-visual{order:2}
-      .hero-logo-stage{min-height:470px}
-      .hero-logo-stage img{height:470px;object-fit:contain}
-      .section-head{align-items:flex-start;flex-direction:column}
-      .cap-grid{grid-template-columns:1fr 1fr}
-      .gallery{grid-template-columns:1fr 1fr}
-      .gallery-item.big{grid-column:1/-1;grid-row:auto;min-height:420px}
-      .cta-inner{align-items:flex-start;flex-direction:column}
-      .nav-links{display:none}
-      .menu-btn{display:block}
-      nav{position:relative}
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
     }
 
-    @media (max-width: 640px){
-      html,body{width:100%;max-width:100%;overflow-x:hidden}
-      .container{width:calc(100% - 24px);max-width:100%}
+    .reveal.show{
+      opacity:1;
+      transform:none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:980px){
+      .container{
+        width:min(var(--max),calc(100% - 32px));
+      }
+
+      .hero{
+        padding-top:118px;
+      }
+
+      .hero-grid,
+      .company-grid,
+      .product-feature{
+        grid-template-columns:1fr;
+        gap:28px;
+      }
+
+      .hero-copy{
+        order:1;
+      }
+
+      .hero-visual{
+        order:2;
+      }
+
+      .hero-logo-stage{
+        min-height:470px;
+      }
+
+      .hero-logo-stage img{
+        height:470px;
+        object-fit:contain;
+      }
+
+      .section-head{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .cap-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .gallery{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .gallery-item.big{
+        grid-column:1/-1;
+        grid-row:auto;
+        min-height:420px;
+      }
+
+      .cta-inner{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      nav{
+        position:relative;
+      }
+    }
+
+    @media (max-width:640px){
+      html,body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden;
+      }
+
+      .container{
+        width:calc(100% - 24px);
+        max-width:100%;
+      }
 
       /* Header */
-      .nav-wrap{padding:10px 0}
-      nav{min-height:58px;padding:7px 9px 7px 10px;border-radius:18px;gap:8px}
-      .brand{min-width:0;gap:0}
-      .brand img{width:42px;height:42px;border-radius:12px}
-      .brand div{display:none}
-      .menu-btn{display:block;width:44px;height:44px;flex:0 0 44px;font-size:25px;line-height:1;padding:0}
-      .nav-links{display:none;position:absolute !important;top:66px !important;right:0 !important;left:0 !important;width:100% !important;max-width:100% !important}
-      .nav-links[data-open="true"]{display:flex !important;flex-direction:column !important;align-items:stretch !important;gap:4px !important;padding:9px !important}
-      .nav-links a{font-size:13px;padding:11px 12px;text-align:center}
+      .nav-wrap{
+        padding:10px 0;
+      }
+
+      nav{
+        min-height:58px;
+        padding:7px 9px 7px 10px;
+        border-radius:18px;
+        gap:8px;
+      }
+
+      .brand{
+        min-width:0;
+        gap:0;
+      }
+
+      .brand img{
+        width:42px;
+        height:42px;
+        border-radius:12px;
+      }
+
+      .brand div{
+        display:none;
+      }
+
+      .menu-btn{
+        display:block;
+        width:44px;
+        height:44px;
+        flex:0 0 44px;
+        font-size:25px;
+        line-height:1;
+        padding:0;
+      }
+
+      .nav-links{
+        display:none;
+        position:absolute !important;
+        top:66px !important;
+        right:0 !important;
+        left:0 !important;
+        width:100% !important;
+        max-width:100% !important;
+      }
+
+      .nav-links[data-open="true"]{
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:stretch !important;
+        gap:4px !important;
+        padding:9px !important;
+      }
+
+      .nav-links a{
+        font-size:13px;
+        padding:11px 12px;
+        text-align:center;
+      }
 
       /* Hero */
-      .hero{min-height:auto;padding:104px 0 58px}
-      .hero-grid{display:flex;flex-direction:column;gap:24px}
-      .hero-copy{width:100%;max-width:100%;text-align:center}
-      .eyebrow{display:flex;width:100%;max-width:100%;justify-content:center;align-items:center;margin:0 auto 17px;padding:8px 11px;font-size:10px;line-height:1.8;white-space:normal;text-align:center}
-      .hero h1,.hero-copy h1{font-size:clamp(34px,11vw,50px);line-height:1.16;letter-spacing:-1px;margin-bottom:18px;overflow-wrap:anywhere}
-      .hero-copy>p{max-width:100%;font-size:13px;line-height:2;text-align:center}
-      .hero-actions{width:100%;display:flex;flex-direction:column;gap:10px;margin-top:20px}
-      .hero-actions .btn,.hero-actions a{width:100%;max-width:100%;min-height:48px}
-      .hero-proof{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;text-align:center}
-      .proof{padding:11px 8px;border:1px solid rgba(155,198,245,.10);border-radius:14px;background:rgba(255,255,255,.02)}
+      .hero{
+        min-height:auto;
+        padding:104px 0 58px;
+      }
 
-      /* Hero logo — never crop */
-      .hero-logo-frame{width:100%;padding:7px;border-radius:24px}
-      .hero-logo-inner{padding:12px 11px 13px;border-radius:19px}
-      .hero-logo-kicker{font-size:8px;letter-spacing:2px;white-space:normal;line-height:1.7;margin-bottom:10px}
-      .hero-logo-stage{min-height:0;height:auto;border-radius:15px}
-      .hero-logo-stage img{width:100%;height:auto;min-height:0;aspect-ratio:1/1;object-fit:contain;object-position:center;background:#020713}
-      .hero-logo-footer{align-items:center;gap:10px;margin-top:10px}
-      .hero-logo-caption strong{font-size:18px;letter-spacing:3px}
-      .hero-logo-caption span{font-size:7px;letter-spacing:1.2px}
-      .hero-logo-pill{font-size:8px;padding:6px 8px}
+      .hero-grid{
+        display:flex;
+        flex-direction:column;
+        gap:24px;
+      }
+
+      .hero-copy{
+        width:100%;
+        max-width:100%;
+        text-align:center;
+      }
+
+      .eyebrow{
+        display:flex;
+        width:100%;
+        max-width:100%;
+        justify-content:center;
+        align-items:center;
+        margin:0 auto 17px;
+        padding:8px 11px;
+        font-size:10px;
+        line-height:1.8;
+        white-space:normal;
+        text-align:center;
+      }
+
+      .hero h1,
+      .hero-copy h1{
+        font-size:clamp(34px,11vw,50px);
+        line-height:1.16;
+        letter-spacing:-1px;
+        margin-bottom:18px;
+        overflow-wrap:anywhere;
+      }
+
+      .hero-copy>p{
+        max-width:100%;
+        font-size:13px;
+        line-height:2;
+        text-align:center;
+      }
+
+      .hero-actions{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        margin-top:20px;
+      }
+
+      .hero-actions .btn,
+      .hero-actions a{
+        width:100%;
+        max-width:100%;
+        min-height:48px;
+      }
+
+      .hero-proof{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+        margin-top:20px;
+        text-align:center;
+      }
+
+      .proof{
+        padding:11px 8px;
+        border:1px solid rgba(155,198,245,.10);
+        border-radius:14px;
+        background:rgba(255,255,255,.02);
+      }
+
+      /* Hero logo */
+      .hero-logo-frame{
+        width:100%;
+        padding:7px;
+        border-radius:24px;
+      }
+
+      .hero-logo-inner{
+        padding:12px 11px 13px;
+        border-radius:19px;
+      }
+
+      .hero-logo-kicker{
+        font-size:8px;
+        letter-spacing:2px;
+        white-space:normal;
+        line-height:1.7;
+        margin-bottom:10px;
+      }
+
+      .hero-logo-stage{
+        min-height:0;
+        height:auto;
+        border-radius:15px;
+      }
+
+      .hero-logo-stage img{
+        width:100%;
+        height:auto;
+        min-height:0;
+        aspect-ratio:1/1;
+        object-fit:contain;
+        object-position:center;
+        background:#020713;
+      }
+
+      .hero-logo-footer{
+        align-items:center;
+        gap:10px;
+        margin-top:10px;
+      }
+
+      .hero-logo-caption strong{
+        font-size:18px;
+        letter-spacing:3px;
+      }
+
+      .hero-logo-caption span{
+        font-size:7px;
+        letter-spacing:1.2px;
+      }
+
+      .hero-logo-pill{
+        font-size:8px;
+        padding:6px 8px;
+      }
 
       /* Sections */
-      section{padding:66px 0}
-      .section-head{margin-bottom:26px;gap:16px}
-      .kicker{font-size:9px;letter-spacing:1.8px}
-      .section-head h2{font-size:clamp(28px,8.5vw,40px);line-height:1.25}
-      .section-head p{max-width:100%;font-size:12px;line-height:1.9}
+      section{
+        padding:66px 0;
+      }
+
+      .section-head{
+        margin-bottom:26px;
+        gap:16px;
+      }
+
+      .kicker{
+        font-size:9px;
+        letter-spacing:1.8px;
+      }
+
+      .section-head h2{
+        font-size:clamp(28px,8.5vw,40px);
+        line-height:1.25;
+      }
+
+      .section-head p{
+        max-width:100%;
+        font-size:12px;
+        line-height:1.9;
+      }
 
       /* Company */
-      .company-grid{gap:18px}
-      .about-card{padding:21px}
-      .about-card .lead{font-size:13px;line-height:2}
-      .company-points{grid-template-columns:1fr;gap:10px;margin-top:19px}
-      .point{padding:14px}
-      .point strong{font-size:12px}
-      .image-card{min-height:0;border-radius:22px}
-      .image-card img{width:100%;height:auto;min-height:0;aspect-ratio:4/3;object-fit:contain;object-position:center;background:#071326}
+      .company-grid{
+        gap:18px;
+      }
+
+      .about-card{
+        padding:21px;
+      }
+
+      .about-card .lead{
+        font-size:13px;
+        line-height:2;
+      }
+
+      .company-points{
+        grid-template-columns:1fr;
+        gap:10px;
+        margin-top:19px;
+      }
+
+      .point{
+        padding:14px;
+      }
+
+      .point strong{
+        font-size:12px;
+      }
+
+      .image-card{
+        min-height:0;
+        border-radius:22px;
+      }
+
+      .image-card img{
+        width:100%;
+        height:auto;
+        min-height:0;
+        aspect-ratio:4/3;
+        object-fit:contain;
+        object-position:center;
+        background:#071326;
+      }
 
       /* Capabilities */
-      .cap-grid{grid-template-columns:1fr;gap:12px}
-      .cap{min-height:0;padding:20px}
-      .cap-num{font-size:9px;margin-bottom:15px}
-      .cap h3{font-size:17px;margin-bottom:8px}
-      .cap p{font-size:11px;line-height:1.9}
+      .cap-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .cap{
+        min-height:0;
+        padding:20px;
+      }
+
+      .cap-num{
+        font-size:9px;
+        margin-bottom:15px;
+      }
+
+      .cap h3{
+        font-size:17px;
+        margin-bottom:8px;
+      }
+
+      .cap p{
+        font-size:11px;
+        line-height:1.9;
+      }
 
       /* VENIX preview */
-      .product-feature{gap:18px}
-      .product-copy{padding:21px}
-      .product-logo{font-size:36px;letter-spacing:6px}
-      .product-tag{font-size:9px;letter-spacing:2.3px;margin-bottom:14px}
-      .product-copy>p{font-size:12px;line-height:2}
-      .feature-list{grid-template-columns:1fr;gap:9px;margin-top:18px}
-      .feature{padding:14px}
-      .feature b{font-size:12px}
-      .feature span{font-size:9px}
-      .product-actions{margin-top:18px}
-      .product-actions .btn{width:100%}
-      .product-image{border-radius:22px}
-      .product-image img{width:100%;height:auto;min-height:0;aspect-ratio:4/3;object-fit:contain;object-position:center;background:#071326}
+      .product-feature{
+        gap:18px;
+      }
+
+      .product-copy{
+        padding:21px;
+      }
+
+      .product-logo{
+        font-size:36px;
+        letter-spacing:6px;
+      }
+
+      .product-tag{
+        font-size:9px;
+        letter-spacing:2.3px;
+        margin-bottom:14px;
+      }
+
+      .product-copy>p{
+        font-size:12px;
+        line-height:2;
+      }
+
+      .feature-list{
+        grid-template-columns:1fr;
+        gap:9px;
+        margin-top:18px;
+      }
+
+      .feature{
+        padding:14px;
+      }
+
+      .feature b{
+        font-size:12px;
+      }
+
+      .feature span{
+        font-size:9px;
+      }
+
+      .product-actions{
+        margin-top:18px;
+      }
+
+      .product-actions .btn{
+        width:100%;
+      }
+
+      .product-image{
+        border-radius:22px;
+      }
+
+      .product-image img{
+        width:100%;
+        height:auto;
+        min-height:0;
+        aspect-ratio:4/3;
+        object-fit:contain;
+        object-position:center;
+        background:#071326;
+      }
 
       /* Showcase */
-      .quote-strip{padding:19px;flex-direction:column;align-items:stretch;gap:14px;text-align:center}
-      .quote-strip strong{font-size:13px}
-      .quote-strip span{font-size:10px}
-      .quote-strip .btn{width:100%}
+      .quote-strip{
+        padding:19px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:14px;
+        text-align:center;
+      }
 
-      /* Gallery — full image visible */
-      .gallery{grid-template-columns:1fr;gap:12px}
-      .gallery-item,.gallery-item.big{grid-column:auto;grid-row:auto;min-height:0;height:auto;aspect-ratio:4/3;border-radius:18px}
-      .gallery-item img,.gallery-item.big img{width:100%;height:100%;object-fit:contain;object-position:center;background:#071326}
-      .gallery-overlay{padding:11px 13px;font-size:10px}
+      .quote-strip strong{
+        font-size:13px;
+      }
+
+      .quote-strip span{
+        font-size:10px;
+      }
+
+      .quote-strip .btn{
+        width:100%;
+      }
+
+      /* Gallery */
+      .gallery{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .gallery-item,
+      .gallery-item.big{
+        grid-column:auto;
+        grid-row:auto;
+        min-height:0;
+        height:auto;
+        aspect-ratio:4/3;
+        border-radius:18px;
+      }
+
+      .gallery-item img,
+      .gallery-item.big img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        object-position:center;
+        background:#071326;
+      }
+
+      .gallery-overlay{
+        padding:11px 13px;
+        font-size:10px;
+      }
 
       /* CTA */
-      .cta{padding:28px 21px;border-radius:22px}
-      .cta h3{font-size:clamp(22px,7vw,31px);line-height:1.35}
-      .cta p{font-size:11px;line-height:1.9}
-      .cta .btn{width:100%}
+      .cta{
+        padding:28px 21px;
+        border-radius:22px;
+      }
+
+      .cta h3{
+        font-size:clamp(22px,7vw,31px);
+        line-height:1.35;
+      }
+
+      .cta p{
+        font-size:11px;
+        line-height:1.9;
+      }
+
+      .cta .btn{
+        width:100%;
+      }
 
       /* Footer */
-      footer{padding:26px 0 22px;margin-top:6px}
-      .footer{align-items:center;flex-direction:column;gap:16px;text-align:center}
-      .footer-brand{justify-content:center}
-      .footer-links{justify-content:center}
-      .footer-links a{font-size:10px;padding:5px 7px}
-      .copyright{font-size:9px}
+      footer{
+        padding:26px 0 22px;
+        margin-top:6px;
+      }
+
+      .footer{
+        align-items:center;
+        flex-direction:column;
+        gap:16px;
+        text-align:center;
+      }
+
+      .footer-brand{
+        justify-content:center;
+      }
+
+      .footer-links{
+        justify-content:center;
+      }
+
+      .footer-links a{
+        font-size:10px;
+        padding:5px 7px;
+      }
+
+      .copyright{
+        font-size:9px;
+      }
     }
-/* ISO 13485 FOOTER BADGE */
-.iso-footer-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:8px 12px;
-  border:1px solid rgba(93,194,255,.18);
-  border-radius:14px;
-  background:rgba(7,27,49,.55);
-  transition:all .25s ease;
-}
 
-.iso-footer-badge:hover{
-  border-color:rgba(93,194,255,.36);
-  background:rgba(10,34,59,.75);
-  transform:translateY(-1px);
-}
+    /* ISO 13485 FOOTER BADGE */
+    .iso-footer-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border:1px solid rgba(93,194,255,.18);
+      border-radius:14px;
+      background:rgba(7,27,49,.55);
+      transition:all .25s ease;
+    }
 
-.iso-badge-mark{
-  width:38px;
-  height:38px;
-  display:grid;
-  place-items:center;
-  flex-shrink:0;
-  border-radius:11px;
-  border:1px solid rgba(93,194,255,.22);
-  background:linear-gradient(
-    145deg,
-    rgba(27,77,115,.55),
-    rgba(3,15,30,.9)
-  );
-  color:#b8eaff;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.6px;
-}
+    .iso-footer-badge:hover{
+      border-color:rgba(93,194,255,.36);
+      background:rgba(10,34,59,.75);
+      transform:translateY(-1px);
+    }
 
-.iso-badge-text{
-  display:flex;
-  flex-direction:column;
-  gap:1px;
-}
+    .iso-badge-mark{
+      width:38px;
+      height:38px;
+      display:grid;
+      place-items:center;
+      flex-shrink:0;
+      border-radius:11px;
+      border:1px solid rgba(93,194,255,.22);
+      background:linear-gradient(
+        145deg,
+        rgba(27,77,115,.55),
+        rgba(3,15,30,.9)
+      );
+      color:#b8eaff;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.6px;
+    }
 
-.iso-badge-text strong{
-  color:#eef7ff;
-  font-size:10px;
-  line-height:1.3;
-}
+    .iso-badge-text{
+      display:flex;
+      flex-direction:column;
+      gap:1px;
+    }
 
-.iso-badge-text small{
-  color:#7891aa;
-  font-size:8px;
-  line-height:1.5;
-}
+    .iso-badge-text strong{
+      color:#eef7ff;
+      font-size:10px;
+      line-height:1.3;
+    }
 
-/* MOBILE */
-@media(max-width:640px){
-  .iso-footer-badge{
-    width:100%;
-    justify-content:flex-start;
-}
-  /* حذف کادر دور نوار اصلی */
-  nav{
-    border:none !important;
-    border-radius:0 !important;
-    background:transparent !important;
-    box-shadow:none !important;
-  }
-</style>
+    .iso-badge-text small{
+      color:#7891aa;
+      font-size:8px;
+      line-height:1.5;
+    }
+
+    @media(max-width:640px){
+      .iso-footer-badge{
+        width:100%;
+        justify-content:flex-start;
+      }
+    }
+
+    /* FIX: REMOVE THE LARGE FRAME AROUND THE MAIN NAV */
+    header.nav-wrap .container nav{
+      border:none !important;
+      border-radius:0 !important;
+      background:transparent !important;
+      box-shadow:none !important;
+    }
+  </style>
 </head>
 
 <body>
+
   <header class="nav-wrap" id="nav">
     <div class="container">
       <nav>
@@ -450,51 +1463,87 @@
   </header>
 
   <main>
+
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="container">
         <div class="hero-grid">
+
           <div class="hero-copy reveal">
-            <div class="eyebrow"><i></i> فناوری برای نسل بعدی راهکارهای پزشکی</div>
+            <div class="eyebrow">
+              <i></i>
+              فناوری برای نسل بعدی راهکارهای پزشکی
+            </div>
+
             <h1>
               <span class="gradient">FARADID</span><br>
               <span class="line-soft">فراتر از امروز،</span><br>
               <span class="gradient">دیدی به فردا</span>
             </h1>
+
             <p>
               فرادید پردیس کاوش، مجموعه‌ای فناورمحور با تمرکز بر طراحی، توسعه و نمونه‌سازی
               راهکارهای نوآورانه و تبدیل ایده‌های مهندسی به راهکارهای کاربردی در حوزه فناوری است.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-primary" href="venix.html">مشاهده VENIX <span>←</span></a>
-              <a class="btn btn-secondary" href="about.html">آشنایی با شرکت</a>
+              <a class="btn btn-primary" href="venix.html">
+                مشاهده VENIX
+                <span>←</span>
+              </a>
+
+              <a class="btn btn-secondary" href="about.html">
+                آشنایی با شرکت
+              </a>
             </div>
 
             <div class="hero-proof">
-              <div class="proof"><strong>FARADID</strong><span>توسعه راهکارهای نوآورانه</span></div>
-              <div class="proof"><strong>VENIX</strong><span>رگیاب نوری</span></div>
-              <div class="proof"><strong>PRODUCT</strong><span>از ایده تا نمونه‌سازی</span></div>
+              <div class="proof">
+                <strong>FARADID</strong>
+                <span>توسعه راهکارهای نوآورانه</span>
+              </div>
+
+              <div class="proof">
+                <strong>VENIX</strong>
+                <span>رگیاب نوری</span>
+              </div>
+
+              <div class="proof">
+                <strong>PRODUCT</strong>
+                <span>از ایده تا نمونه‌سازی</span>
+              </div>
             </div>
           </div>
 
           <div class="hero-visual reveal">
             <div class="hero-logo-frame">
               <div class="hero-logo-inner">
-                <div class="hero-logo-kicker">FARADID · INNOVATION &amp; PRODUCT DEVELOPMENT</div>
-                <div class="hero-logo-stage">
-                  <img src="faradid-logo.jpg" alt="لوگوی رسمی شرکت فرادید پردیس کاوش" loading="eager">
+
+                <div class="hero-logo-kicker">
+                  FARADID · INNOVATION &amp; PRODUCT DEVELOPMENT
                 </div>
+
+                <div class="hero-logo-stage">
+                  <img
+                    src="faradid-logo.jpg"
+                    alt="لوگوی رسمی شرکت فرادید پردیس کاوش"
+                    loading="eager"
+                  >
+                </div>
+
                 <div class="hero-logo-footer">
                   <span class="hero-logo-pill">برند شرکت</span>
+
                   <div class="hero-logo-caption">
                     <strong>FARADID</strong>
                     <span>FARADID PARDIS KAVOSH</span>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -502,36 +1551,70 @@
     <!-- COMPANY -->
     <section id="company">
       <div class="container">
+
         <div class="section-head reveal">
           <div>
             <div class="kicker">ABOUT FARADID</div>
             <h2>مهندسی ایده، ساخت محصول</h2>
           </div>
-          <p>فرادید روی تبدیل ایده‌های فناورانه به راهکارهای قابل‌ارائه تمرکز دارد؛ با ترکیب طراحی، توسعه و نمونه‌سازی.</p>
+
+          <p>
+            فرادید روی تبدیل ایده‌های فناورانه به راهکارهای قابل‌ارائه تمرکز دارد؛
+            با ترکیب طراحی، توسعه و نمونه‌سازی.
+          </p>
         </div>
 
         <div class="company-grid">
+
           <article class="glass about-card reveal">
+
             <p class="lead">
-              در فرادید، مسیر توسعه محصول از شناخت مسئله و طراحی آغاز می‌شود و با نمونه‌سازی، بهبود تکرارشونده و آماده‌سازی برای ارائه ادامه پیدا می‌کند.
+              در فرادید، مسیر توسعه محصول از شناخت مسئله و طراحی آغاز می‌شود و با نمونه‌سازی،
+              بهبود تکرارشونده و آماده‌سازی برای ارائه ادامه پیدا می‌کند.
               تمرکز ویژه این مجموعه بر راهکارهای نوآورانه و حوزه فناوری پزشکی است.
             </p>
 
             <div class="company-points">
-              <div class="point"><small>تمرکز</small><strong>نوآوری و توسعه محصول</strong></div>
-              <div class="point"><small>حوزه</small><strong>فناوری و تجهیزات پزشکی</strong></div>
-              <div class="point"><small>محصول شاخص</small><strong>VENIX</strong></div>
-              <div class="point"><small>رویکرد</small><strong>طراحی، توسعه و نمونه‌سازی</strong></div>
+
+              <div class="point">
+                <small>تمرکز</small>
+                <strong>نوآوری و توسعه محصول</strong>
+              </div>
+
+              <div class="point">
+                <small>حوزه</small>
+                <strong>فناوری و تجهیزات پزشکی</strong>
+              </div>
+
+              <div class="point">
+                <small>محصول شاخص</small>
+                <strong>VENIX</strong>
+              </div>
+
+              <div class="point">
+                <small>رویکرد</small>
+                <strong>طراحی، توسعه و نمونه‌سازی</strong>
+              </div>
+
             </div>
 
             <div class="hero-actions">
-              <a class="btn btn-secondary" href="about.html">صفحه درباره شرکت <span>←</span></a>
+              <a class="btn btn-secondary" href="about.html">
+                صفحه درباره شرکت
+                <span>←</span>
+              </a>
             </div>
+
           </article>
 
           <article class="glass image-card reveal">
-            <img src="venix-features.jpg" alt="نمایی از محصول VENIX و قابلیت‌های آن" loading="lazy">
+            <img
+              src="venix-features.jpg"
+              alt="نمایی از محصول VENIX و قابلیت‌های آن"
+              loading="lazy"
+            >
           </article>
+
         </div>
       </div>
     </section>
@@ -539,30 +1622,44 @@
     <!-- CAPABILITIES -->
     <section id="capabilities">
       <div class="container">
+
         <div class="section-head reveal">
           <div>
             <div class="kicker">WHAT WE BUILD</div>
             <h2>توانمندی‌های کلیدی</h2>
           </div>
-          <p>ساختار فعالیت فرادید را می‌توان در سه مرحله اصلی از طراحی تا توسعه محصول خلاصه کرد.</p>
+
+          <p>
+            ساختار فعالیت فرادید را می‌توان در سه مرحله اصلی از طراحی تا توسعه محصول خلاصه کرد.
+          </p>
         </div>
 
         <div class="cap-grid">
+
           <article class="glass cap reveal">
             <div class="cap-num">01 · DESIGN</div>
             <h3>طراحی و حل مسئله</h3>
-            <p>تبدیل نیاز واقعی کاربر به مفهوم محصول، تجربه کاربری و ساختار مهندسی قابل توسعه.</p>
+            <p>
+              تبدیل نیاز واقعی کاربر به مفهوم محصول، تجربه کاربری و ساختار مهندسی قابل توسعه.
+            </p>
           </article>
+
           <article class="glass cap reveal">
             <div class="cap-num">02 · PROTOTYPE</div>
             <h3>نمونه‌سازی و آزمون</h3>
-            <p>حرکت مرحله‌ای از ایده به نمونه اولیه و اصلاح طراحی بر اساس بازخورد و آزمون‌های توسعه.</p>
+            <p>
+              حرکت مرحله‌ای از ایده به نمونه اولیه و اصلاح طراحی بر اساس بازخورد و آزمون‌های توسعه.
+            </p>
           </article>
+
           <article class="glass cap reveal">
             <div class="cap-num">03 · PRODUCT</div>
             <h3>توسعه محصول</h3>
-            <p>یکپارچه‌سازی طراحی، فناوری و ارائه محصول برای حرکت از نمونه اولیه به سمت محصول قابل عرضه.</p>
+            <p>
+              یکپارچه‌سازی طراحی، فناوری و ارائه محصول برای حرکت از نمونه اولیه به سمت محصول قابل عرضه.
+            </p>
           </article>
+
         </div>
       </div>
     </section>
@@ -570,43 +1667,86 @@
     <!-- VENIX -->
     <section id="venix-preview">
       <div class="container">
+
         <div class="section-head reveal">
           <div>
             <div class="kicker">FEATURED PRODUCT</div>
             <h2>VENIX؛ محصول محوری فرادید</h2>
           </div>
-          <p>رگیاب نوری با طراحی مدرن و تمرکز بر تجربه کاربری در فرایند رگ‌گیری.</p>
+
+          <p>
+            رگیاب نوری با طراحی مدرن و تمرکز بر تجربه کاربری در فرایند رگ‌گیری.
+          </p>
         </div>
 
         <div class="product-feature">
+
           <article class="glass product-copy reveal">
+
             <div class="product-logo">VENIX</div>
+
             <div class="product-tag">SMART VEIN FINDER</div>
+
             <p>
               VENIX با هدف کمک به مشاهده بهتر رگ و ساده‌تر شدن فرایند رگ‌گیری توسعه یافته است.
               طراحی دستگاه بر ترکیب کاربردپذیری، ظاهر حرفه‌ای و تجربه کاربری ساده تمرکز دارد.
             </p>
 
             <div class="feature-list">
-              <div class="feature"><b>رگیاب نوری</b><span>کمک به مشاهده رگ</span></div>
-              <div class="feature"><b>مد کودک و بزرگسال</b><span>حالت‌های کاربری مجزا</span></div>
-              <div class="feature"><b>نمایشگر</b><span>نمایش وضعیت دستگاه</span></div>
-              <div class="feature"><b>تایمر و هشدار صوتی</b><span>بازخورد زمان و اعلان صوتی</span></div>
+
+              <div class="feature">
+                <b>رگیاب نوری</b>
+                <span>کمک به مشاهده رگ</span>
+              </div>
+
+              <div class="feature">
+                <b>مد کودک و بزرگسال</b>
+                <span>حالت‌های کاربری مجزا</span>
+              </div>
+
+              <div class="feature">
+                <b>نمایشگر</b>
+                <span>نمایش وضعیت دستگاه</span>
+              </div>
+
+              <div class="feature">
+                <b>تایمر و هشدار صوتی</b>
+                <span>بازخورد زمان و اعلان صوتی</span>
+              </div>
+
             </div>
 
             <div class="product-actions">
-              <a class="btn btn-primary" href="venix.html">مشاهده صفحه کامل VENIX <span>←</span></a>
+              <a class="btn btn-primary" href="venix.html">
+                مشاهده صفحه کامل VENIX
+                <span>←</span>
+              </a>
             </div>
+
           </article>
 
           <article class="glass product-image reveal">
-            <img src="venix-closeup.jpg" alt="نمای نزدیک از دستگاه VENIX" loading="lazy">
+            <img
+              src="venix-closeup.jpg"
+              alt="نمای نزدیک از دستگاه VENIX"
+              loading="lazy"
+            >
           </article>
+
         </div>
 
         <div class="quote-strip reveal">
-          <div><strong>SEE MORE. ACT WITH CONFIDENCE.</strong><br><span>فناوری برای لحظه‌ای که دیدن، مهم است.</span></div>
-          <a class="btn btn-secondary" href="venix.html">جزئیات محصول <span>↗</span></a>
+
+          <div>
+            <strong>SEE MORE. ACT WITH CONFIDENCE.</strong><br>
+            <span>فناوری برای لحظه‌ای که دیدن، مهم است.</span>
+          </div>
+
+          <a class="btn btn-secondary" href="venix.html">
+            جزئیات محصول
+            <span>↗</span>
+          </a>
+
         </div>
       </div>
     </section>
@@ -614,27 +1754,53 @@
     <!-- GALLERY -->
     <section id="gallery">
       <div class="container">
+
         <div class="section-head reveal">
           <div>
             <div class="kicker">PRODUCT GALLERY</div>
             <h2>VENIX از نزدیک</h2>
           </div>
-          <p>نمایی از محصول، بسته‌بندی و ارائه بصری VENIX.</p>
+
+          <p>
+            نمایی از محصول، بسته‌بندی و ارائه بصری VENIX.
+          </p>
         </div>
 
         <div class="gallery">
+
           <article class="gallery-item big reveal">
-            <img src="venix-showcase.jpg" alt="VENIX و بسته‌بندی محصول" loading="lazy">
-            <div class="gallery-overlay">VENIX · Smart Vein Finder</div>
+            <img
+              src="venix-showcase.jpg"
+              alt="VENIX و بسته‌بندی محصول"
+              loading="lazy"
+            >
+            <div class="gallery-overlay">
+              VENIX · Smart Vein Finder
+            </div>
           </article>
+
           <article class="gallery-item reveal">
-            <img src="venix-box-01.jpg" alt="بسته‌بندی VENIX" loading="lazy">
-            <div class="gallery-overlay">بسته‌بندی محصول</div>
+            <img
+              src="venix-box-01.jpg"
+              alt="بسته‌بندی VENIX"
+              loading="lazy"
+            >
+            <div class="gallery-overlay">
+              بسته‌بندی محصول
+            </div>
           </article>
+
           <article class="gallery-item reveal">
-            <img src="venix-box-02.jpg" alt="نمای دوم بسته‌بندی VENIX" loading="lazy">
-            <div class="gallery-overlay">طراحی بسته‌بندی</div>
+            <img
+              src="venix-box-02.jpg"
+              alt="نمای دوم بسته‌بندی VENIX"
+              loading="lazy"
+            >
+            <div class="gallery-overlay">
+              طراحی بسته‌بندی
+            </div>
           </article>
+
         </div>
       </div>
     </section>
@@ -642,55 +1808,75 @@
     <!-- CONTACT -->
     <section id="contact">
       <div class="container">
+
         <div class="glass cta reveal">
+
           <div class="cta-inner">
+
             <div>
               <div class="kicker">LET'S CONNECT</div>
-              <h3>آماده همکاری و توسعه ایده‌های نوآورانه هستیم.</h3>
-              <p>برای معرفی شرکت، محصول و مسیرهای همکاری با فرادید در ارتباط باشید.</p>
+
+              <h3>
+                آماده همکاری و توسعه ایده‌های نوآورانه هستیم.
+              </h3>
+
+              <p>
+                برای معرفی شرکت، محصول و مسیرهای همکاری با فرادید در ارتباط باشید.
+              </p>
             </div>
+
             <!-- ایمیل تماس را در href زیر جایگزین کنید -->
-            <a class="btn btn-primary" href="mailto:EMAIL@EXAMPLE.COM">ارتباط با فرادید <span>↗</span></a>
+            <a class="btn btn-primary" href="mailto:EMAIL@EXAMPLE.COM">
+              ارتباط با فرادید
+              <span>↗</span>
+            </a>
+
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
- <footer>
-  <div class="container footer">
+  <footer>
+    <div class="container footer">
 
-    <div class="footer-brand">
-      <img src="faradid-logo.jpg" alt="FARADID">
-      <div>
-        <strong>FARADID</strong>
-        <span>فرادید پردیس کاوش</span>
+      <div class="footer-brand">
+        <img src="faradid-logo.jpg" alt="FARADID">
+
+        <div>
+          <strong>FARADID</strong>
+          <span>فرادید پردیس کاوش</span>
+        </div>
       </div>
+
+      <div class="footer-links">
+        <a href="index.html">خانه</a>
+        <a href="about.html">درباره شرکت</a>
+        <a href="venix.html">VENIX</a>
+        <a href="#gallery">گالری</a>
+        <a href="#contact">تماس</a>
+      </div>
+
+      <a href="certifications.html" class="iso-footer-badge">
+
+        <span class="iso-badge-mark">
+          ISO
+        </span>
+
+        <span class="iso-badge-text">
+          <strong>ISO 13485:2016</strong>
+          <small>سیستم مدیریت کیفیت تجهیزات پزشکی</small>
+        </span>
+
+      </a>
+
+      <div class="copyright">
+        © 2026 Faradid Pardis Kavosh
+      </div>
+
     </div>
-
-    <div class="footer-links">
-      <a href="index.html">خانه</a>
-      <a href="about.html">درباره شرکت</a>
-      <a href="venix.html">VENIX</a>
-      <a href="#gallery">گالری</a>
-      <a href="#contact">تماس</a>
-    </div>
-
-    <a href="certifications.html" class="iso-footer-badge">
-      <span class="iso-badge-mark">ISO</span>
-
-      <span class="iso-badge-text">
-        <strong>ISO 13485:2016</strong>
-        <small>سیستم مدیریت کیفیت تجهیزات پزشکی</small>
-      </span>
-    </a>
-
-    <div class="copyright">
-      © 2026 Faradid Pardis Kavosh
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
   <script>
     const nav = document.getElementById('nav');
