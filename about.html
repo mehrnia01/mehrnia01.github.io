@@ -18,8 +18,156 @@
     *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
     body{font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at 12% 8%,rgba(18,81,156,.28),transparent 31%),radial-gradient(circle at 90% 18%,rgba(0,166,255,.11),transparent 30%),linear-gradient(180deg,#020817,#031020 52%,#020817);color:var(--text);line-height:1.9;overflow-x:hidden}
     a{color:inherit;text-decoration:none} img{display:block;max-width:100%}.wrap{width:min(var(--max),92%);margin:auto}
-    .nav{position:sticky;top:0;z-index:50;background:rgba(2,8,23,.82);backdrop-filter:blur(15px);border-bottom:1px solid rgba(255,255,255,.07)}
-    .nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.16em}.brand img{width:44px;height:44px;object-fit:cover;border-radius:12px}.brand span{font-size:18px}.links{display:flex;gap:8px;flex-wrap:wrap}.links a{padding:10px 13px;border-radius:11px;color:#d9e6f5;font-size:14px;transition:.25s}.links a:hover{background:rgba(83,191,255,.08);color:#fff}.active{color:#9bdcff!important;background:rgba(83,191,255,.06)}
+    /* HEADER / NAVIGATION — هماهنگ با منوی سایر صفحات سایت */
+    .container{width:min(1180px,calc(100% - 32px));margin:auto}
+    .nav-wrap{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      padding:10px 0;
+      background:rgba(2,9,20,.88);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(92,194,255,.09);
+    }
+    .nav-wrap nav{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:64px;
+      padding:8px 12px 8px 16px;
+      border:none;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      direction:ltr;
+      flex-shrink:0;
+    }
+    .brand img{
+      width:50px;
+      height:50px;
+      object-fit:cover;
+      border-radius:14px;
+      border:1px solid rgba(92,194,255,.18);
+    }
+    .brand strong{
+      display:block;
+      color:#f5f8ff;
+      font-size:18px;
+      line-height:1;
+      letter-spacing:2px;
+    }
+    .brand small{
+      display:block;
+      margin-top:6px;
+      color:#7891aa;
+      font-size:8px;
+      letter-spacing:1.4px;
+      white-space:nowrap;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:5px;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+    }
+    .nav-links a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:10px 13px;
+      border:1px solid transparent;
+      border-radius:12px;
+      color:#dbe6ef;
+      font-size:12px;
+      white-space:nowrap;
+      transition:background .2s ease,color .2s ease,border-color .2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:rgba(10,32,57,.92);
+      border-color:rgba(92,194,255,.12);
+      color:var(--blue2);
+    }
+    .menu-btn{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      width:44px;
+      height:44px;
+      flex:0 0 44px;
+      border:1px solid rgba(92,194,255,.20);
+      border-radius:13px;
+      background:rgba(7,27,49,.88);
+      color:#eaf7ff;
+      font-family:inherit;
+      font-size:24px;
+      line-height:1;
+      cursor:pointer;
+      transition:background .2s ease,border-color .2s ease;
+    }
+    .menu-btn:hover,
+    .menu-btn:focus-visible{
+      background:#0a2039;
+      border-color:rgba(116,210,255,.45);
+      outline:none;
+    }
+    .nav-wrap .container nav{
+      border:none !important;
+      border-radius:0 !important;
+      background:transparent !important;
+      box-shadow:none !important;
+    }
+    @media(max-width:1050px){
+      .nav-wrap .container{position:relative}
+      .nav-wrap nav{gap:12px;padding:8px 0}
+      .menu-btn{display:inline-flex}
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:calc(100% + 9px);
+        right:0;
+        left:0;
+        z-index:1001;
+        flex-direction:column;
+        align-items:stretch;
+        gap:4px;
+        padding:10px;
+        border:1px solid rgba(92,194,255,.20);
+        border-radius:18px;
+        background:rgba(4,17,33,.98);
+        box-shadow:0 22px 55px rgba(0,0,0,.42);
+        backdrop-filter:blur(16px);
+        -webkit-backdrop-filter:blur(16px);
+      }
+      .nav-links.is-open{display:flex}
+      .nav-links a{
+        display:flex;
+        width:100%;
+        min-height:44px;
+        justify-content:flex-start;
+        padding:11px 14px;
+        border-radius:11px;
+        font-size:12px;
+        white-space:normal;
+        text-align:right;
+      }
+    }
+    @media(max-width:640px){
+      .brand{gap:0}
+      .brand strong,.brand small{display:none}
+      .brand img{width:42px;height:42px;border-radius:12px}
+      .nav-links{right:0;left:0}
+    }
     .hero{padding:92px 0 75px}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:54px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue2);font-size:13px;letter-spacing:.14em;margin-bottom:15px}.eyebrow:before{content:"";width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--blue2))}.hero h1{font-size:clamp(43px,6.4vw,78px);line-height:1.08;margin-bottom:20px}.hero h1 span{color:var(--blue2)}.hero p{color:var(--muted);font-size:17px;max-width:690px}.hero-card{padding:10px;border-radius:32px;background:linear-gradient(135deg,rgba(92,199,255,.4),rgba(255,255,255,.04),rgba(0,128,255,.12));box-shadow:var(--shadow)}.hero-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:25px}
     section{padding:88px 0}.section-title{font-size:clamp(30px,4.5vw,52px);line-height:1.2;margin:8px 0 14px}.lead{color:var(--muted);font-size:16px;max-width:760px}
     .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}.panel{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(12,31,53,.88),rgba(4,14,27,.92));box-shadow:0 16px 45px rgba(0,0,0,.18)}.copy{padding:30px}.copy p{color:var(--muted);font-size:15px;margin-top:13px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.fact{padding:18px;border:1px solid rgba(255,255,255,.07);border-radius:17px;background:rgba(255,255,255,.02)}.fact strong{display:block;font-size:15px;margin-bottom:3px}.fact span{color:#8ea1b6;font-size:13px}.visual{overflow:hidden}.visual img{width:100%;height:100%;min-height:390px;object-fit:cover}
@@ -31,7 +179,7 @@
     footer{padding:30px 0 42px;border-top:1px solid rgba(255,255,255,.07);color:#8195aa}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:13px}
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.show{opacity:1;transform:none}
     @media(max-width:980px){.hero-grid,.about-grid,.ach-grid,.venix{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.hero{padding-top:60px}}
-    @media(max-width:640px){.nav-inner{align-items:flex-start;flex-direction:column;padding:12px 0}.links{justify-content:center}.values,.timeline,.facts{grid-template-columns:1fr}.contact{flex-direction:column;align-items:stretch}.hero h1{font-size:clamp(39px,13vw,58px)}section{padding:70px 0}}
+    @media(max-width:640px){.values,.timeline,.facts{grid-template-columns:1fr}.contact{flex-direction:column;align-items:stretch}.hero h1{font-size:clamp(39px,13vw,58px)}section{padding:70px 0}}
   
     /* ISO 13485 FOOTER BADGE */
     .iso-footer-badge{
@@ -98,19 +246,62 @@
   </style>
 </head>
 <body>
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="index.html"><img src="faradid-logo.jpg" alt="لوگوی فرادید"><span>FARADID</span></a>
-    <nav class="links" aria-label="منوی سایت">
-      <a href="index.html">خانه</a>
-      <a href="venix.html">VENIX</a>
-      <a href="specifications.html">مشخصات فنی</a>
-      <a href="certifications.html">مجوزات و استانداردها</a>
-      <a class="active" href="about.html">درباره شرکت</a>
-      <a href="contact.html">تماس با ما</a>
+<header class="nav-wrap">
+  <div class="container">
+    <nav aria-label="منوی سایت">
+      <a href="index.html" class="brand" aria-label="FARADID">
+        <img src="faradid-logo.jpg" alt="لوگوی فرادید">
+        <div>
+          <strong>FARADID</strong>
+          <small>BEYOND TODAY, VISION FOR TOMORROW</small>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">خانه</a>
+        <a href="venix.html">VENIX</a>
+        <a href="specifications.html">مشخصات فنی</a>
+        <a href="certifications.html">مجوزات و استانداردها</a>
+        <a href="about.html" class="active">درباره شرکت</a>
+        <a href="contact.html">تماس با ما</a>
+      </div>
+      <button type="button" class="menu-btn" id="menuBtn" aria-label="باز کردن منو" aria-controls="navLinks" aria-expanded="false">☰</button>
     </nav>
   </div>
 </header>
+
+<script>
+  (() => {
+    const menuButton = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (!menuButton || !navLinks) return;
+
+    const closeMenu = () => {
+      navLinks.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'باز کردن منو');
+      menuButton.textContent = '☰';
+    };
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'بستن منو' : 'باز کردن منو');
+      menuButton.textContent = isOpen ? '×' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1050) closeMenu();
+    });
+  })();
+</script>
 
 <main>
 <section class="hero">
