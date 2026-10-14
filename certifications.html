@@ -1637,6 +1637,22 @@
     </div>
 
   </div>
+   /* منوی همبرگری موبایل */
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+
+    menuBtn.setAttribute('aria-expanded', isOpen);
+
+    menuBtn.setAttribute(
+      'aria-label',
+      isOpen ? 'بستن منو' : 'باز کردن منو'
+    );
+
+    menuBtn.textContent = isOpen ? '✕' : '☰';
+  });
   <script
   src="https://widget.faratamas.com/talko-widget.js"
   data-talko-widget-key="b2bd0fa390c44268a585de8a1e807d70"
