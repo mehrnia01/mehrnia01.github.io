@@ -225,5 +225,11 @@
   const io = new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
 </script>
+  <script
+  src="https://widget.faratamas.com/talko-widget.js"
+  data-talko-widget-key="b2bd0fa390c44268a585de8a1e807d70"
+  data-talko-chat-url="https://api.faratamas.com/chat"
+  async
+></script>
 </body>
 </html>
