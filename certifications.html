@@ -50,18 +50,20 @@
 
     .container{width:min(1180px,calc(100% - 32px));margin:auto}
 
-    /* HEADER */
+    /* HEADER / NAVIGATION */
     .nav-wrap{
       position:sticky;
       top:0;
       z-index:1000;
-      padding:12px 0;
-      background:rgba(2,9,20,.84);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(92,194,255,.07);
+      padding:10px 0;
+      background:rgba(2,9,20,.88);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(92,194,255,.09);
     }
 
     nav{
+      position:relative;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -71,7 +73,6 @@
       border:none;
       border-radius:0;
       background:transparent;
-      backdrop-filter:none;
       box-shadow:none;
     }
 
@@ -88,11 +89,12 @@
       height:50px;
       object-fit:cover;
       border-radius:14px;
-      border:1px solid rgba(92,194,255,.12);
+      border:1px solid rgba(92,194,255,.18);
     }
 
     .brand strong{
       display:block;
+      color:#f5f8ff;
       font-size:18px;
       line-height:1;
       letter-spacing:2px;
@@ -109,23 +111,56 @@
 
     .nav-links{
       display:flex;
+      align-items:center;
       gap:5px;
       flex-wrap:wrap;
       justify-content:flex-start;
     }
 
     .nav-links a{
-      padding:10px 14px;
-      border-radius:13px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:10px 13px;
+      border:1px solid transparent;
+      border-radius:12px;
       color:#dbe6ef;
       font-size:12px;
-      transition:.2s ease;
+      white-space:nowrap;
+      transition:background .2s ease,color .2s ease,border-color .2s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active{
-      background:#0a2039;
+      background:rgba(10,32,57,.92);
+      border-color:rgba(92,194,255,.12);
       color:var(--blue2);
+    }
+
+    .menu-btn{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      width:44px;
+      height:44px;
+      flex:0 0 44px;
+      border:1px solid rgba(92,194,255,.20);
+      border-radius:13px;
+      background:rgba(7,27,49,.88);
+      color:#eaf7ff;
+      font-family:inherit;
+      font-size:24px;
+      line-height:1;
+      cursor:pointer;
+      transition:background .2s ease,border-color .2s ease;
+    }
+
+    .menu-btn:hover,
+    .menu-btn:focus-visible{
+      background:#0a2039;
+      border-color:rgba(116,210,255,.45);
+      outline:none;
     }
 
     /* COMMON */
@@ -856,12 +891,63 @@
       }
       }
 
-    /* FIX: REMOVE THE LARGE FRAME AROUND THE MAIN NAV */
+    /* NAVIGATION: RESPONSIVE DROPDOWN FOR TABLETS AND PHONES */
     header.nav-wrap .container nav{
       border:none !important;
       border-radius:0 !important;
       background:transparent !important;
       box-shadow:none !important;
+    }
+
+    @media(max-width:1050px){
+      .nav-wrap .container{position:relative}
+
+      nav{
+        gap:12px;
+        padding:8px 0;
+      }
+
+      .menu-btn{display:inline-flex}
+
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:calc(100% + 9px);
+        right:0;
+        left:0;
+        z-index:1001;
+        flex-direction:column;
+        align-items:stretch;
+        gap:4px;
+        padding:10px;
+        border:1px solid rgba(92,194,255,.20);
+        border-radius:18px;
+        background:rgba(4,17,33,.98);
+        box-shadow:0 22px 55px rgba(0,0,0,.42);
+        backdrop-filter:blur(16px);
+        -webkit-backdrop-filter:blur(16px);
+      }
+
+      .nav-links.is-open{display:flex}
+
+      .nav-links a{
+        display:flex;
+        width:100%;
+        min-height:44px;
+        justify-content:flex-start;
+        padding:11px 14px;
+        border-radius:11px;
+        font-size:12px;
+        white-space:normal;
+        text-align:right;
+      }
+    }
+
+    @media(max-width:640px){
+      .brand{gap:0}
+      .brand strong,.brand small{display:none}
+      .brand img{width:42px;height:42px;border-radius:12px}
+      .nav-links{right:0;left:0}
     }
     
   </style>
@@ -891,11 +977,44 @@
           <a href="contact.html">تماس با ما</a>
         </div>
 
-        <button class="menu-btn" id="menuBtn" aria-label="باز کردن منو">☰</button>
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="باز کردن منو" aria-controls="navLinks" aria-expanded="false">☰</button>
       </nav>
     </div>
   </header>
 
+  <script>
+    (() => {
+      const menuButton = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      if (!menuButton || !navLinks) return;
+
+      const closeMenu = () => {
+        navLinks.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'باز کردن منو');
+        menuButton.textContent = '☰';
+      };
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('is-open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'بستن منو' : 'باز کردن منو');
+        menuButton.textContent = isOpen ? '×' : '☰';
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMenu();
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1050) closeMenu();
+      });
+    })();
+  </script>
 
   <main>
 
