@@ -1438,6 +1438,145 @@
       background:transparent !important;
       box-shadow:none !important;
     }
+    /* FOOTER CONTACT DETAILS */
+.footer-details{
+  display:grid;
+  grid-template-columns:1fr 1.15fr 1.5fr 1fr;
+  gap:26px;
+  align-items:start;
+  padding-top:28px;
+  margin-top:28px;
+  border-top:1px solid var(--line);
+}
+
+.footer-details h4{
+  color:#eef6ff;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:13px;
+}
+
+.footer-company-meta{
+  margin-top:12px;
+  color:#7f91a8;
+  font-size:10px;
+  line-height:2;
+}
+
+.footer-detail-links{
+  display:grid;
+  gap:9px;
+}
+
+.footer-detail-link{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  color:#9eafc4;
+  font-size:11px;
+  line-height:1.9;
+  overflow-wrap:anywhere;
+  transition:color .2s ease;
+}
+
+.footer-detail-link:hover{
+  color:#74d2ff;
+}
+
+.footer-detail-icon{
+  flex:0 0 18px;
+  color:var(--blue-2);
+  text-align:center;
+}
+
+.footer-address{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  color:#9eafc4;
+  font-size:11px;
+  line-height:2.1;
+  font-style:normal;
+  overflow-wrap:anywhere;
+}
+
+.footer-socials{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.footer-socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 10px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:rgba(255,255,255,.025);
+  color:#aebfd3;
+  font-size:10px;
+  transition:all .2s ease;
+}
+
+.footer-socials a:hover{
+  color:#fff;
+  border-color:var(--line-strong);
+  background:rgba(35,170,247,.09);
+}
+
+.footer-bottom-line{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  padding-top:20px;
+  margin-top:24px;
+  border-top:1px solid var(--line);
+}
+
+.footer-enamad img{
+  display:block;
+  width:70px;
+  max-width:100%;
+  height:auto;
+}
+
+.footer-details .iso-footer-badge{
+  max-width:100%;
+}
+
+@media(max-width:980px){
+  .footer-details{
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+}
+
+@media(max-width:640px){
+  .footer-details{
+    grid-template-columns:1fr;
+    gap:23px;
+    padding-top:23px;
+    margin-top:23px;
+  }
+
+  .footer-details h4{
+    margin-bottom:10px;
+  }
+
+  .footer-bottom-line{
+    flex-direction:column;
+    justify-content:center;
+    gap:16px;
+    text-align:center;
+  }
+
+  .footer-details .iso-footer-badge{
+    width:auto;
+  }
+}
   </style>
 </head>
 
@@ -1845,15 +1984,105 @@
   </main>
 
   <footer>
-    <div class="container footer">
+  <div class="container">
 
-      <div class="footer-brand">
-        <img src="faradid-logo.jpg" alt="FARADID">
+    <div class="footer-details">
 
-        <div>
-          <strong>FARADID</strong>
-          <span>فرادید پردیس کاوش</span>
+      <!-- اطلاعات شرکت -->
+      <div class="footer-company-info">
+        <div class="footer-brand">
+          <img src="faradid-logo.jpg" alt="لوگوی فرادید پردیس کاوش">
+
+          <div>
+            <strong>FARADID</strong>
+            <span>فرادید پردیس کاوش</span>
+          </div>
         </div>
+
+        <p class="footer-company-meta">
+          شرکت فرادید پردیس کاوش (سهامی خاص)<br>
+          شماره ثبت: 9747
+        </p>
+      </div>
+
+      <!-- راه‌های ارتباطی -->
+      <div class="footer-contact-col">
+        <h4>ارتباط با ما</h4>
+
+        <div class="footer-detail-links">
+
+          <a class="footer-detail-link" href="tel:+982191308510">
+            <span class="footer-detail-icon">☎</span>
+            <span>تلفن شرکت: 02191308510</span>
+          </a>
+
+          <a class="footer-detail-link" href="tel:+989351238510">
+            <span class="footer-detail-icon">▣</span>
+            <span>تلفن همراه: 09351238510</span>
+          </a>
+
+          <a class="footer-detail-link"
+             href="mailto:info@faradidtech.ir">
+            <span class="footer-detail-icon">✉</span>
+            <span>info@faradidtech.ir</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- نشانی کامل شرکت -->
+      <div class="footer-address-col">
+        <h4>نشانی دفتر مرکزی و تحقیق‌وتوسعه</h4>
+
+        <address class="footer-address">
+          <span class="footer-detail-icon">⌖</span>
+
+          <span>
+            استان سمنان، شهر سمنان، میدان استاندارد، بلوار جوان،
+            پارک علم و فناوری دانشگاه سمنان، ساختمان پردیس کاوش،
+            شرکت فرادید پردیس کاوش.
+            <br>
+            کد پستی: 9791754965
+          </span>
+        </address>
+      </div>
+
+      <!-- شبکه‌های اجتماعی -->
+      <div class="footer-social-col">
+        <h4>شبکه‌های اجتماعی</h4>
+
+        <div class="footer-socials">
+
+          <a href="https://instagram.com/faradidtech"
+             target="_blank"
+             rel="noopener noreferrer">
+            اینستاگرام
+          </a>
+
+          <a href="https://t.me/p_port"
+             target="_blank"
+             rel="noopener noreferrer">
+            تلگرام
+          </a>
+
+          <a href="https://eitaa.com/p_port"
+             target="_blank"
+             rel="noopener noreferrer">
+            ایتا
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- بخش پایینی فوتر: استاندارد، حقوق سایت و نماد اعتماد -->
+    <div class="footer-bottom-line">
+
+      <div class="copyright">
+        © 2026 Faradid Pardis Kavosh
+        <br>
+        تمامی حقوق محفوظ است.
       </div>
 
       <a href="certifications.html" class="iso-footer-badge">
@@ -1868,14 +2097,27 @@
         </span>
 
       </a>
-      
-      <div class="copyright">
-        © 2026 Faradid Pardis Kavosh
+
+      <div class="footer-enamad">
+        <a
+          referrerpolicy="origin"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://trustseal.enamad.ir/?id=8060565&Code=rnDMONE3n1FoDLOrygnASeSMsfPSPTCA"
+        >
+          <img
+            referrerpolicy="origin"
+            src="https://trustseal.enamad.ir/logo.aspx?id=8060565&Code=rnDMONE3n1FoDLOrygnASeSMsfPSPTCA"
+            alt="نماد اعتماد الکترونیکی شرکت فرادید پردیس کاوش"
+            loading="lazy"
+          >
+        </a>
       </div>
 
     </div>
-    <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=8060565&Code=rnDMONE3n1FoDLOrygnASeSMsfPSPTCA'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=8060565&Code=rnDMONE3n1FoDLOrygnASeSMsfPSPTCA' alt='' style='cursor:pointer' code='rnDMONE3n1FoDLOrygnASeSMsfPSPTCA'></a>
-  </footer>
+
+  </div>
+</footer>
 
   <script>
     const nav = document.getElementById('nav');
